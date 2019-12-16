@@ -42,8 +42,8 @@
             this.gridList = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GroupCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GroupName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGroupName.Properties)).BeginInit();
@@ -119,6 +119,7 @@
             this.btnClose.Size = new System.Drawing.Size(83, 40);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Kapat";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -129,6 +130,7 @@
             this.btnDelete.Size = new System.Drawing.Size(83, 40);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Sil";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -139,6 +141,7 @@
             this.btnSave.Size = new System.Drawing.Size(83, 40);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Kaydet";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // groupControl3
             // 
@@ -159,13 +162,14 @@
             this.gridList.TabIndex = 0;
             this.gridList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridList.DoubleClick += new System.EventHandler(this.gridList_DoubleClick);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
-            this.groupCode,
-            this.groupName});
+            this.GroupCode,
+            this.GroupName});
             this.gridView1.GridControl = this.gridList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -174,23 +178,37 @@
             // 
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
+            this.ID.MaxWidth = 30;
+            this.ID.MinWidth = 10;
             this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 0;
+            this.ID.Width = 10;
             // 
-            // groupCode
+            // GroupCode
             // 
-            this.groupCode.Caption = "GRUP KODU";
-            this.groupCode.Name = "groupCode";
-            this.groupCode.Visible = true;
-            this.groupCode.VisibleIndex = 1;
+            this.GroupCode.Caption = "GRUP KODU";
+            this.GroupCode.FieldName = "GroupCode";
+            this.GroupCode.MaxWidth = 100;
+            this.GroupCode.MinWidth = 50;
+            this.GroupCode.Name = "GroupCode";
+            this.GroupCode.OptionsColumn.AllowEdit = false;
+            this.GroupCode.OptionsColumn.AllowFocus = false;
+            this.GroupCode.OptionsColumn.FixedWidth = true;
+            this.GroupCode.Visible = true;
+            this.GroupCode.VisibleIndex = 0;
+            this.GroupCode.Width = 50;
             // 
-            // groupName
+            // GroupName
             // 
-            this.groupName.Caption = "GRUP ADI";
-            this.groupName.Name = "groupName";
-            this.groupName.Visible = true;
-            this.groupName.VisibleIndex = 2;
+            this.GroupName.Caption = "GRUP ADI";
+            this.GroupName.FieldName = "GroupName";
+            this.GroupName.MaxWidth = 100;
+            this.GroupName.MinWidth = 75;
+            this.GroupName.Name = "GroupName";
+            this.GroupName.OptionsColumn.AllowEdit = false;
+            this.GroupName.OptionsColumn.AllowFocus = false;
+            this.GroupName.OptionsColumn.FixedWidth = true;
+            this.GroupName.Visible = true;
+            this.GroupName.VisibleIndex = 1;
             // 
             // frmStockGroup
             // 
@@ -235,7 +253,7 @@
         private DevExpress.XtraGrid.GridControl gridList;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
-        private DevExpress.XtraGrid.Columns.GridColumn groupCode;
-        private DevExpress.XtraGrid.Columns.GridColumn groupName;
+        private DevExpress.XtraGrid.Columns.GridColumn GroupCode;
+        private DevExpress.XtraGrid.Columns.GridColumn GroupName;
     }
 }

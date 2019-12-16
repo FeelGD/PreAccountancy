@@ -27,11 +27,11 @@ namespace PreAccountancy.Functions
         public void StockGroup(bool Selection = false)
         {
             Modul_Stock.frmStockGroup frm = new Modul_Stock.frmStockGroup();
-            if (Selection)
-            {
-                frm.Selection = Selection;
+            if (Selection) frm.Selection = Selection;
+            
+               
                 frm.ShowDialog();
-            }
+           
         }
 
         public void StockMovement(bool Open = false)

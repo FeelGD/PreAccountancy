@@ -1,1 +1,18 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Db">
+  <DataContextMoniker Name="/DbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="311c5157-ff12-4393-bd6b-6ce6cde89b2f" isExpanded="false" absoluteBounds="0.5, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/DbDataContext/TBL_Stock" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e488178b-50e9-4e53-acec-bba71801cea3" absoluteBounds="0.51500000000000012, 1.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7026a5da-4276-497e-b0c5-4ff86b858a0f" isExpanded="false" absoluteBounds="0.5, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/DbDataContext/TBL_StockGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="474f598b-bec9-44b0-8455-9024b126df18" absoluteBounds="0.51499999999999968, 1.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

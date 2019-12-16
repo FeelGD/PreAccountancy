@@ -22,6 +22,7 @@ namespace PreAccountancy.Functions
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="PreAccountancy")]
 	public partial class DbDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,19 @@ namespace PreAccountancy.Functions
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTBL_Stock(TBL_Stock instance);
+    partial void UpdateTBL_Stock(TBL_Stock instance);
+    partial void DeleteTBL_Stock(TBL_Stock instance);
+    partial void InsertTBL_StockGroup(TBL_StockGroup instance);
+    partial void UpdateTBL_StockGroup(TBL_StockGroup instance);
+    partial void DeleteTBL_StockGroup(TBL_StockGroup instance);
     #endregion
+		
+		public DbDataContext() : 
+				base(global::PreAccountancy.Properties.Settings.Default.PreAccountancyConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DbDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +66,626 @@ namespace PreAccountancy.Functions
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<TBL_Stock> TBL_Stocks
+		{
+			get
+			{
+				return this.GetTable<TBL_Stock>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_StockGroup> TBL_StockGroups
+		{
+			get
+			{
+				return this.GetTable<TBL_StockGroup>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_Stock")]
+	public partial class TBL_Stock : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _StockBarcode;
+		
+		private string _StockCode;
+		
+		private string _StockName;
+		
+		private string _StockUnit;
+		
+		private System.Nullable<decimal> _StockPurchasePrice;
+		
+		private System.Nullable<decimal> _StockSalePrice;
+		
+		private System.Nullable<decimal> _StockPurchaseTAX;
+		
+		private System.Nullable<decimal> _StockSaleTAX;
+		
+		private System.Nullable<int> _StockGroupID;
+		
+		private System.Data.Linq.Binary _StockPicture;
+		
+		private System.Nullable<int> _StockSaveUser;
+		
+		private System.Nullable<System.DateTime> _StockSaveDate;
+		
+		private System.Nullable<int> _StockEditUser;
+		
+		private System.Nullable<System.DateTime> _StockEditDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnStockBarcodeChanging(string value);
+    partial void OnStockBarcodeChanged();
+    partial void OnStockCodeChanging(string value);
+    partial void OnStockCodeChanged();
+    partial void OnStockNameChanging(string value);
+    partial void OnStockNameChanged();
+    partial void OnStockUnitChanging(string value);
+    partial void OnStockUnitChanged();
+    partial void OnStockPurchasePriceChanging(System.Nullable<decimal> value);
+    partial void OnStockPurchasePriceChanged();
+    partial void OnStockSalePriceChanging(System.Nullable<decimal> value);
+    partial void OnStockSalePriceChanged();
+    partial void OnStockPurchaseTAXChanging(System.Nullable<decimal> value);
+    partial void OnStockPurchaseTAXChanged();
+    partial void OnStockSaleTAXChanging(System.Nullable<decimal> value);
+    partial void OnStockSaleTAXChanged();
+    partial void OnStockGroupIDChanging(System.Nullable<int> value);
+    partial void OnStockGroupIDChanged();
+    partial void OnStockPictureChanging(System.Data.Linq.Binary value);
+    partial void OnStockPictureChanged();
+    partial void OnStockSaveUserChanging(System.Nullable<int> value);
+    partial void OnStockSaveUserChanged();
+    partial void OnStockSaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnStockSaveDateChanged();
+    partial void OnStockEditUserChanging(System.Nullable<int> value);
+    partial void OnStockEditUserChanged();
+    partial void OnStockEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnStockEditDateChanged();
+    #endregion
+		
+		public TBL_Stock()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockBarcode", DbType="NVarChar(50)")]
+		public string StockBarcode
+		{
+			get
+			{
+				return this._StockBarcode;
+			}
+			set
+			{
+				if ((this._StockBarcode != value))
+				{
+					this.OnStockBarcodeChanging(value);
+					this.SendPropertyChanging();
+					this._StockBarcode = value;
+					this.SendPropertyChanged("StockBarcode");
+					this.OnStockBarcodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockCode", DbType="NVarChar(50)")]
+		public string StockCode
+		{
+			get
+			{
+				return this._StockCode;
+			}
+			set
+			{
+				if ((this._StockCode != value))
+				{
+					this.OnStockCodeChanging(value);
+					this.SendPropertyChanging();
+					this._StockCode = value;
+					this.SendPropertyChanged("StockCode");
+					this.OnStockCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockName", DbType="NVarChar(50)")]
+		public string StockName
+		{
+			get
+			{
+				return this._StockName;
+			}
+			set
+			{
+				if ((this._StockName != value))
+				{
+					this.OnStockNameChanging(value);
+					this.SendPropertyChanging();
+					this._StockName = value;
+					this.SendPropertyChanged("StockName");
+					this.OnStockNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockUnit", DbType="NVarChar(50)")]
+		public string StockUnit
+		{
+			get
+			{
+				return this._StockUnit;
+			}
+			set
+			{
+				if ((this._StockUnit != value))
+				{
+					this.OnStockUnitChanging(value);
+					this.SendPropertyChanging();
+					this._StockUnit = value;
+					this.SendPropertyChanged("StockUnit");
+					this.OnStockUnitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPurchasePrice", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> StockPurchasePrice
+		{
+			get
+			{
+				return this._StockPurchasePrice;
+			}
+			set
+			{
+				if ((this._StockPurchasePrice != value))
+				{
+					this.OnStockPurchasePriceChanging(value);
+					this.SendPropertyChanging();
+					this._StockPurchasePrice = value;
+					this.SendPropertyChanged("StockPurchasePrice");
+					this.OnStockPurchasePriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockSalePrice", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> StockSalePrice
+		{
+			get
+			{
+				return this._StockSalePrice;
+			}
+			set
+			{
+				if ((this._StockSalePrice != value))
+				{
+					this.OnStockSalePriceChanging(value);
+					this.SendPropertyChanging();
+					this._StockSalePrice = value;
+					this.SendPropertyChanged("StockSalePrice");
+					this.OnStockSalePriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPurchaseTAX", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> StockPurchaseTAX
+		{
+			get
+			{
+				return this._StockPurchaseTAX;
+			}
+			set
+			{
+				if ((this._StockPurchaseTAX != value))
+				{
+					this.OnStockPurchaseTAXChanging(value);
+					this.SendPropertyChanging();
+					this._StockPurchaseTAX = value;
+					this.SendPropertyChanged("StockPurchaseTAX");
+					this.OnStockPurchaseTAXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockSaleTAX", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> StockSaleTAX
+		{
+			get
+			{
+				return this._StockSaleTAX;
+			}
+			set
+			{
+				if ((this._StockSaleTAX != value))
+				{
+					this.OnStockSaleTAXChanging(value);
+					this.SendPropertyChanging();
+					this._StockSaleTAX = value;
+					this.SendPropertyChanged("StockSaleTAX");
+					this.OnStockSaleTAXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockGroupID", DbType="Int")]
+		public System.Nullable<int> StockGroupID
+		{
+			get
+			{
+				return this._StockGroupID;
+			}
+			set
+			{
+				if ((this._StockGroupID != value))
+				{
+					this.OnStockGroupIDChanging(value);
+					this.SendPropertyChanging();
+					this._StockGroupID = value;
+					this.SendPropertyChanged("StockGroupID");
+					this.OnStockGroupIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPicture", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary StockPicture
+		{
+			get
+			{
+				return this._StockPicture;
+			}
+			set
+			{
+				if ((this._StockPicture != value))
+				{
+					this.OnStockPictureChanging(value);
+					this.SendPropertyChanging();
+					this._StockPicture = value;
+					this.SendPropertyChanged("StockPicture");
+					this.OnStockPictureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockSaveUser", DbType="Int")]
+		public System.Nullable<int> StockSaveUser
+		{
+			get
+			{
+				return this._StockSaveUser;
+			}
+			set
+			{
+				if ((this._StockSaveUser != value))
+				{
+					this.OnStockSaveUserChanging(value);
+					this.SendPropertyChanging();
+					this._StockSaveUser = value;
+					this.SendPropertyChanged("StockSaveUser");
+					this.OnStockSaveUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockSaveDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> StockSaveDate
+		{
+			get
+			{
+				return this._StockSaveDate;
+			}
+			set
+			{
+				if ((this._StockSaveDate != value))
+				{
+					this.OnStockSaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._StockSaveDate = value;
+					this.SendPropertyChanged("StockSaveDate");
+					this.OnStockSaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockEditUser", DbType="Int")]
+		public System.Nullable<int> StockEditUser
+		{
+			get
+			{
+				return this._StockEditUser;
+			}
+			set
+			{
+				if ((this._StockEditUser != value))
+				{
+					this.OnStockEditUserChanging(value);
+					this.SendPropertyChanging();
+					this._StockEditUser = value;
+					this.SendPropertyChanged("StockEditUser");
+					this.OnStockEditUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> StockEditDate
+		{
+			get
+			{
+				return this._StockEditDate;
+			}
+			set
+			{
+				if ((this._StockEditDate != value))
+				{
+					this.OnStockEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._StockEditDate = value;
+					this.SendPropertyChanged("StockEditDate");
+					this.OnStockEditDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_StockGroup")]
+	public partial class TBL_StockGroup : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _GroupName;
+		
+		private string _GroupCode;
+		
+		private System.Nullable<int> _GroupSaveUser;
+		
+		private System.Nullable<System.DateTime> _GroupSaveDate;
+		
+		private System.Nullable<int> _GroupEditUser;
+		
+		private System.Nullable<System.DateTime> _GroupEditDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnGroupNameChanging(string value);
+    partial void OnGroupNameChanged();
+    partial void OnGroupCodeChanging(string value);
+    partial void OnGroupCodeChanged();
+    partial void OnGroupSaveUserChanging(System.Nullable<int> value);
+    partial void OnGroupSaveUserChanged();
+    partial void OnGroupSaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnGroupSaveDateChanged();
+    partial void OnGroupEditUserChanging(System.Nullable<int> value);
+    partial void OnGroupEditUserChanged();
+    partial void OnGroupEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnGroupEditDateChanged();
+    #endregion
+		
+		public TBL_StockGroup()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupName", DbType="NVarChar(50)")]
+		public string GroupName
+		{
+			get
+			{
+				return this._GroupName;
+			}
+			set
+			{
+				if ((this._GroupName != value))
+				{
+					this.OnGroupNameChanging(value);
+					this.SendPropertyChanging();
+					this._GroupName = value;
+					this.SendPropertyChanged("GroupName");
+					this.OnGroupNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupCode", DbType="NVarChar(50)")]
+		public string GroupCode
+		{
+			get
+			{
+				return this._GroupCode;
+			}
+			set
+			{
+				if ((this._GroupCode != value))
+				{
+					this.OnGroupCodeChanging(value);
+					this.SendPropertyChanging();
+					this._GroupCode = value;
+					this.SendPropertyChanged("GroupCode");
+					this.OnGroupCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupSaveUser", DbType="Int")]
+		public System.Nullable<int> GroupSaveUser
+		{
+			get
+			{
+				return this._GroupSaveUser;
+			}
+			set
+			{
+				if ((this._GroupSaveUser != value))
+				{
+					this.OnGroupSaveUserChanging(value);
+					this.SendPropertyChanging();
+					this._GroupSaveUser = value;
+					this.SendPropertyChanged("GroupSaveUser");
+					this.OnGroupSaveUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupSaveDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> GroupSaveDate
+		{
+			get
+			{
+				return this._GroupSaveDate;
+			}
+			set
+			{
+				if ((this._GroupSaveDate != value))
+				{
+					this.OnGroupSaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._GroupSaveDate = value;
+					this.SendPropertyChanged("GroupSaveDate");
+					this.OnGroupSaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupEditUser", DbType="Int")]
+		public System.Nullable<int> GroupEditUser
+		{
+			get
+			{
+				return this._GroupEditUser;
+			}
+			set
+			{
+				if ((this._GroupEditUser != value))
+				{
+					this.OnGroupEditUserChanging(value);
+					this.SendPropertyChanging();
+					this._GroupEditUser = value;
+					this.SendPropertyChanged("GroupEditUser");
+					this.OnGroupEditUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> GroupEditDate
+		{
+			get
+			{
+				return this._GroupEditDate;
+			}
+			set
+			{
+				if ((this._GroupEditDate != value))
+				{
+					this.OnGroupEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._GroupEditDate = value;
+					this.SendPropertyChanged("GroupEditDate");
+					this.OnGroupEditDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }
