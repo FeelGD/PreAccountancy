@@ -28,11 +28,214 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStockGroup));
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtGroupCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtGroupName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupName = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGroupCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGroupName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.txtGroupName);
+            this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.txtGroupCode);
+            this.groupControl1.Controls.Add(this.labelControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(276, 82);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Grup Bilgisi";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.btnClose);
+            this.groupControl2.Controls.Add(this.btnDelete);
+            this.groupControl2.Controls.Add(this.btnSave);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl2.Location = new System.Drawing.Point(0, 373);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(276, 73);
+            this.groupControl2.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(10, 34);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(54, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Grup Kodu:";
+            // 
+            // txtGroupCode
+            // 
+            this.txtGroupCode.Location = new System.Drawing.Point(99, 27);
+            this.txtGroupCode.Name = "txtGroupCode";
+            this.txtGroupCode.Size = new System.Drawing.Size(165, 20);
+            this.txtGroupCode.TabIndex = 1;
+            // 
+            // txtGroupName
+            // 
+            this.txtGroupName.Location = new System.Drawing.Point(99, 53);
+            this.txtGroupName.Name = "txtGroupName";
+            this.txtGroupName.Size = new System.Drawing.Size(165, 20);
+            this.txtGroupName.TabIndex = 3;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(12, 60);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(45, 13);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Grup Adı:";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.gridControl1);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(0, 82);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(276, 291);
+            this.groupControl3.TabIndex = 2;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
+            this.btnSave.Location = new System.Drawing.Point(10, 27);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(83, 40);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Kaydet";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDelete.ImageOptions.SvgImage")));
+            this.btnDelete.Location = new System.Drawing.Point(99, 27);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(83, 40);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Sil";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
+            this.btnClose.Location = new System.Drawing.Point(188, 27);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(83, 40);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Kapat";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(2, 20);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(272, 269);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.groupCode,
+            this.groupName});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // groupCode
+            // 
+            this.groupCode.Caption = "GRUP KODU";
+            this.groupCode.Name = "groupCode";
+            this.groupCode.Visible = true;
+            this.groupCode.VisibleIndex = 1;
+            // 
+            // groupName
+            // 
+            this.groupName.Caption = "GRUP ADI";
+            this.groupName.Name = "groupName";
+            this.groupName.Visible = true;
+            this.groupName.VisibleIndex = 2;
+            // 
+            // frmStockGroup
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmStockGroups";
+            this.ClientSize = new System.Drawing.Size(276, 446);
+            this.Controls.Add(this.groupControl3);
+            this.Controls.Add(this.groupControl2);
+            this.Controls.Add(this.groupControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "frmStockGroup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stok Grupları";
+            this.Load += new System.EventHandler(this.frmStockGroup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtGroupCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGroupName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.TextEdit txtGroupName;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtGroupCode;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn groupCode;
+        private DevExpress.XtraGrid.Columns.GridColumn groupName;
     }
 }
