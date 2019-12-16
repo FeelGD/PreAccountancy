@@ -145,9 +145,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Functions\ORMDataModel1Code\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Icons\Ara32x32.png" />
     <Content Include="Icons\Banka32x32.png" />
