@@ -46,7 +46,7 @@ namespace PreAccountancy.Modul_Stock
         }
         void NewRecord()
         {
-            Functions.
+            
             
         }
 
