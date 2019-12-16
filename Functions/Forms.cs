@@ -10,27 +10,27 @@ namespace PreAccountancy.Functions
     {
         public void StockList(bool Selection = false)
         {
-            Modul_Stock.frmStockList frm = new Modul_Stock.frmStockList();
+            Modul_Stock.frmStockList stockList = new Modul_Stock.frmStockList();
 
             if (Selection)
             {
-                frm.Selection = Selection;
-                frm.ShowDialog();
+                stockList.Selection = Selection;
+                stockList.ShowDialog();
             }
             else
             {
-                frm.MdiParent = frmMain.ActiveForm;
-                frm.Show();
+                stockList.MdiParent = frmMain.ActiveForm;
+                stockList.Show();
             }
         }
 
         public void StockGroup(bool Selection = false)
         {
-            Modul_Stock.frmStockGroup frm = new Modul_Stock.frmStockGroup();
-            if (Selection) frm.Selection = Selection;
-            
-               
-                frm.ShowDialog();
+            Modul_Stock.frmStockGroup stockGroup = new Modul_Stock.frmStockGroup();
+            if (Selection) stockGroup.Selection = Selection;
+
+
+            stockGroup.ShowDialog();
            
         }
 
@@ -40,8 +40,8 @@ namespace PreAccountancy.Functions
         }
         public void StockCard(bool Open = false)
         {
-            Modul_Stock.frmStockCard frm = new Modul_Stock.frmStockCard();
-            frm.ShowDialog();
+            Modul_Stock.frmStockCard stockCard = new Modul_Stock.frmStockCard();
+            stockCard.ShowDialog();
         }
     }
 }

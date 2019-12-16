@@ -8,7 +8,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using System.Linq;
 
 namespace PreAccountancy.Modul_Stock
 {

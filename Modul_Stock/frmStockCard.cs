@@ -73,5 +73,10 @@ namespace PreAccountancy.Modul_Stock
         {
 
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test");
+        }
     }
 }
