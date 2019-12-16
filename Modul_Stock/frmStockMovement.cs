@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace PreAccountancy.Modul_Stock
 {
-    public partial class frmStockMovements : DevExpress.XtraEditors.XtraForm
+    public partial class frmStockMovement : DevExpress.XtraEditors.XtraForm
     {
-        public frmStockMovements()
+        public frmStockMovement()
         {
             InitializeComponent();
         }

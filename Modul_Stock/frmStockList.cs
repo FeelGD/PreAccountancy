@@ -14,7 +14,7 @@ namespace PreAccountancy.Modul_Stock
     public partial class frmStockList : DevExpress.XtraEditors.XtraForm
     {
 
-        public bool choice = false;
+        public bool Selection = false;
 
         public frmStockList()
         {

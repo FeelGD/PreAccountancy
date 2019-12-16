@@ -1,6 +1,6 @@
 ﻿namespace PreAccountancy.Modul_Stock
 {
-    partial class frmStockMovements
+    partial class frmStockMovement
     {
         /// <summary>
         /// Required designer variable.

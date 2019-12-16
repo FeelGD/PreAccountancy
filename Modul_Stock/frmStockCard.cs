@@ -16,6 +16,7 @@ namespace PreAccountancy.Modul_Stock
         public frmStockCard()
         {
             InitializeComponent();
+           
         }
     }
 }

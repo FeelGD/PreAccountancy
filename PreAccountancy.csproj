@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Data.v19.1" />
     <Reference Include="DevExpress.Printing.v19.1.Core" />
     <Reference Include="DevExpress.Utils.v19.1" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v19.1" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v19.1" />
@@ -61,6 +62,15 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions\Db.cs">
+      <DependentUpon>Db.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\Db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Db.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\Forms.cs" />
     <Compile Include="Modul_Stock\frmStockCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,16 +89,19 @@
     <Compile Include="Modul_Stock\frmStockList.Designer.cs">
       <DependentUpon>frmStockList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modul_Stock\frmStockMovements.cs">
+    <Compile Include="Modul_Stock\frmStockMovement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modul_Stock\frmStockMovements.Designer.cs">
-      <DependentUpon>frmStockMovements.cs</DependentUpon>
+    <Compile Include="Modul_Stock\frmStockMovement.Designer.cs">
+      <DependentUpon>frmStockMovement.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Stock\frmStockCard.resx">
+      <DependentUpon>frmStockCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modul_Stock\frmStockGroup.resx">
       <DependentUpon>frmStockGroup.cs</DependentUpon>
@@ -107,6 +120,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <None Include="Functions\Db.xsc">
+      <DependentUpon>Db.xsd</DependentUpon>
+    </None>
+    <None Include="Functions\Db.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Db.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Functions\Db.xss">
+      <DependentUpon>Db.xsd</DependentUpon>
+    </None>
+    <None Include="Functions\ORMDataModel1.xpo" />
+    <None Include="Functions\ORMDataModel1.xpo.diagram">
+      <DependentUpon>ORMDataModel1.xpo</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,7 +146,159 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Functions\" />
+    <Folder Include="Functions\ORMDataModel1Code\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Ara32x32.png" />
+    <Content Include="Icons\Banka32x32.png" />
+    <Content Include="Icons\BankaEFT16x16.png" />
+    <Content Include="Icons\BankaEFT32x32.png" />
+    <Content Include="Icons\Bankaya_Cek_Cikisi.ico" />
+    <Content Include="Icons\Bankaya_Senet_Cikisi.ico" />
+    <Content Include="Icons\Banka_Acilis_Karti.ico" />
+    <Content Include="Icons\Banka_EFT.ico" />
+    <Content Include="Icons\Banka_Hareket16x16.png" />
+    <Content Include="Icons\Banka_Hareket32x32.png" />
+    <Content Include="Icons\Banka_Hareket_Kayitlari.ico" />
+    <Content Include="Icons\Banka_Havale.ico" />
+    <Content Include="Icons\Banka_Havale16x16.png" />
+    <Content Include="Icons\Banka_Havale32x32.png" />
+    <Content Include="Icons\Banka_Islem.ico" />
+    <Content Include="Icons\Banka_Islem16x16.png" />
+    <Content Include="Icons\Banka_Islem32x32.png" />
+    <Content Include="Icons\Banka_Kartı16x16.png" />
+    <Content Include="Icons\Banka_Kartı32x32.png" />
+    <Content Include="Icons\Banka_Liste16x16.png" />
+    <Content Include="Icons\Banka_Liste32x32.png" />
+    <Content Include="Icons\Banka_Listesi.ico" />
+    <Content Include="Icons\Cari32x32.png" />
+    <Content Include="Icons\Cariye_Cek_Cikisi.ico" />
+    <Content Include="Icons\Cariye_Senet_Cikisi.ico" />
+    <Content Include="Icons\Cari_Grup.ico" />
+    <Content Include="Icons\Cari_Grup16x16.png" />
+    <Content Include="Icons\Cari_Grup32x32.png" />
+    <Content Include="Icons\Cari_Hareket.ico" />
+    <Content Include="Icons\Cari_Hareket16x16.png" />
+    <Content Include="Icons\Cari_Hareket32x32.png" />
+    <Content Include="Icons\Cari_Kart16x16.png" />
+    <Content Include="Icons\Cari_Kart32x32.png" />
+    <Content Include="Icons\Cari_Karti.ico" />
+    <Content Include="Icons\Cari_Liste16x16.png" />
+    <Content Include="Icons\Cari_Liste32x32.png" />
+    <Content Include="Icons\Cari_Listesi.ico" />
+    <Content Include="Icons\Cek32x32.png" />
+    <Content Include="Icons\Cek_Bankaya16x16.png" />
+    <Content Include="Icons\Cek_Bankaya32x32.png" />
+    <Content Include="Icons\Cek_Bordo32x32.png" />
+    <Content Include="Icons\Cek_Bordro16x16.png" />
+    <Content Include="Icons\Cek_BordroLst16x16.png" />
+    <Content Include="Icons\Cek_BordroLst32x32.png" />
+    <Content Include="Icons\Cek_Bordro_Listesi.ico" />
+    <Content Include="Icons\Cek_Cariye16x16.png" />
+    <Content Include="Icons\Cek_Cariye32x32.png" />
+    <Content Include="Icons\Cek_Durumu.ico" />
+    <Content Include="Icons\Cek_Kendi16x16.png" />
+    <Content Include="Icons\Cek_Kendi32x32.png" />
+    <Content Include="Icons\Cek_KendiLst16x16.png" />
+    <Content Include="Icons\Cek_KendiLst32x32.png" />
+    <Content Include="Icons\Cek_Musteri16x16.png" />
+    <Content Include="Icons\Cek_Musteri32x32.png" />
+    <Content Include="Icons\Cek_MusteriLst16x16.png" />
+    <Content Include="Icons\Cek_MusteriLst32x32.png" />
+    <Content Include="Icons\Chrome32x32.png" />
+    <Content Include="Icons\Excel32x32.png" />
+    <Content Include="Icons\Fatura32x32.png" />
+    <Content Include="Icons\Fatura_Alis.ico" />
+    <Content Include="Icons\Fatura_Alis16x16.png" />
+    <Content Include="Icons\Fatura_Alis32x32.png" />
+    <Content Include="Icons\Fatura_AlisIade16x16.png" />
+    <Content Include="Icons\Fatura_AlisIade32x32.png" />
+    <Content Include="Icons\Fatura_Alis_Iade.ico" />
+    <Content Include="Icons\Fatura_Satis16x16.png" />
+    <Content Include="Icons\Fatura_Satis32x32.png" />
+    <Content Include="Icons\Fatura_SatisIade16x16.png" />
+    <Content Include="Icons\Fatura_SatisIade32x32.png" />
+    <Content Include="Icons\FireFox32x32.png" />
+    <Content Include="Icons\HesapMakinesi32x32.png" />
+    <Content Include="Icons\Kapat24x24.png" />
+    <Content Include="Icons\Kasa32x32.png" />
+    <Content Include="Icons\Kasa_Acilis_Karti.ico" />
+    <Content Include="Icons\Kasa_Devir16x16.png" />
+    <Content Include="Icons\Kasa_Devir32x32.png" />
+    <Content Include="Icons\Kasa_Devir_Karti.ico" />
+    <Content Include="Icons\Kasa_Hareket16x16.png" />
+    <Content Include="Icons\Kasa_Hareket32x32.png" />
+    <Content Include="Icons\Kasa_Hareket_Kayitlari.ico" />
+    <Content Include="Icons\Kasa_Karti16x16.png" />
+    <Content Include="Icons\Kasa_Karti32x32.png" />
+    <Content Include="Icons\Kasa_Liste16x16.png" />
+    <Content Include="Icons\Kasa_Liste32x32.png" />
+    <Content Include="Icons\Kasa_Listesi.ico" />
+    <Content Include="Icons\Kasa_Odeme.ico" />
+    <Content Include="Icons\Kasa_Odeme16x16.png" />
+    <Content Include="Icons\Kasa_Odeme32x32.png" />
+    <Content Include="Icons\Kasa_Tahsilat.ico" />
+    <Content Include="Icons\Kasa_Tahsilat16x16.png" />
+    <Content Include="Icons\Kasa_Tahsilat32x32.png" />
+    <Content Include="Icons\Kaydet24x24.png" />
+    <Content Include="Icons\Kendi_Cekimiz_Giris.ico" />
+    <Content Include="Icons\Kendi_Cek_Listemiz.ico" />
+    <Content Include="Icons\Kendi_Senetimiz_Giris.ico" />
+    <Content Include="Icons\Kendi_Senet_Listemiz.ico" />
+    <Content Include="Icons\Menu32x32.png" />
+    <Content Include="Icons\Musteri_Ceki.ico" />
+    <Content Include="Icons\Musteri_Cek_Bordro.ico" />
+    <Content Include="Icons\Musteri_Cek_Listesi.ico" />
+    <Content Include="Icons\Musteri_Senet.ico" />
+    <Content Include="Icons\Musteri_Senet_Bordro.ico" />
+    <Content Include="Icons\Musteri_Senet_Listesi.ico" />
+    <Content Include="Icons\Program_Exit16x16.png" />
+    <Content Include="Icons\Program_Exit32x32.png" />
+    <Content Include="Icons\Satis_Faturasi.ico" />
+    <Content Include="Icons\Satis_Iade_Faturasi.ico" />
+    <Content Include="Icons\Senet32x32.png" />
+    <Content Include="Icons\Senet_Bankaya16x16.png" />
+    <Content Include="Icons\Senet_Bankaya32x32.png" />
+    <Content Include="Icons\Senet_Bordro16x16.png" />
+    <Content Include="Icons\Senet_Bordro32x32.png" />
+    <Content Include="Icons\Senet_BordroLst16x16.png" />
+    <Content Include="Icons\Senet_BordroLst32x32.png" />
+    <Content Include="Icons\Senet_Bordro_Listesi.ico" />
+    <Content Include="Icons\Senet_Cariye16x16.png" />
+    <Content Include="Icons\Senet_Cariye32x32.png" />
+    <Content Include="Icons\Senet_Kendi16x16.png" />
+    <Content Include="Icons\Senet_Kendi32x32.png" />
+    <Content Include="Icons\Senet_KendiLst16x16.png" />
+    <Content Include="Icons\Senet_KendiLst32x32.png" />
+    <Content Include="Icons\Senet_Musteri16x16.png" />
+    <Content Include="Icons\Senet_Musteri32x32.png" />
+    <Content Include="Icons\Senet_MusteriLst16x16.png" />
+    <Content Include="Icons\Senet_MusteriLst32x32.png" />
+    <Content Include="Icons\Sil24x24.png" />
+    <Content Include="Icons\Sil32x32.png" />
+    <Content Include="Icons\Siparis_Bekleyen16x16.png" />
+    <Content Include="Icons\Siparis_Bekleyen32x32.png" />
+    <Content Include="Icons\Siparis_Iptal16x16.png" />
+    <Content Include="Icons\Siparis_Iptal32x32.png" />
+    <Content Include="Icons\Siparis_Onaylanan16x16.png" />
+    <Content Include="Icons\Siparis_Onaylanan32x32.png" />
+    <Content Include="Icons\Siparis_Sevk16x16.png" />
+    <Content Include="Icons\Siparis_Sevk32x32.png" />
+    <Content Include="Icons\Stok32x32.png" />
+    <Content Include="Icons\Stok_Acilis_Karti_Icon.ico" />
+    <Content Include="Icons\Stok_Grup.ico" />
+    <Content Include="Icons\Stok_Grup16x16.png" />
+    <Content Include="Icons\Stok_Grup32x32.png" />
+    <Content Include="Icons\Stok_Hareket.ico" />
+    <Content Include="Icons\Stok_Hareket16x16.png" />
+    <Content Include="Icons\Stok_Hareket32x32.png" />
+    <Content Include="Icons\Stok_Kartı16x16.png" />
+    <Content Include="Icons\Stok_Kartı32x32.png" />
+    <Content Include="Icons\Stok_Liste.ico" />
+    <Content Include="Icons\Stok_Liste16x16.png" />
+    <Content Include="Icons\Stok_Liste32x32.png" />
+    <Content Include="Icons\Word32x32.png" />
+    <Content Include="Icons\Yeni24x24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

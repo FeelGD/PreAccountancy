@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.PageStock = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnStockCard = new DevExpress.XtraBars.BarButtonItem();
             this.btnStockList = new DevExpress.XtraBars.BarButtonItem();
             this.btnStockGroup = new DevExpress.XtraBars.BarButtonItem();
             this.btnStockMovements = new DevExpress.XtraBars.BarButtonItem();
+            this.PageStock = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -53,7 +56,43 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageStock});
-            this.ribbonControl1.Size = new System.Drawing.Size(890, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(906, 143);
+            // 
+            // btnStockCard
+            // 
+            this.btnStockCard.Caption = "Stok Kartı";
+            this.btnStockCard.Id = 1;
+            this.btnStockCard.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockCard.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnStockCard.Name = "btnStockCard";
+            this.btnStockCard.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStockCard_ItemClick);
+            // 
+            // btnStockList
+            // 
+            this.btnStockList.Caption = "Stok Listesi";
+            this.btnStockList.Id = 2;
+            this.btnStockList.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnStockList.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnStockList.Name = "btnStockList";
+            this.btnStockList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStockList_ItemClick);
+            // 
+            // btnStockGroup
+            // 
+            this.btnStockGroup.Caption = "Stok Grup";
+            this.btnStockGroup.Id = 3;
+            this.btnStockGroup.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnStockGroup.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnStockGroup.Name = "btnStockGroup";
+            this.btnStockGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStockGroup_ItemClick);
+            // 
+            // btnStockMovements
+            // 
+            this.btnStockMovements.Caption = "Stok Hareketleri";
+            this.btnStockMovements.Id = 4;
+            this.btnStockMovements.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnStockMovements.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnStockMovements.Name = "btnStockMovements";
+            this.btnStockMovements.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStockMovements_ItemClick);
             // 
             // PageStock
             // 
@@ -71,40 +110,23 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
-            // btnStockCard
+            // xtraTabbedMdiManager1
             // 
-            this.btnStockCard.Caption = "Stok Kartı";
-            this.btnStockCard.Id = 1;
-            this.btnStockCard.Name = "btnStockCard";
+            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // btnStockList
-            // 
-            this.btnStockList.Caption = "Stok Listesi";
-            this.btnStockList.Id = 2;
-            this.btnStockList.Name = "btnStockList";
-            // 
-            // btnStockGroup
-            // 
-            this.btnStockGroup.Caption = "Stok Grup";
-            this.btnStockGroup.Id = 3;
-            this.btnStockGroup.Name = "btnStockGroup";
-            // 
-            // btnStockMovements
-            // 
-            this.btnStockMovements.Caption = "Stok Hareketleri";
-            this.btnStockMovements.Id = 4;
-            this.btnStockMovements.Name = "btnStockMovements";
-            // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 377);
+            this.ClientSize = new System.Drawing.Size(906, 480);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "Form1";
+            this.IsMdiContainer = true;
+            this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +141,7 @@
         private DevExpress.XtraBars.BarButtonItem btnStockList;
         private DevExpress.XtraBars.BarButtonItem btnStockGroup;
         private DevExpress.XtraBars.BarButtonItem btnStockMovements;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
 

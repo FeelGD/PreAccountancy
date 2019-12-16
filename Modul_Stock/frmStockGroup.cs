@@ -8,12 +8,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Linq;
 
 namespace PreAccountancy.Modul_Stock
 {
     public partial class frmStockGroup : DevExpress.XtraEditors.XtraForm
     {
-        public bool choice = false;
+
+        Functions.Db DB = new Functions.Db();
+
+
+        public bool Selection = false;
+        
+
         public frmStockGroup()
         {
             InitializeComponent();
@@ -25,7 +32,23 @@ namespace PreAccountancy.Modul_Stock
         }
         void Lists()
         {
+            var list = from s in DB.TBL_StockGroup
+                       select s;
+            gridList.DataSource = list;
 
         }
+
+        void Clear()
+        {
+            txtGroupCode.Text = "";
+            txtGroupName.Text = "";
+            
+        }
+        void NewRecord()
+        {
+            Functions.
+            
+        }
+
     }
 }
