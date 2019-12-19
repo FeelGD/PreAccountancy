@@ -30,4 +30,43 @@
       <Column Name="GroupEditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TBL_CurrentGroup" Member="TBL_CurrentGroups">
+    <Type Name="TBL_CurrentGroup">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CurrentGroupName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentGroupCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentGroupSaveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CurrentGroupSaveUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentGroupEditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CurrentGroupEditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Current" Member="TBL_Currents">
+    <Type Name="TBL_Current">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CurrentCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentTaxOffice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentTaxNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CurrentGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentCity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentDistrict" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentAddress" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CurrentPhone1" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="CurrentPhone2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CurrentTax1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CurrentTax2" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="CurrentWebAddress" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CurrentMailInfo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CurrentAuthorized1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentAuthorized1Mail" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CurrentAuthorized2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentAuthorized2Mail" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CurrentSaveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CurrentSaveUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentEditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CurrentEditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

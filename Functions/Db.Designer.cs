@@ -36,6 +36,12 @@ namespace PreAccountancy.Functions
     partial void InsertTBL_StockGroup(TBL_StockGroup instance);
     partial void UpdateTBL_StockGroup(TBL_StockGroup instance);
     partial void DeleteTBL_StockGroup(TBL_StockGroup instance);
+    partial void InsertTBL_CurrentGroup(TBL_CurrentGroup instance);
+    partial void UpdateTBL_CurrentGroup(TBL_CurrentGroup instance);
+    partial void DeleteTBL_CurrentGroup(TBL_CurrentGroup instance);
+    partial void InsertTBL_Current(TBL_Current instance);
+    partial void UpdateTBL_Current(TBL_Current instance);
+    partial void DeleteTBL_Current(TBL_Current instance);
     #endregion
 		
 		public DbDataContext() : 
@@ -81,6 +87,22 @@ namespace PreAccountancy.Functions
 			get
 			{
 				return this.GetTable<TBL_StockGroup>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_CurrentGroup> TBL_CurrentGroups
+		{
+			get
+			{
+				return this.GetTable<TBL_CurrentGroup>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_Current> TBL_Currents
+		{
+			get
+			{
+				return this.GetTable<TBL_Current>();
 			}
 		}
 	}
@@ -664,6 +686,826 @@ namespace PreAccountancy.Functions
 					this._GroupEditDate = value;
 					this.SendPropertyChanged("GroupEditDate");
 					this.OnGroupEditDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_CurrentGroup")]
+	public partial class TBL_CurrentGroup : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _CurrentGroupName;
+		
+		private string _CurrentGroupCode;
+		
+		private System.Nullable<System.DateTime> _CurrentGroupSaveDate;
+		
+		private System.Nullable<int> _CurrentGroupSaveUser;
+		
+		private System.Nullable<System.DateTime> _CurrentGroupEditDate;
+		
+		private System.Nullable<int> _CurrentGroupEditUser;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCurrentGroupNameChanging(string value);
+    partial void OnCurrentGroupNameChanged();
+    partial void OnCurrentGroupCodeChanging(string value);
+    partial void OnCurrentGroupCodeChanged();
+    partial void OnCurrentGroupSaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCurrentGroupSaveDateChanged();
+    partial void OnCurrentGroupSaveUserChanging(System.Nullable<int> value);
+    partial void OnCurrentGroupSaveUserChanged();
+    partial void OnCurrentGroupEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCurrentGroupEditDateChanged();
+    partial void OnCurrentGroupEditUserChanging(System.Nullable<int> value);
+    partial void OnCurrentGroupEditUserChanged();
+    #endregion
+		
+		public TBL_CurrentGroup()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentGroupName", DbType="NVarChar(50)")]
+		public string CurrentGroupName
+		{
+			get
+			{
+				return this._CurrentGroupName;
+			}
+			set
+			{
+				if ((this._CurrentGroupName != value))
+				{
+					this.OnCurrentGroupNameChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentGroupName = value;
+					this.SendPropertyChanged("CurrentGroupName");
+					this.OnCurrentGroupNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentGroupCode", DbType="NVarChar(50)")]
+		public string CurrentGroupCode
+		{
+			get
+			{
+				return this._CurrentGroupCode;
+			}
+			set
+			{
+				if ((this._CurrentGroupCode != value))
+				{
+					this.OnCurrentGroupCodeChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentGroupCode = value;
+					this.SendPropertyChanged("CurrentGroupCode");
+					this.OnCurrentGroupCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentGroupSaveDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentGroupSaveDate
+		{
+			get
+			{
+				return this._CurrentGroupSaveDate;
+			}
+			set
+			{
+				if ((this._CurrentGroupSaveDate != value))
+				{
+					this.OnCurrentGroupSaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentGroupSaveDate = value;
+					this.SendPropertyChanged("CurrentGroupSaveDate");
+					this.OnCurrentGroupSaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentGroupSaveUser", DbType="Int")]
+		public System.Nullable<int> CurrentGroupSaveUser
+		{
+			get
+			{
+				return this._CurrentGroupSaveUser;
+			}
+			set
+			{
+				if ((this._CurrentGroupSaveUser != value))
+				{
+					this.OnCurrentGroupSaveUserChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentGroupSaveUser = value;
+					this.SendPropertyChanged("CurrentGroupSaveUser");
+					this.OnCurrentGroupSaveUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentGroupEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentGroupEditDate
+		{
+			get
+			{
+				return this._CurrentGroupEditDate;
+			}
+			set
+			{
+				if ((this._CurrentGroupEditDate != value))
+				{
+					this.OnCurrentGroupEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentGroupEditDate = value;
+					this.SendPropertyChanged("CurrentGroupEditDate");
+					this.OnCurrentGroupEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentGroupEditUser", DbType="Int")]
+		public System.Nullable<int> CurrentGroupEditUser
+		{
+			get
+			{
+				return this._CurrentGroupEditUser;
+			}
+			set
+			{
+				if ((this._CurrentGroupEditUser != value))
+				{
+					this.OnCurrentGroupEditUserChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentGroupEditUser = value;
+					this.SendPropertyChanged("CurrentGroupEditUser");
+					this.OnCurrentGroupEditUserChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_Current")]
+	public partial class TBL_Current : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _CurrentCode;
+		
+		private string _CurrentName;
+		
+		private string _CurrentTaxOffice;
+		
+		private string _CurrentTaxNumber;
+		
+		private System.Nullable<int> _CurrentGroupID;
+		
+		private string _CurrentCountry;
+		
+		private string _CurrentCity;
+		
+		private string _CurrentDistrict;
+		
+		private string _CurrentAddress;
+		
+		private string _CurrentPhone1;
+		
+		private string _CurrentPhone2;
+		
+		private string _CurrentTax1;
+		
+		private string _CurrentTax2;
+		
+		private string _CurrentWebAddress;
+		
+		private string _CurrentMailInfo;
+		
+		private string _CurrentAuthorized1;
+		
+		private string _CurrentAuthorized1Mail;
+		
+		private string _CurrentAuthorized2;
+		
+		private string _CurrentAuthorized2Mail;
+		
+		private System.Nullable<System.DateTime> _CurrentSaveDate;
+		
+		private System.Nullable<int> _CurrentSaveUser;
+		
+		private System.Nullable<System.DateTime> _CurrentEditDate;
+		
+		private System.Nullable<int> _CurrentEditUser;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCurrentCodeChanging(string value);
+    partial void OnCurrentCodeChanged();
+    partial void OnCurrentNameChanging(string value);
+    partial void OnCurrentNameChanged();
+    partial void OnCurrentTaxOfficeChanging(string value);
+    partial void OnCurrentTaxOfficeChanged();
+    partial void OnCurrentTaxNumberChanging(string value);
+    partial void OnCurrentTaxNumberChanged();
+    partial void OnCurrentGroupIDChanging(System.Nullable<int> value);
+    partial void OnCurrentGroupIDChanged();
+    partial void OnCurrentCountryChanging(string value);
+    partial void OnCurrentCountryChanged();
+    partial void OnCurrentCityChanging(string value);
+    partial void OnCurrentCityChanged();
+    partial void OnCurrentDistrictChanging(string value);
+    partial void OnCurrentDistrictChanged();
+    partial void OnCurrentAddressChanging(string value);
+    partial void OnCurrentAddressChanged();
+    partial void OnCurrentPhone1Changing(string value);
+    partial void OnCurrentPhone1Changed();
+    partial void OnCurrentPhone2Changing(string value);
+    partial void OnCurrentPhone2Changed();
+    partial void OnCurrentTax1Changing(string value);
+    partial void OnCurrentTax1Changed();
+    partial void OnCurrentTax2Changing(string value);
+    partial void OnCurrentTax2Changed();
+    partial void OnCurrentWebAddressChanging(string value);
+    partial void OnCurrentWebAddressChanged();
+    partial void OnCurrentMailInfoChanging(string value);
+    partial void OnCurrentMailInfoChanged();
+    partial void OnCurrentAuthorized1Changing(string value);
+    partial void OnCurrentAuthorized1Changed();
+    partial void OnCurrentAuthorized1MailChanging(string value);
+    partial void OnCurrentAuthorized1MailChanged();
+    partial void OnCurrentAuthorized2Changing(string value);
+    partial void OnCurrentAuthorized2Changed();
+    partial void OnCurrentAuthorized2MailChanging(string value);
+    partial void OnCurrentAuthorized2MailChanged();
+    partial void OnCurrentSaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCurrentSaveDateChanged();
+    partial void OnCurrentSaveUserChanging(System.Nullable<int> value);
+    partial void OnCurrentSaveUserChanged();
+    partial void OnCurrentEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCurrentEditDateChanged();
+    partial void OnCurrentEditUserChanging(System.Nullable<int> value);
+    partial void OnCurrentEditUserChanged();
+    #endregion
+		
+		public TBL_Current()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentCode", DbType="NVarChar(50)")]
+		public string CurrentCode
+		{
+			get
+			{
+				return this._CurrentCode;
+			}
+			set
+			{
+				if ((this._CurrentCode != value))
+				{
+					this.OnCurrentCodeChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentCode = value;
+					this.SendPropertyChanged("CurrentCode");
+					this.OnCurrentCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentName", DbType="NVarChar(50)")]
+		public string CurrentName
+		{
+			get
+			{
+				return this._CurrentName;
+			}
+			set
+			{
+				if ((this._CurrentName != value))
+				{
+					this.OnCurrentNameChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentName = value;
+					this.SendPropertyChanged("CurrentName");
+					this.OnCurrentNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentTaxOffice", DbType="NVarChar(50)")]
+		public string CurrentTaxOffice
+		{
+			get
+			{
+				return this._CurrentTaxOffice;
+			}
+			set
+			{
+				if ((this._CurrentTaxOffice != value))
+				{
+					this.OnCurrentTaxOfficeChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentTaxOffice = value;
+					this.SendPropertyChanged("CurrentTaxOffice");
+					this.OnCurrentTaxOfficeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentTaxNumber", DbType="NVarChar(20)")]
+		public string CurrentTaxNumber
+		{
+			get
+			{
+				return this._CurrentTaxNumber;
+			}
+			set
+			{
+				if ((this._CurrentTaxNumber != value))
+				{
+					this.OnCurrentTaxNumberChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentTaxNumber = value;
+					this.SendPropertyChanged("CurrentTaxNumber");
+					this.OnCurrentTaxNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentGroupID", DbType="Int")]
+		public System.Nullable<int> CurrentGroupID
+		{
+			get
+			{
+				return this._CurrentGroupID;
+			}
+			set
+			{
+				if ((this._CurrentGroupID != value))
+				{
+					this.OnCurrentGroupIDChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentGroupID = value;
+					this.SendPropertyChanged("CurrentGroupID");
+					this.OnCurrentGroupIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentCountry", DbType="NVarChar(50)")]
+		public string CurrentCountry
+		{
+			get
+			{
+				return this._CurrentCountry;
+			}
+			set
+			{
+				if ((this._CurrentCountry != value))
+				{
+					this.OnCurrentCountryChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentCountry = value;
+					this.SendPropertyChanged("CurrentCountry");
+					this.OnCurrentCountryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentCity", DbType="NVarChar(50)")]
+		public string CurrentCity
+		{
+			get
+			{
+				return this._CurrentCity;
+			}
+			set
+			{
+				if ((this._CurrentCity != value))
+				{
+					this.OnCurrentCityChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentCity = value;
+					this.SendPropertyChanged("CurrentCity");
+					this.OnCurrentCityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentDistrict", DbType="NVarChar(50)")]
+		public string CurrentDistrict
+		{
+			get
+			{
+				return this._CurrentDistrict;
+			}
+			set
+			{
+				if ((this._CurrentDistrict != value))
+				{
+					this.OnCurrentDistrictChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentDistrict = value;
+					this.SendPropertyChanged("CurrentDistrict");
+					this.OnCurrentDistrictChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentAddress", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string CurrentAddress
+		{
+			get
+			{
+				return this._CurrentAddress;
+			}
+			set
+			{
+				if ((this._CurrentAddress != value))
+				{
+					this.OnCurrentAddressChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentAddress = value;
+					this.SendPropertyChanged("CurrentAddress");
+					this.OnCurrentAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentPhone1", DbType="NVarChar(16)")]
+		public string CurrentPhone1
+		{
+			get
+			{
+				return this._CurrentPhone1;
+			}
+			set
+			{
+				if ((this._CurrentPhone1 != value))
+				{
+					this.OnCurrentPhone1Changing(value);
+					this.SendPropertyChanging();
+					this._CurrentPhone1 = value;
+					this.SendPropertyChanged("CurrentPhone1");
+					this.OnCurrentPhone1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentPhone2", DbType="NChar(10)")]
+		public string CurrentPhone2
+		{
+			get
+			{
+				return this._CurrentPhone2;
+			}
+			set
+			{
+				if ((this._CurrentPhone2 != value))
+				{
+					this.OnCurrentPhone2Changing(value);
+					this.SendPropertyChanging();
+					this._CurrentPhone2 = value;
+					this.SendPropertyChanged("CurrentPhone2");
+					this.OnCurrentPhone2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentTax1", DbType="NChar(10)")]
+		public string CurrentTax1
+		{
+			get
+			{
+				return this._CurrentTax1;
+			}
+			set
+			{
+				if ((this._CurrentTax1 != value))
+				{
+					this.OnCurrentTax1Changing(value);
+					this.SendPropertyChanging();
+					this._CurrentTax1 = value;
+					this.SendPropertyChanged("CurrentTax1");
+					this.OnCurrentTax1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentTax2", DbType="NVarChar(16)")]
+		public string CurrentTax2
+		{
+			get
+			{
+				return this._CurrentTax2;
+			}
+			set
+			{
+				if ((this._CurrentTax2 != value))
+				{
+					this.OnCurrentTax2Changing(value);
+					this.SendPropertyChanging();
+					this._CurrentTax2 = value;
+					this.SendPropertyChanged("CurrentTax2");
+					this.OnCurrentTax2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentWebAddress", DbType="NVarChar(150)")]
+		public string CurrentWebAddress
+		{
+			get
+			{
+				return this._CurrentWebAddress;
+			}
+			set
+			{
+				if ((this._CurrentWebAddress != value))
+				{
+					this.OnCurrentWebAddressChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentWebAddress = value;
+					this.SendPropertyChanged("CurrentWebAddress");
+					this.OnCurrentWebAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentMailInfo", DbType="NVarChar(250)")]
+		public string CurrentMailInfo
+		{
+			get
+			{
+				return this._CurrentMailInfo;
+			}
+			set
+			{
+				if ((this._CurrentMailInfo != value))
+				{
+					this.OnCurrentMailInfoChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentMailInfo = value;
+					this.SendPropertyChanged("CurrentMailInfo");
+					this.OnCurrentMailInfoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentAuthorized1", DbType="NVarChar(50)")]
+		public string CurrentAuthorized1
+		{
+			get
+			{
+				return this._CurrentAuthorized1;
+			}
+			set
+			{
+				if ((this._CurrentAuthorized1 != value))
+				{
+					this.OnCurrentAuthorized1Changing(value);
+					this.SendPropertyChanging();
+					this._CurrentAuthorized1 = value;
+					this.SendPropertyChanged("CurrentAuthorized1");
+					this.OnCurrentAuthorized1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentAuthorized1Mail", DbType="NVarChar(250)")]
+		public string CurrentAuthorized1Mail
+		{
+			get
+			{
+				return this._CurrentAuthorized1Mail;
+			}
+			set
+			{
+				if ((this._CurrentAuthorized1Mail != value))
+				{
+					this.OnCurrentAuthorized1MailChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentAuthorized1Mail = value;
+					this.SendPropertyChanged("CurrentAuthorized1Mail");
+					this.OnCurrentAuthorized1MailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentAuthorized2", DbType="NVarChar(50)")]
+		public string CurrentAuthorized2
+		{
+			get
+			{
+				return this._CurrentAuthorized2;
+			}
+			set
+			{
+				if ((this._CurrentAuthorized2 != value))
+				{
+					this.OnCurrentAuthorized2Changing(value);
+					this.SendPropertyChanging();
+					this._CurrentAuthorized2 = value;
+					this.SendPropertyChanged("CurrentAuthorized2");
+					this.OnCurrentAuthorized2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentAuthorized2Mail", DbType="NVarChar(250)")]
+		public string CurrentAuthorized2Mail
+		{
+			get
+			{
+				return this._CurrentAuthorized2Mail;
+			}
+			set
+			{
+				if ((this._CurrentAuthorized2Mail != value))
+				{
+					this.OnCurrentAuthorized2MailChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentAuthorized2Mail = value;
+					this.SendPropertyChanged("CurrentAuthorized2Mail");
+					this.OnCurrentAuthorized2MailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentSaveDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentSaveDate
+		{
+			get
+			{
+				return this._CurrentSaveDate;
+			}
+			set
+			{
+				if ((this._CurrentSaveDate != value))
+				{
+					this.OnCurrentSaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentSaveDate = value;
+					this.SendPropertyChanged("CurrentSaveDate");
+					this.OnCurrentSaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentSaveUser", DbType="Int")]
+		public System.Nullable<int> CurrentSaveUser
+		{
+			get
+			{
+				return this._CurrentSaveUser;
+			}
+			set
+			{
+				if ((this._CurrentSaveUser != value))
+				{
+					this.OnCurrentSaveUserChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentSaveUser = value;
+					this.SendPropertyChanged("CurrentSaveUser");
+					this.OnCurrentSaveUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentEditDate
+		{
+			get
+			{
+				return this._CurrentEditDate;
+			}
+			set
+			{
+				if ((this._CurrentEditDate != value))
+				{
+					this.OnCurrentEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentEditDate = value;
+					this.SendPropertyChanged("CurrentEditDate");
+					this.OnCurrentEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentEditUser", DbType="Int")]
+		public System.Nullable<int> CurrentEditUser
+		{
+			get
+			{
+				return this._CurrentEditUser;
+			}
+			set
+			{
+				if ((this._CurrentEditUser != value))
+				{
+					this.OnCurrentEditUserChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentEditUser = value;
+					this.SendPropertyChanged("CurrentEditUser");
+					this.OnCurrentEditUserChanged();
 				}
 			}
 		}

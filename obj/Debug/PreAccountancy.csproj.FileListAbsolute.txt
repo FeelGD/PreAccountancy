@@ -98,3 +98,7 @@ C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountan
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.csproj.CopyComplete
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.exe
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.pdb
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Current.frmCurrentGroup.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Current.frmCurrentList.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Current.frmCurrentOpeningCard.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Stock.frmStockMovement.resources

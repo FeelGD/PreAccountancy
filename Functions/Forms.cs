@@ -8,6 +8,7 @@ namespace PreAccountancy.Functions
 {
     class Forms
     {
+        #region StockForms
         public int StockList(bool Selection = false)
         {
             Modul_Stock.frmStockList stockList = new Modul_Stock.frmStockList();
@@ -44,5 +45,16 @@ namespace PreAccountancy.Functions
             Modul_Stock.frmStockCard stockCard = new Modul_Stock.frmStockCard();
             stockCard.ShowDialog();
         }
+        #endregion
+
+
+        public int CurrentGroup(bool Selection = false)
+        {
+            Modul_Current.frmCurrentGroup currentGroup = new Modul_Current.frmCurrentGroup();
+            if (Selection) currentGroup.Selection = Selection;
+            currentGroup.ShowDialog();
+            return frmMain.Transfer;
+        }
+
     }
 }

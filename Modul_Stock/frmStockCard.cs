@@ -99,7 +99,7 @@ namespace PreAccountancy.Modul_Stock
             StockID = ID;
             Functions.TBL_Stock stock = DB.TBL_Stocks.First(s => s.ID == StockID);
             OpenGroup(stock.StockGroupID.Value);
-            pictureBox1.Image = Photos.GetPhoto(stock.StockPicture.ToArray());
+           if(stock.StockPicture!=null) pictureBox1.Image = Photos.GetPhoto(stock.StockPicture.ToArray());
             txtPurchasePrice.Text = stock.StockPurchasePrice.ToString();
             txtPurchaseTAX.Text = stock.StockPurchaseTAX.ToString();
             txtBarcode.Text = stock.StockBarcode;
@@ -124,7 +124,7 @@ namespace PreAccountancy.Modul_Stock
                 stock.StockUnit = txtboxUnit.Text;
                 stock.StockGroupID = GroupID;
                 stock.StockCode = txtStockCode.Text;
-                stock.StockPicture = new System.Data.Linq.Binary(Photos.AddPhoto(pictureBox1.Image));
+                if (SelectedPhoto) stock.StockPicture = new System.Data.Linq.Binary(Photos.AddPhoto(pictureBox1.Image));
                 stock.StockSalePrice = decimal.Parse(txtSalePrice.Text);
                 stock.StockSaleTAX = decimal.Parse(txtSaleTAX.Text);
                 stock.StockSaveDate = DateTime.Now;

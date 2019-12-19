@@ -41,5 +41,25 @@ namespace PreAccountancy
         {
             Forms.StockMovement();
         }
+
+        private void barbtnCurrentOpeningCard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barbtnCurrentGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.CurrentGroup();
+        }
+
+        private void barbtnCurrentList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barbtnCurrentMovement_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
