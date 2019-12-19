@@ -117,6 +117,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(267, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -144,6 +145,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtStockCode.Size = new System.Drawing.Size(191, 20);
             this.txtStockCode.TabIndex = 0;
+            this.txtStockCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtStockCode_ButtonClick);
             // 
             // txtStockName
             // 
@@ -161,6 +163,7 @@
             this.btnClose.Size = new System.Drawing.Size(83, 40);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Kapat";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -171,6 +174,7 @@
             this.btnDelete.Size = new System.Drawing.Size(83, 40);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Sil";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // groupControl2
             // 
@@ -392,6 +396,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtStockGroupCode.Size = new System.Drawing.Size(164, 20);
             this.txtStockGroupCode.TabIndex = 0;
+            this.txtStockGroupCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtStockGroupCode_ButtonClick);
             // 
             // frmStockCard
             // 

@@ -8,7 +8,7 @@ namespace PreAccountancy.Functions
 {
     class Forms
     {
-        public void StockList(bool Selection = false)
+        public int StockList(bool Selection = false)
         {
             Modul_Stock.frmStockList stockList = new Modul_Stock.frmStockList();
 
@@ -22,15 +22,16 @@ namespace PreAccountancy.Functions
                 stockList.MdiParent = frmMain.ActiveForm;
                 stockList.Show();
             }
+           return frmMain.Transfer;
         }
 
-        public void StockGroup(bool Selection = false)
+        public int StockGroup(bool Selection = false)
         {
             Modul_Stock.frmStockGroup stockGroup = new Modul_Stock.frmStockGroup();
             if (Selection) stockGroup.Selection = Selection;
 
-
             stockGroup.ShowDialog();
+            return frmMain.Transfer;
            
         }
 
