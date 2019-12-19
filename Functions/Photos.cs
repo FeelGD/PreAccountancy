@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Drawing;
-using System.Threading.Tasks;
 
 namespace PreAccountancy.Functions
 {

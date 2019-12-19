@@ -384,7 +384,7 @@ namespace PreAccountancy.Functions
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPicture", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPicture", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary StockPicture
 		{
 			get
@@ -947,9 +947,9 @@ namespace PreAccountancy.Functions
 		
 		private string _CurrentPhone2;
 		
-		private string _CurrentTax1;
+		private string _CurrentFax1;
 		
-		private string _CurrentTax2;
+		private string _CurrentFax2;
 		
 		private string _CurrentWebAddress;
 		
@@ -999,10 +999,10 @@ namespace PreAccountancy.Functions
     partial void OnCurrentPhone1Changed();
     partial void OnCurrentPhone2Changing(string value);
     partial void OnCurrentPhone2Changed();
-    partial void OnCurrentTax1Changing(string value);
-    partial void OnCurrentTax1Changed();
-    partial void OnCurrentTax2Changing(string value);
-    partial void OnCurrentTax2Changed();
+    partial void OnCurrentFax1Changing(string value);
+    partial void OnCurrentFax1Changed();
+    partial void OnCurrentFax2Changing(string value);
+    partial void OnCurrentFax2Changed();
     partial void OnCurrentWebAddressChanging(string value);
     partial void OnCurrentWebAddressChanged();
     partial void OnCurrentMailInfoChanging(string value);
@@ -1270,42 +1270,42 @@ namespace PreAccountancy.Functions
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentTax1", DbType="NChar(10)")]
-		public string CurrentTax1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentFax1", DbType="NChar(10)")]
+		public string CurrentFax1
 		{
 			get
 			{
-				return this._CurrentTax1;
+				return this._CurrentFax1;
 			}
 			set
 			{
-				if ((this._CurrentTax1 != value))
+				if ((this._CurrentFax1 != value))
 				{
-					this.OnCurrentTax1Changing(value);
+					this.OnCurrentFax1Changing(value);
 					this.SendPropertyChanging();
-					this._CurrentTax1 = value;
-					this.SendPropertyChanged("CurrentTax1");
-					this.OnCurrentTax1Changed();
+					this._CurrentFax1 = value;
+					this.SendPropertyChanged("CurrentFax1");
+					this.OnCurrentFax1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentTax2", DbType="NVarChar(16)")]
-		public string CurrentTax2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentFax2", DbType="NVarChar(16)")]
+		public string CurrentFax2
 		{
 			get
 			{
-				return this._CurrentTax2;
+				return this._CurrentFax2;
 			}
 			set
 			{
-				if ((this._CurrentTax2 != value))
+				if ((this._CurrentFax2 != value))
 				{
-					this.OnCurrentTax2Changing(value);
+					this.OnCurrentFax2Changing(value);
 					this.SendPropertyChanging();
-					this._CurrentTax2 = value;
-					this.SendPropertyChanged("CurrentTax2");
-					this.OnCurrentTax2Changed();
+					this._CurrentFax2 = value;
+					this.SendPropertyChanged("CurrentFax2");
+					this.OnCurrentFax2Changed();
 				}
 			}
 		}

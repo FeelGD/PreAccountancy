@@ -55,8 +55,8 @@
       <Column Name="CurrentAddress" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="CurrentPhone1" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
       <Column Name="CurrentPhone2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="CurrentTax1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="CurrentTax2" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="CurrentFax1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CurrentFax2" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
       <Column Name="CurrentWebAddress" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="CurrentMailInfo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="CurrentAuthorized1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />

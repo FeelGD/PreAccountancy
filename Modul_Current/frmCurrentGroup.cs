@@ -60,7 +60,8 @@ namespace PreAccountancy.Modul_Current
                 Messages.Error(e);
             }
         }
-        void Update()
+
+        new void Update()
         {
             try
             {
@@ -79,7 +80,7 @@ namespace PreAccountancy.Modul_Current
                 Messages.Error(e);
             }
         }
-        void Select()
+        public void Select()
         {
             try
             {
@@ -88,7 +89,7 @@ namespace PreAccountancy.Modul_Current
                 txtGroupName.Text = gridView1.GetFocusedRowCellValue("CurrentGroupName").ToString();
                 txtGroupCode.Text = gridView1.GetFocusedRowCellValue("CurrentGroupCode").ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Edit = false;
                 SelectionID = -1;

@@ -16,7 +16,7 @@ namespace PreAccountancy.Modul_Stock
 
         //picture && photo
 
-
+        
 
         Functions.DbDataContext DB = new Functions.DbDataContext();
         Functions.Messages Messages = new Functions.Messages();
@@ -34,6 +34,7 @@ namespace PreAccountancy.Modul_Stock
 
         public frmStockCard()
         {
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
 
         }

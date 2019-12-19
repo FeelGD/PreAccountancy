@@ -28,5 +28,21 @@ namespace PreAccountancy.Functions
                 return "0000001";
             }
         }
+        public string CurrentCodeNumber()
+        {
+            try
+            {
+                int Number = int.Parse((from s in DB.TBL_Currents orderby s.ID descending select s).First().CurrentCode);
+                Number++;
+                string Num = Number.ToString().PadLeft(7, '0');
+                return Num;
+            }
+            catch (Exception EX)
+            {
+
+                Messages.Error(EX);
+                return "0000001";
+            }
+        }
     }
 }
