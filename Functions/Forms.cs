@@ -55,6 +55,27 @@ namespace PreAccountancy.Functions
             currentGroup.ShowDialog();
             return frmMain.Transfer;
         }
-
+         
+        public  int CurrentList(bool Selection = false)
+        {
+            Modul_Current.frmCurrentList currentList = new Modul_Current.frmCurrentList();
+            if (Selection)
+            {
+                currentList.Selection = Selection;
+                currentList.ShowDialog();
+            }
+            else
+            {
+                currentList.MdiParent = frmMain.ActiveForm;
+                currentList.Show();
+            }
+            return frmMain.Transfer;
+        }
+        public void CurrentOpeningCard(bool Open=false, int CurrentID = -1)
+        {
+            Modul_Current.frmCurrentOpeningCard openingCard = new Modul_Current.frmCurrentOpeningCard();
+            if (Open) openingCard.Open(CurrentID);
+            openingCard.ShowDialog();
+        }
     }
 }

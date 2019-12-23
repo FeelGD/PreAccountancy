@@ -1,6 +1,6 @@
-﻿namespace PreAccountancy.Modul_Current
+﻿namespace PreAccountancy.Modul_Bank
 {
-    partial class frmCurrentList
+    partial class frmBankList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCurrentList));
-            this.CurrentCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBankList));
+            this.StockBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.StockCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.CurrentName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.StockName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridList = new DevExpress.XtraGrid.GridControl();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.txtCurrentGroup = new DevExpress.XtraEditors.TextEdit();
+            this.txtIBAN = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCurrentName = new DevExpress.XtraEditors.TextEdit();
+            this.txtAccountNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCurrentCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtAccountName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCurrentGroup.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCurrentName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCurrentCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIBAN.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAccountNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAccountName.Properties)).BeginInit();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -57,16 +58,27 @@
             this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // CurrentCode
+            // StockBarcode
             // 
-            this.CurrentCode.Caption = "Cari Kodu";
-            this.CurrentCode.FieldName = "CurrentCode";
-            this.CurrentCode.Name = "CurrentCode";
-            this.CurrentCode.OptionsColumn.AllowEdit = false;
-            this.CurrentCode.OptionsColumn.AllowFocus = false;
-            this.CurrentCode.OptionsColumn.FixedWidth = true;
-            this.CurrentCode.Visible = true;
-            this.CurrentCode.VisibleIndex = 0;
+            this.StockBarcode.Caption = "Barkod";
+            this.StockBarcode.FieldName = "StockBarcode";
+            this.StockBarcode.Name = "StockBarcode";
+            this.StockBarcode.OptionsColumn.AllowEdit = false;
+            this.StockBarcode.OptionsColumn.AllowFocus = false;
+            this.StockBarcode.OptionsColumn.FixedWidth = true;
+            this.StockBarcode.Visible = true;
+            this.StockBarcode.VisibleIndex = 2;
+            // 
+            // StockCode
+            // 
+            this.StockCode.Caption = "Stok Kodu";
+            this.StockCode.FieldName = "StockCode";
+            this.StockCode.Name = "StockCode";
+            this.StockCode.OptionsColumn.AllowEdit = false;
+            this.StockCode.OptionsColumn.AllowFocus = false;
+            this.StockCode.OptionsColumn.FixedWidth = true;
+            this.StockCode.Visible = true;
+            this.StockCode.VisibleIndex = 0;
             // 
             // ID
             // 
@@ -77,22 +89,23 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
-            this.CurrentCode,
-            this.CurrentName});
+            this.StockCode,
+            this.StockName,
+            this.StockBarcode});
             this.gridView1.GridControl = this.gridList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // CurrentName
+            // StockName
             // 
-            this.CurrentName.Caption = "Cari Adı";
-            this.CurrentName.FieldName = "CurrentName";
-            this.CurrentName.Name = "CurrentName";
-            this.CurrentName.OptionsColumn.AllowEdit = false;
-            this.CurrentName.OptionsColumn.AllowFocus = false;
-            this.CurrentName.OptionsColumn.FixedWidth = true;
-            this.CurrentName.Visible = true;
-            this.CurrentName.VisibleIndex = 1;
+            this.StockName.Caption = "Stok Adı";
+            this.StockName.FieldName = "StockName";
+            this.StockName.Name = "StockName";
+            this.StockName.OptionsColumn.AllowEdit = false;
+            this.StockName.OptionsColumn.AllowFocus = false;
+            this.StockName.OptionsColumn.FixedWidth = true;
+            this.StockName.Visible = true;
+            this.StockName.VisibleIndex = 1;
             // 
             // gridList
             // 
@@ -100,11 +113,10 @@
             this.gridList.Location = new System.Drawing.Point(0, 0);
             this.gridList.MainView = this.gridView1;
             this.gridList.Name = "gridList";
-            this.gridList.Size = new System.Drawing.Size(781, 442);
+            this.gridList.Size = new System.Drawing.Size(729, 518);
             this.gridList.TabIndex = 0;
             this.gridList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridList.DoubleClick += new System.EventHandler(this.gridList_DoubleClick);
             // 
             // btnClear
             // 
@@ -124,63 +136,63 @@
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Ara";
             // 
-            // txtCurrentGroup
+            // txtIBAN
             // 
-            this.txtCurrentGroup.Location = new System.Drawing.Point(11, 161);
-            this.txtCurrentGroup.Name = "txtCurrentGroup";
-            this.txtCurrentGroup.Size = new System.Drawing.Size(152, 20);
-            this.txtCurrentGroup.TabIndex = 6;
+            this.txtIBAN.Location = new System.Drawing.Point(11, 161);
+            this.txtIBAN.Name = "txtIBAN";
+            this.txtIBAN.Size = new System.Drawing.Size(152, 20);
+            this.txtIBAN.TabIndex = 6;
             // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(11, 141);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(55, 13);
+            this.labelControl3.Size = new System.Drawing.Size(28, 13);
             this.labelControl3.TabIndex = 5;
-            this.labelControl3.Text = "Cari Grubu:";
+            this.labelControl3.Text = "IBAN:";
             // 
-            // txtCurrentName
+            // txtAccountNo
             // 
-            this.txtCurrentName.Location = new System.Drawing.Point(11, 111);
-            this.txtCurrentName.Name = "txtCurrentName";
-            this.txtCurrentName.Size = new System.Drawing.Size(152, 20);
-            this.txtCurrentName.TabIndex = 4;
+            this.txtAccountNo.Location = new System.Drawing.Point(11, 111);
+            this.txtAccountNo.Name = "txtAccountNo";
+            this.txtAccountNo.Size = new System.Drawing.Size(152, 20);
+            this.txtAccountNo.TabIndex = 4;
             // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(11, 91);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(41, 13);
+            this.labelControl2.Size = new System.Drawing.Size(50, 13);
             this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Cari Adı:";
+            this.labelControl2.Text = "Hesap No:";
             // 
-            // txtCurrentCode
+            // txtAccountName
             // 
-            this.txtCurrentCode.Location = new System.Drawing.Point(11, 61);
-            this.txtCurrentCode.Name = "txtCurrentCode";
-            this.txtCurrentCode.Size = new System.Drawing.Size(152, 20);
-            this.txtCurrentCode.TabIndex = 2;
+            this.txtAccountName.Location = new System.Drawing.Point(11, 61);
+            this.txtAccountName.Name = "txtAccountName";
+            this.txtAccountName.Size = new System.Drawing.Size(152, 20);
+            this.txtAccountName.TabIndex = 2;
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(11, 41);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(50, 13);
+            this.labelControl1.Size = new System.Drawing.Size(78, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Cari Kodu:";
+            this.labelControl1.Text = "Hesap Adı/Türü:";
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.btnClear);
             this.xtraTabPage1.Controls.Add(this.btnSearch);
-            this.xtraTabPage1.Controls.Add(this.txtCurrentGroup);
+            this.xtraTabPage1.Controls.Add(this.txtIBAN);
             this.xtraTabPage1.Controls.Add(this.labelControl3);
-            this.xtraTabPage1.Controls.Add(this.txtCurrentName);
+            this.xtraTabPage1.Controls.Add(this.txtAccountNo);
             this.xtraTabPage1.Controls.Add(this.labelControl2);
-            this.xtraTabPage1.Controls.Add(this.txtCurrentCode);
+            this.xtraTabPage1.Controls.Add(this.txtAccountName);
             this.xtraTabPage1.Controls.Add(this.labelControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(179, 414);
+            this.xtraTabPage1.Size = new System.Drawing.Size(179, 490);
             this.xtraTabPage1.Text = "Arama";
             // 
             // xtraTabControl1
@@ -189,7 +201,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(185, 442);
+            this.xtraTabControl1.Size = new System.Drawing.Size(185, 518);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -203,28 +215,27 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridList);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(971, 442);
+            this.splitContainerControl1.Size = new System.Drawing.Size(919, 518);
             this.splitContainerControl1.SplitterPosition = 185;
             this.splitContainerControl1.TabIndex = 1;
             // 
-            // frmCurrentList
+            // frmBankList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 442);
+            this.ClientSize = new System.Drawing.Size(919, 518);
             this.Controls.Add(this.splitContainerControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmCurrentList";
-            this.Text = "Cari Listesi";
-            this.Load += new System.EventHandler(this.frmCurrentList_Load);
+            this.Name = "frmBankList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Banka Listesi";
+            this.Load += new System.EventHandler(this.frmBankList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCurrentGroup.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCurrentName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCurrentCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIBAN.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAccountNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAccountName.Properties)).EndInit();
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -236,18 +247,20 @@
         }
 
         #endregion
-        private DevExpress.XtraGrid.Columns.GridColumn CurrentCode;
+
+        private DevExpress.XtraGrid.Columns.GridColumn StockBarcode;
+        private DevExpress.XtraGrid.Columns.GridColumn StockCode;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn CurrentName;
+        private DevExpress.XtraGrid.Columns.GridColumn StockName;
         private DevExpress.XtraGrid.GridControl gridList;
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
-        private DevExpress.XtraEditors.TextEdit txtCurrentGroup;
+        private DevExpress.XtraEditors.TextEdit txtIBAN;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txtCurrentName;
+        private DevExpress.XtraEditors.TextEdit txtAccountNo;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtCurrentCode;
+        private DevExpress.XtraEditors.TextEdit txtAccountName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;

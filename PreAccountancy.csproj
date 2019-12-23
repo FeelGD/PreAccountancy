@@ -72,6 +72,36 @@
     <Compile Include="Functions\Messages.cs" />
     <Compile Include="Functions\Number.cs" />
     <Compile Include="Functions\Photos.cs" />
+    <Compile Include="Modul_Bank\frmBankList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Bank\frmBankList.Designer.cs">
+      <DependentUpon>frmBankList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Bank\frmBankMovement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Bank\frmBankMovement.Designer.cs">
+      <DependentUpon>frmBankMovement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Bank\frmBankOpeningCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Bank\frmBankOpeningCard.Designer.cs">
+      <DependentUpon>frmBankOpeningCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Bank\frmBankProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Bank\frmBankProcess.Designer.cs">
+      <DependentUpon>frmBankProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Bank\frmMoneyTranfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Bank\frmMoneyTranfer.Designer.cs">
+      <DependentUpon>frmMoneyTranfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modul_Current\frmCurrentGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +125,42 @@
     </Compile>
     <Compile Include="Modul_Current\frmCurrentOpeningCard.Designer.cs">
       <DependentUpon>frmCurrentOpeningCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Invoice\frmInvoiceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Invoice\frmInvoiceList.Designer.cs">
+      <DependentUpon>frmInvoiceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Invoice\frmSalesInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Invoice\frmSalesInvoice.Designer.cs">
+      <DependentUpon>frmSalesInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafeList.Designer.cs">
+      <DependentUpon>frmSafeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafeOpeningCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafeOpeningCard.Designer.cs">
+      <DependentUpon>frmSafeOpeningCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafePayment.Designer.cs">
+      <DependentUpon>frmSafePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafeTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafeTransfer.Designer.cs">
+      <DependentUpon>frmSafeTransfer.cs</DependentUpon>
     </Compile>
     <Compile Include="Modul_Stock\frmStockCard.cs">
       <SubType>Form</SubType>
@@ -125,6 +191,21 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Bank\frmBankList.resx">
+      <DependentUpon>frmBankList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Bank\frmBankMovement.resx">
+      <DependentUpon>frmBankMovement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Bank\frmBankOpeningCard.resx">
+      <DependentUpon>frmBankOpeningCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Bank\frmBankProcess.resx">
+      <DependentUpon>frmBankProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Bank\frmMoneyTranfer.resx">
+      <DependentUpon>frmMoneyTranfer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modul_Current\frmCurrentGroup.resx">
       <DependentUpon>frmCurrentGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +214,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modul_Current\frmCurrentOpeningCard.resx">
       <DependentUpon>frmCurrentOpeningCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Invoice\frmInvoiceList.resx">
+      <DependentUpon>frmInvoiceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Invoice\frmSalesInvoice.resx">
+      <DependentUpon>frmSalesInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Safe\frmSafeList.resx">
+      <DependentUpon>frmSafeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Safe\frmSafeOpeningCard.resx">
+      <DependentUpon>frmSafeOpeningCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Safe\frmSafePayment.resx">
+      <DependentUpon>frmSafePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Safe\frmSafeTransfer.resx">
+      <DependentUpon>frmSafeTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modul_Stock\frmStockCard.resx">
       <DependentUpon>frmStockCard.cs</DependentUpon>

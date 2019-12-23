@@ -44,7 +44,7 @@ namespace PreAccountancy
 
         private void barbtnCurrentOpeningCard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Forms.CurrentOpeningCard();
         }
 
         private void barbtnCurrentGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

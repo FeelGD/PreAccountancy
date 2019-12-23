@@ -42,7 +42,7 @@ namespace PreAccountancy.Modul_Current
                 if (item is DevExpress.XtraEditors.TextEdit || item is DevExpress.XtraEditors.ButtonEdit) item.Text = "";
             foreach (Control items in groupControl2.Controls)
                 if (items is DevExpress.XtraEditors.TextEdit || items is DevExpress.XtraEditors.ButtonEdit || items is DevExpress.XtraEditors.MemoEdit) items.Text = "";
-
+            txtCurrentCode.Text = Numbers.CurrentCodeNumber();
             Edit = false;
             CurrentID = -1;
             GroupID = -1;
@@ -116,7 +116,7 @@ namespace PreAccountancy.Modul_Current
                 current.CurrentEditDate = DateTime.Now;
                 current.CurrentEditUser = frmMain.UserID;
                 DB.SubmitChanges();
-                Messages.NewRecord("Yeni Cari Kaydı Oluşturuldu.");
+                Messages.Update(true);
                 Clear();
             }
             catch (Exception e)
@@ -181,14 +181,50 @@ namespace PreAccountancy.Modul_Current
             {
                 GroupID = ID;
                 Functions.TBL_CurrentGroup currentGroup = DB.TBL_CurrentGroups.First(s => s.ID == GroupID);
-                txtCurrentGroupCode.Text = currentGroup.CurrentGroupCode;
-                txtCurrentGroupName.Text = currentGroup.CurrentGroupName;
+                txtCurrentGroupName.Text = currentGroup.CurrentGroupCode;
+                txtCurrentGroupCode.Text = currentGroup.CurrentGroupName;
             }
             catch (Exception e)
             {
 
                 Messages.Error(e);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (Edit && CurrentID > 0 && Messages.Delete() == DialogResult.Yes) Delete();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (Edit && CurrentID > 0 && Messages.Update() == DialogResult.Yes) Update();
+            else NewSave();
+        }
+
+        private void txtCurrentGroupCode_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            int ID = Forms.CurrentGroup(true);
+            if (ID>0)
+            {
+                OpenGroup(ID);
+            }
+            frmMain.Transfer = -1;
+        }
+
+        private void txtCurrentCode_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            int ID = Forms.CurrentList(true);
+            if (ID>0)
+            {
+                Open(ID);
+            }
+            frmMain.Transfer = -1;
         }
     }
 }

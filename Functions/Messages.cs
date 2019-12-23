@@ -15,13 +15,13 @@ namespace PreAccountancy.Functions
         }
         public DialogResult Delete()
         {
-            return MessageBox.Show("Seçili kalıcı olarak silinecektir\n Silme işlemini onaylıyor musunuz=", "Silme işlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            return MessageBox.Show("Seçili kalıcı olarak silinecektir\n Silme işlemini onaylıyor musunuz?", "Silme işlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
 
         public DialogResult Update()
         {
-            return MessageBox.Show("Seçili kalıcı olarak güncellenecektir.\n Güncelleme işlemini onaylıyor musunuz=", "Silme işlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            return MessageBox.Show("Seçili kalıcı olarak güncellenecektir.\n Güncelleme işlemini onaylıyor musunuz?", "Silme işlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
         public void Update(bool Updates)
         {

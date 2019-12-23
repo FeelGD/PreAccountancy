@@ -102,3 +102,7 @@ C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountan
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Current.frmCurrentList.resources
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Current.frmCurrentOpeningCard.resources
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Stock.frmStockMovement.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Bank.frmBankMovement.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Bank.frmBankOpeningCard.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Bank.frmBankProcess.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Bank.frmMoneyTranfer.resources
