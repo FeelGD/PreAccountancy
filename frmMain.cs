@@ -61,5 +61,10 @@ namespace PreAccountancy
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            clock.Caption = DateTime.Now.ToString();
+        }
     }
 }

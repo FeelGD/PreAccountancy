@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.btnStockCard = new DevExpress.XtraBars.BarButtonItem();
             this.btnStockList = new DevExpress.XtraBars.BarButtonItem();
             this.btnStockGroup = new DevExpress.XtraBars.BarButtonItem();
@@ -47,6 +48,13 @@
             this.barbtnSafeList = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnSafeTransfer = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnSafePayment = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnSalesInvoice = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnSalesRefundInvoice = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnPurchaseInvoice = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnPurshaseRefundInvoice = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnSalesSlip = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnPurshaseSlip = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.PageStock = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -55,26 +63,25 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barbtnSalesInvoice = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnSalesRefundInvoice = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnPurchaseInvoice = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnPurshaseRefundInvoice = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barbtnSalesSlip = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnPurshaseSlip = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.clock = new DevExpress.XtraBars.BarHeaderItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.CaptionBarItemLinks.Add(this.barStaticItem2);
+            this.ribbonControl1.CaptionBarItemLinks.Add(this.clock);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barStaticItem2,
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.btnStockCard,
@@ -99,9 +106,11 @@
             this.barbtnPurchaseInvoice,
             this.barbtnPurshaseRefundInvoice,
             this.barbtnSalesSlip,
-            this.barbtnPurshaseSlip});
+            this.barbtnPurshaseSlip,
+            this.barStaticItem1,
+            this.clock});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 24;
+            this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageStock,
@@ -111,6 +120,12 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbonControl1.Size = new System.Drawing.Size(906, 162);
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "Ali Yazılım";
+            this.barStaticItem2.Id = 25;
+            this.barStaticItem2.Name = "barStaticItem2";
             // 
             // btnStockCard
             // 
@@ -273,6 +288,66 @@
             this.barbtnSafePayment.Name = "barbtnSafePayment";
             this.barbtnSafePayment.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // barbtnSalesInvoice
+            // 
+            this.barbtnSalesInvoice.Caption = "Satış Faturası";
+            this.barbtnSalesInvoice.Id = 18;
+            this.barbtnSalesInvoice.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_Satis32x32;
+            this.barbtnSalesInvoice.LargeWidth = 100;
+            this.barbtnSalesInvoice.Name = "barbtnSalesInvoice";
+            this.barbtnSalesInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barbtnSalesRefundInvoice
+            // 
+            this.barbtnSalesRefundInvoice.Caption = "Satış İade Faturası";
+            this.barbtnSalesRefundInvoice.Id = 19;
+            this.barbtnSalesRefundInvoice.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_SatisIade32x32;
+            this.barbtnSalesRefundInvoice.LargeWidth = 100;
+            this.barbtnSalesRefundInvoice.Name = "barbtnSalesRefundInvoice";
+            this.barbtnSalesRefundInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barbtnPurchaseInvoice
+            // 
+            this.barbtnPurchaseInvoice.Caption = "Alış Faturası";
+            this.barbtnPurchaseInvoice.Id = 20;
+            this.barbtnPurchaseInvoice.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_Alis32x32;
+            this.barbtnPurchaseInvoice.LargeWidth = 100;
+            this.barbtnPurchaseInvoice.Name = "barbtnPurchaseInvoice";
+            this.barbtnPurchaseInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barbtnPurshaseRefundInvoice
+            // 
+            this.barbtnPurshaseRefundInvoice.Caption = "Alış İade Faturası";
+            this.barbtnPurshaseRefundInvoice.Id = 21;
+            this.barbtnPurshaseRefundInvoice.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_AlisIade32x32;
+            this.barbtnPurshaseRefundInvoice.LargeWidth = 100;
+            this.barbtnPurshaseRefundInvoice.Name = "barbtnPurshaseRefundInvoice";
+            this.barbtnPurshaseRefundInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barbtnSalesSlip
+            // 
+            this.barbtnSalesSlip.Caption = "Satış İrsaliyesi";
+            this.barbtnSalesSlip.Id = 22;
+            this.barbtnSalesSlip.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_SatisIade32x32;
+            this.barbtnSalesSlip.LargeWidth = 100;
+            this.barbtnSalesSlip.Name = "barbtnSalesSlip";
+            this.barbtnSalesSlip.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barbtnPurshaseSlip
+            // 
+            this.barbtnPurshaseSlip.Caption = "Alış İrsaliyesi";
+            this.barbtnPurshaseSlip.Id = 23;
+            this.barbtnPurshaseSlip.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_AlisIade32x32;
+            this.barbtnPurshaseSlip.LargeWidth = 100;
+            this.barbtnPurshaseSlip.Name = "barbtnPurshaseSlip";
+            this.barbtnPurshaseSlip.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "barStaticItem1";
+            this.barStaticItem1.Id = 24;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
             // PageStock
             // 
             this.PageStock.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -342,11 +417,6 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Kasa İşlemleri";
             // 
-            // xtraTabbedMdiManager1
-            // 
-            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
-            this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -365,6 +435,13 @@
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Fatura İşlemleri";
             // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barbtnSalesSlip);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barbtnPurshaseSlip);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "İrsaliye İşlemleri";
+            // 
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -377,66 +454,20 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
-            // barbtnSalesInvoice
+            // xtraTabbedMdiManager1
             // 
-            this.barbtnSalesInvoice.Caption = "Satış Faturası";
-            this.barbtnSalesInvoice.Id = 18;
-            this.barbtnSalesInvoice.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_Satis32x32;
-            this.barbtnSalesInvoice.LargeWidth = 100;
-            this.barbtnSalesInvoice.Name = "barbtnSalesInvoice";
-            this.barbtnSalesInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // barbtnSalesRefundInvoice
+            // clock
             // 
-            this.barbtnSalesRefundInvoice.Caption = "Satış İade Faturası";
-            this.barbtnSalesRefundInvoice.Id = 19;
-            this.barbtnSalesRefundInvoice.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_SatisIade32x32;
-            this.barbtnSalesRefundInvoice.LargeWidth = 100;
-            this.barbtnSalesRefundInvoice.Name = "barbtnSalesRefundInvoice";
-            this.barbtnSalesRefundInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.clock.Id = 26;
+            this.clock.Name = "clock";
             // 
-            // barbtnPurchaseInvoice
+            // timer1
             // 
-            this.barbtnPurchaseInvoice.Caption = "Alış Faturası";
-            this.barbtnPurchaseInvoice.Id = 20;
-            this.barbtnPurchaseInvoice.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_Alis32x32;
-            this.barbtnPurchaseInvoice.LargeWidth = 100;
-            this.barbtnPurchaseInvoice.Name = "barbtnPurchaseInvoice";
-            this.barbtnPurchaseInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // barbtnPurshaseRefundInvoice
-            // 
-            this.barbtnPurshaseRefundInvoice.Caption = "Alış İade Faturası";
-            this.barbtnPurshaseRefundInvoice.Id = 21;
-            this.barbtnPurshaseRefundInvoice.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_AlisIade32x32;
-            this.barbtnPurshaseRefundInvoice.LargeWidth = 100;
-            this.barbtnPurshaseRefundInvoice.Name = "barbtnPurshaseRefundInvoice";
-            this.barbtnPurshaseRefundInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barbtnSalesSlip);
-            this.ribbonPageGroup7.ItemLinks.Add(this.barbtnPurshaseSlip);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "İrsaliye İşlemleri";
-            // 
-            // barbtnSalesSlip
-            // 
-            this.barbtnSalesSlip.Caption = "Satış İrsaliyesi";
-            this.barbtnSalesSlip.Id = 22;
-            this.barbtnSalesSlip.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_SatisIade32x32;
-            this.barbtnSalesSlip.LargeWidth = 100;
-            this.barbtnSalesSlip.Name = "barbtnSalesSlip";
-            this.barbtnSalesSlip.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // barbtnPurshaseSlip
-            // 
-            this.barbtnPurshaseSlip.Caption = "Alış İrsaliyesi";
-            this.barbtnPurshaseSlip.Id = 23;
-            this.barbtnPurshaseSlip.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Fatura_AlisIade32x32;
-            this.barbtnPurshaseSlip.LargeWidth = 100;
-            this.barbtnPurshaseSlip.Name = "barbtnPurshaseSlip";
-            this.barbtnPurshaseSlip.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMain
             // 
@@ -495,6 +526,10 @@
         private DevExpress.XtraBars.BarButtonItem barbtnSalesSlip;
         private DevExpress.XtraBars.BarButtonItem barbtnPurshaseSlip;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarHeaderItem clock;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

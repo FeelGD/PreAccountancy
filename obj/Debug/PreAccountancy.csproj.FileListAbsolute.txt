@@ -106,3 +106,10 @@ C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountan
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Bank.frmBankOpeningCard.resources
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Bank.frmBankProcess.resources
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Bank.frmMoneyTranfer.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Bank.frmBankList.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Invoice.frmInvoiceList.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Invoice.frmSalesInvoice.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Safe.frmSafeList.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Safe.frmSafeOpeningCard.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Safe.frmSafePayment.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Safe.frmSafeTransfer.resources
