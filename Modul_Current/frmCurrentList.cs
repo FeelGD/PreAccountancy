@@ -34,7 +34,8 @@ namespace PreAccountancy.Modul_Current
                        select s;
             gridList.DataSource = list;
         }
-        void Select()
+
+        new void Select()
         {
             try
             {

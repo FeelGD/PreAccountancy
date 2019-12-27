@@ -88,7 +88,8 @@ namespace PreAccountancy.Modul_Current
 
 
         }
-        void Update()
+
+        new void Update()
         {
 
             try

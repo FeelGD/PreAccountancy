@@ -59,7 +59,8 @@ namespace PreAccountancy.Modul_Safe
                 messages.Error(e);
             }
         }
-        void Update()
+
+        new void Update()
         {
             try
             {
@@ -93,7 +94,8 @@ namespace PreAccountancy.Modul_Safe
                 messages.Error(e);
             }
         }
-        void Select()
+
+        new void Select()
         {
             try
             {

@@ -84,5 +84,11 @@ namespace PreAccountancy.Functions
             Modul_Safe.frmSafeOpeningCard openingCard = new Modul_Safe.frmSafeOpeningCard();
             openingCard.ShowDialog();
         }
+        public void Open (bool Open=false, int ProcessID = -1)
+        {
+            Modul_Safe.frmSafeTransfer transfer = new Modul_Safe.frmSafeTransfer();
+            if (Open) transfer.Open(ProcessID);
+            transfer.ShowDialog();
+        }
     }
 }

@@ -80,7 +80,7 @@ namespace PreAccountancy.Modul_Current
                 Messages.Error(e);
             }
         }
-        public void Select()
+        new void Select()
         {
             try
             {

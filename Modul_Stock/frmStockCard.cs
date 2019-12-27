@@ -143,7 +143,7 @@ namespace PreAccountancy.Modul_Stock
 
         }
 
-        void Update()
+        new void Update()
         {
             try
             {

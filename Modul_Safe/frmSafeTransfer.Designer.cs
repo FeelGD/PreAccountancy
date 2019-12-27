@@ -34,12 +34,13 @@
             this.txtSafeName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDocumentNo = new DevExpress.XtraEditors.TextEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtSafeCode = new DevExpress.XtraEditors.ButtonEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.radioOutside = new System.Windows.Forms.RadioButton();
+            this.radioInside = new System.Windows.Forms.RadioButton();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -47,12 +48,10 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtDescription = new DevExpress.XtraEditors.MemoEdit();
             this.txtDate = new DevExpress.XtraEditors.DateEdit();
-            this.radioİnside = new System.Windows.Forms.RadioButton();
-            this.radioOutside = new System.Windows.Forms.RadioButton();
+            this.txtDocumentNo = new DevExpress.XtraEditors.ButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDocumentNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -60,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDocumentNo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -68,11 +68,11 @@
             this.groupControl1.Controls.Add(this.txtSafeName);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.txtDocumentNo);
             this.groupControl1.Controls.Add(this.btnClose);
             this.groupControl1.Controls.Add(this.btnDelete);
             this.groupControl1.Controls.Add(this.btnSave);
             this.groupControl1.Controls.Add(this.txtSafeCode);
+            this.groupControl1.Controls.Add(this.txtDocumentNo);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
@@ -92,6 +92,7 @@
             // 
             this.txtSafeName.Location = new System.Drawing.Point(95, 107);
             this.txtSafeName.Name = "txtSafeName";
+            this.txtSafeName.Properties.ReadOnly = true;
             this.txtSafeName.Size = new System.Drawing.Size(194, 20);
             this.txtSafeName.TabIndex = 7;
             // 
@@ -111,13 +112,6 @@
             this.labelControl1.TabIndex = 4;
             this.labelControl1.Text = "Belge No:";
             // 
-            // txtDocumentNo
-            // 
-            this.txtDocumentNo.Location = new System.Drawing.Point(95, 55);
-            this.txtDocumentNo.Name = "txtDocumentNo";
-            this.txtDocumentNo.Size = new System.Drawing.Size(194, 20);
-            this.txtDocumentNo.TabIndex = 3;
-            // 
             // btnClose
             // 
             this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
@@ -126,6 +120,7 @@
             this.btnClose.Size = new System.Drawing.Size(113, 40);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Kapat";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -135,6 +130,7 @@
             this.btnDelete.Size = new System.Drawing.Size(113, 40);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Sil";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -144,6 +140,7 @@
             this.btnSave.Size = new System.Drawing.Size(113, 40);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Kaydet";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtSafeCode
             // 
@@ -151,13 +148,14 @@
             this.txtSafeCode.Name = "txtSafeCode";
             this.txtSafeCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtSafeCode.Properties.ReadOnly = true;
             this.txtSafeCode.Size = new System.Drawing.Size(194, 20);
             this.txtSafeCode.TabIndex = 5;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.radioOutside);
-            this.groupControl2.Controls.Add(this.radioİnside);
+            this.groupControl2.Controls.Add(this.radioInside);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.labelControl5);
@@ -171,6 +169,28 @@
             this.groupControl2.Size = new System.Drawing.Size(430, 211);
             this.groupControl2.TabIndex = 10;
             this.groupControl2.Text = "İşlem Bilgileri";
+            // 
+            // radioOutside
+            // 
+            this.radioOutside.AutoSize = true;
+            this.radioOutside.Location = new System.Drawing.Point(207, 59);
+            this.radioOutside.Name = "radioOutside";
+            this.radioOutside.Size = new System.Drawing.Size(76, 17);
+            this.radioOutside.TabIndex = 21;
+            this.radioOutside.TabStop = true;
+            this.radioOutside.Text = "Çıkış İşlemi";
+            this.radioOutside.UseVisualStyleBackColor = true;
+            // 
+            // radioInside
+            // 
+            this.radioInside.AutoSize = true;
+            this.radioInside.Location = new System.Drawing.Point(95, 59);
+            this.radioInside.Name = "radioInside";
+            this.radioInside.Size = new System.Drawing.Size(75, 17);
+            this.radioInside.TabIndex = 20;
+            this.radioInside.TabStop = true;
+            this.radioInside.Text = "Giriş İşlemi";
+            this.radioInside.UseVisualStyleBackColor = true;
             // 
             // labelControl10
             // 
@@ -238,27 +258,14 @@
             this.txtDate.Size = new System.Drawing.Size(194, 20);
             this.txtDate.TabIndex = 9;
             // 
-            // radioİnside
+            // txtDocumentNo
             // 
-            this.radioİnside.AutoSize = true;
-            this.radioİnside.Location = new System.Drawing.Point(95, 59);
-            this.radioİnside.Name = "radioİnside";
-            this.radioİnside.Size = new System.Drawing.Size(75, 17);
-            this.radioİnside.TabIndex = 20;
-            this.radioİnside.TabStop = true;
-            this.radioİnside.Text = "Giriş İşlemi";
-            this.radioİnside.UseVisualStyleBackColor = true;
-            // 
-            // radioOutside
-            // 
-            this.radioOutside.AutoSize = true;
-            this.radioOutside.Location = new System.Drawing.Point(207, 59);
-            this.radioOutside.Name = "radioOutside";
-            this.radioOutside.Size = new System.Drawing.Size(76, 17);
-            this.radioOutside.TabIndex = 21;
-            this.radioOutside.TabStop = true;
-            this.radioOutside.Text = "Çıkış İşlemi";
-            this.radioOutside.UseVisualStyleBackColor = true;
+            this.txtDocumentNo.Location = new System.Drawing.Point(95, 55);
+            this.txtDocumentNo.Name = "txtDocumentNo";
+            this.txtDocumentNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtDocumentNo.Size = new System.Drawing.Size(194, 20);
+            this.txtDocumentNo.TabIndex = 3;
             // 
             // frmSafeTransfer
             // 
@@ -279,7 +286,6 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDocumentNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -288,6 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDocumentNo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -299,14 +306,13 @@
         private DevExpress.XtraEditors.TextEdit txtSafeName;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtDocumentNo;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.ButtonEdit txtSafeCode;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.RadioButton radioOutside;
-        private System.Windows.Forms.RadioButton radioİnside;
+        private System.Windows.Forms.RadioButton radioInside;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -314,5 +320,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.MemoEdit txtDescription;
         private DevExpress.XtraEditors.DateEdit txtDate;
+        private DevExpress.XtraEditors.ButtonEdit txtDocumentNo;
     }
 }
