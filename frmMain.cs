@@ -66,5 +66,10 @@ namespace PreAccountancy
         {
             clock.Caption = DateTime.Now.ToString();
         }
+
+        private void barbtnSafeOpeningCard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.SafeOpeningCard();
+        }
     }
 }

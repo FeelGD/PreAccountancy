@@ -47,7 +47,7 @@ namespace PreAccountancy.Functions
         }
         #endregion
 
-
+        #region CurrentForms
         public int CurrentGroup(bool Selection = false)
         {
             Modul_Current.frmCurrentGroup currentGroup = new Modul_Current.frmCurrentGroup();
@@ -75,6 +75,13 @@ namespace PreAccountancy.Functions
         {
             Modul_Current.frmCurrentOpeningCard openingCard = new Modul_Current.frmCurrentOpeningCard();
             if (Open) openingCard.Open(CurrentID);
+            openingCard.ShowDialog();
+        }
+        #endregion
+
+        public void SafeOpeningCard()
+        {
+            Modul_Safe.frmSafeOpeningCard openingCard = new Modul_Safe.frmSafeOpeningCard();
             openingCard.ShowDialog();
         }
     }

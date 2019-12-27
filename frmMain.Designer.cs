@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.clock = new DevExpress.XtraBars.BarHeaderItem();
             this.btnStockCard = new DevExpress.XtraBars.BarButtonItem();
             this.btnStockList = new DevExpress.XtraBars.BarButtonItem();
             this.btnStockGroup = new DevExpress.XtraBars.BarButtonItem();
@@ -69,7 +70,6 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.clock = new DevExpress.XtraBars.BarHeaderItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -82,6 +82,7 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barStaticItem2,
+            this.clock,
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.btnStockCard,
@@ -107,8 +108,7 @@
             this.barbtnPurshaseRefundInvoice,
             this.barbtnSalesSlip,
             this.barbtnPurshaseSlip,
-            this.barStaticItem1,
-            this.clock});
+            this.barStaticItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -126,6 +126,11 @@
             this.barStaticItem2.Caption = "Ali Yazılım";
             this.barStaticItem2.Id = 25;
             this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // clock
+            // 
+            this.clock.Id = 26;
+            this.clock.Name = "clock";
             // 
             // btnStockCard
             // 
@@ -260,6 +265,7 @@
             this.barbtnSafeOpeningCard.LargeWidth = 120;
             this.barbtnSafeOpeningCard.Name = "barbtnSafeOpeningCard";
             this.barbtnSafeOpeningCard.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnSafeOpeningCard.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSafeOpeningCard_ItemClick);
             // 
             // barbtnSafeList
             // 
@@ -458,11 +464,6 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // clock
-            // 
-            this.clock.Id = 26;
-            this.clock.Name = "clock";
             // 
             // timer1
             // 

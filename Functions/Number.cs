@@ -44,5 +44,21 @@ namespace PreAccountancy.Functions
                 return "0000001";
             }
         }
+        public string SafeCodeNumber()
+        {
+            try
+            {
+                int Number = int.Parse((from s in DB.TBL_Safes orderby s.ID descending select s).First().SafeCode);
+                Number++;
+                string Num = Number.ToString().PadLeft(7, '0');
+                return Num;
+            }
+            catch (Exception EX)
+            {
+
+                Messages.Error(EX);
+                return "0000001";
+            }
+        }
     }
 }
