@@ -154,6 +154,7 @@ namespace PreAccountancy.Modul_Safe
                 messages.Error(e);
             }
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (Edit && ProcessID > 0 && messages.Update() == DialogResult.Yes) Update();
@@ -169,6 +170,21 @@ namespace PreAccountancy.Modul_Safe
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtSafeCode_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            int Id = forms.SafeList(true);
+            if (Id > 0)
+            {
+                OpenSafe(Id);
+                frmMain.Transfer = -1;
+            }
+        }
+
+        private void txtDocumentNo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
         }
     }
 }

@@ -23,7 +23,7 @@ namespace PreAccountancy.Functions
                 stockList.MdiParent = frmMain.ActiveForm;
                 stockList.Show();
             }
-           return frmMain.Transfer;
+            return frmMain.Transfer;
         }
 
         public int StockGroup(bool Selection = false)
@@ -33,7 +33,7 @@ namespace PreAccountancy.Functions
 
             stockGroup.ShowDialog();
             return frmMain.Transfer;
-           
+
         }
 
         public void StockMovement(bool Open = false)
@@ -55,8 +55,8 @@ namespace PreAccountancy.Functions
             currentGroup.ShowDialog();
             return frmMain.Transfer;
         }
-         
-        public  int CurrentList(bool Selection = false)
+
+        public int CurrentList(bool Selection = false)
         {
             Modul_Current.frmCurrentList currentList = new Modul_Current.frmCurrentList();
             if (Selection)
@@ -71,7 +71,7 @@ namespace PreAccountancy.Functions
             }
             return frmMain.Transfer;
         }
-        public void CurrentOpeningCard(bool Open=false, int CurrentID = -1)
+        public void CurrentOpeningCard(bool Open = false, int CurrentID = -1)
         {
             Modul_Current.frmCurrentOpeningCard openingCard = new Modul_Current.frmCurrentOpeningCard();
             if (Open) openingCard.Open(CurrentID);
@@ -84,11 +84,26 @@ namespace PreAccountancy.Functions
             Modul_Safe.frmSafeOpeningCard openingCard = new Modul_Safe.frmSafeOpeningCard();
             openingCard.ShowDialog();
         }
-        public void Open (bool Open=false, int ProcessID = -1)
+        public void SafeTransfer(bool Open = false, int ProcessID = -1)
         {
             Modul_Safe.frmSafeTransfer transfer = new Modul_Safe.frmSafeTransfer();
             if (Open) transfer.Open(ProcessID);
             transfer.ShowDialog();
+        }
+        public int SafeList(bool Selection = false)
+        {
+            Modul_Safe.frmSafeList list = new Modul_Safe.frmSafeList();
+            if (Selection)
+            {
+                list.Selection = Selection;
+                list.ShowDialog();
+            }
+            else
+            {
+                list.MdiParent = frmMain.ActiveForm;
+                list.Show();
+            }
+            return frmMain.Transfer;
         }
     }
 }

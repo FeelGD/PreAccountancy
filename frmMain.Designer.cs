@@ -275,6 +275,7 @@
             this.barbtnSafeList.LargeWidth = 120;
             this.barbtnSafeList.Name = "barbtnSafeList";
             this.barbtnSafeList.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnSafeList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSafeList_ItemClick);
             // 
             // barbtnSafeTransfer
             // 
@@ -284,6 +285,7 @@
             this.barbtnSafeTransfer.LargeWidth = 120;
             this.barbtnSafeTransfer.Name = "barbtnSafeTransfer";
             this.barbtnSafeTransfer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnSafeTransfer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSafeTransfer_ItemClick);
             // 
             // barbtnSafePayment
             // 

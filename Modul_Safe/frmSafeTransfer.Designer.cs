@@ -151,6 +151,7 @@
             this.txtSafeCode.Properties.ReadOnly = true;
             this.txtSafeCode.Size = new System.Drawing.Size(194, 20);
             this.txtSafeCode.TabIndex = 5;
+            this.txtSafeCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtSafeCode_ButtonClick);
             // 
             // groupControl2
             // 
@@ -184,6 +185,7 @@
             // radioInside
             // 
             this.radioInside.AutoSize = true;
+            this.radioInside.Checked = true;
             this.radioInside.Location = new System.Drawing.Point(95, 59);
             this.radioInside.Name = "radioInside";
             this.radioInside.Size = new System.Drawing.Size(75, 17);
@@ -266,6 +268,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtDocumentNo.Size = new System.Drawing.Size(194, 20);
             this.txtDocumentNo.TabIndex = 3;
+            this.txtDocumentNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtDocumentNo_ButtonClick);
             // 
             // frmSafeTransfer
             // 

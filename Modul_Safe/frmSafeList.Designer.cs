@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSafeList));
-            this.StockBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.StockCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Amount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SafeCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.txtStockName = new DevExpress.XtraEditors.TextEdit();
+            this.txtSafeName = new DevExpress.XtraEditors.TextEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.StockName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SafeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridList = new DevExpress.XtraGrid.GridControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtStockCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtSafeCode = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStockName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSafeName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStockCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSafeCode.Properties)).BeginInit();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -55,27 +55,27 @@
             this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // StockBarcode
+            // Amount
             // 
-            this.StockBarcode.Caption = "Barkod";
-            this.StockBarcode.FieldName = "StockBarcode";
-            this.StockBarcode.Name = "StockBarcode";
-            this.StockBarcode.OptionsColumn.AllowEdit = false;
-            this.StockBarcode.OptionsColumn.AllowFocus = false;
-            this.StockBarcode.OptionsColumn.FixedWidth = true;
-            this.StockBarcode.Visible = true;
-            this.StockBarcode.VisibleIndex = 2;
+            this.Amount.Caption = "Bakiye";
+            this.Amount.FieldName = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.OptionsColumn.AllowEdit = false;
+            this.Amount.OptionsColumn.AllowFocus = false;
+            this.Amount.OptionsColumn.FixedWidth = true;
+            this.Amount.Visible = true;
+            this.Amount.VisibleIndex = 2;
             // 
-            // StockCode
+            // SafeCode
             // 
-            this.StockCode.Caption = "Stok Kodu";
-            this.StockCode.FieldName = "StockCode";
-            this.StockCode.Name = "StockCode";
-            this.StockCode.OptionsColumn.AllowEdit = false;
-            this.StockCode.OptionsColumn.AllowFocus = false;
-            this.StockCode.OptionsColumn.FixedWidth = true;
-            this.StockCode.Visible = true;
-            this.StockCode.VisibleIndex = 0;
+            this.SafeCode.Caption = "Kasa Kodu";
+            this.SafeCode.FieldName = "SafeCode";
+            this.SafeCode.Name = "SafeCode";
+            this.SafeCode.OptionsColumn.AllowEdit = false;
+            this.SafeCode.OptionsColumn.AllowFocus = false;
+            this.SafeCode.OptionsColumn.FixedWidth = true;
+            this.SafeCode.Visible = true;
+            this.SafeCode.VisibleIndex = 0;
             // 
             // ID
             // 
@@ -99,35 +99,36 @@
             this.btnSearch.Size = new System.Drawing.Size(79, 41);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Ara";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtStockName
+            // txtSafeName
             // 
-            this.txtStockName.Location = new System.Drawing.Point(11, 111);
-            this.txtStockName.Name = "txtStockName";
-            this.txtStockName.Size = new System.Drawing.Size(152, 20);
-            this.txtStockName.TabIndex = 4;
+            this.txtSafeName.Location = new System.Drawing.Point(11, 111);
+            this.txtSafeName.Name = "txtSafeName";
+            this.txtSafeName.Size = new System.Drawing.Size(152, 20);
+            this.txtSafeName.TabIndex = 4;
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
-            this.StockCode,
-            this.StockName,
-            this.StockBarcode});
+            this.SafeCode,
+            this.SafeName,
+            this.Amount});
             this.gridView1.GridControl = this.gridList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // StockName
+            // SafeName
             // 
-            this.StockName.Caption = "Stok Adı";
-            this.StockName.FieldName = "StockName";
-            this.StockName.Name = "StockName";
-            this.StockName.OptionsColumn.AllowEdit = false;
-            this.StockName.OptionsColumn.AllowFocus = false;
-            this.StockName.OptionsColumn.FixedWidth = true;
-            this.StockName.Visible = true;
-            this.StockName.VisibleIndex = 1;
+            this.SafeName.Caption = "Kasa Adı";
+            this.SafeName.FieldName = "SafeName";
+            this.SafeName.Name = "SafeName";
+            this.SafeName.OptionsColumn.AllowEdit = false;
+            this.SafeName.OptionsColumn.AllowFocus = false;
+            this.SafeName.OptionsColumn.FixedWidth = true;
+            this.SafeName.Visible = true;
+            this.SafeName.VisibleIndex = 1;
             // 
             // gridList
             // 
@@ -139,6 +140,7 @@
             this.gridList.TabIndex = 0;
             this.gridList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridList.DoubleClick += new System.EventHandler(this.gridList_DoubleClick);
             // 
             // labelControl2
             // 
@@ -148,20 +150,20 @@
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Kasa Adı:";
             // 
-            // txtStockCode
+            // txtSafeCode
             // 
-            this.txtStockCode.Location = new System.Drawing.Point(11, 61);
-            this.txtStockCode.Name = "txtStockCode";
-            this.txtStockCode.Size = new System.Drawing.Size(152, 20);
-            this.txtStockCode.TabIndex = 2;
+            this.txtSafeCode.Location = new System.Drawing.Point(11, 61);
+            this.txtSafeCode.Name = "txtSafeCode";
+            this.txtSafeCode.Size = new System.Drawing.Size(152, 20);
+            this.txtSafeCode.TabIndex = 2;
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.btnClear);
             this.xtraTabPage1.Controls.Add(this.btnSearch);
-            this.xtraTabPage1.Controls.Add(this.txtStockName);
+            this.xtraTabPage1.Controls.Add(this.txtSafeName);
             this.xtraTabPage1.Controls.Add(this.labelControl2);
-            this.xtraTabPage1.Controls.Add(this.txtStockCode);
+            this.xtraTabPage1.Controls.Add(this.txtSafeCode);
             this.xtraTabPage1.Controls.Add(this.labelControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(179, 477);
@@ -212,10 +214,10 @@
             this.Name = "frmSafeList";
             this.Text = "Kasa Listesi";
             this.Load += new System.EventHandler(this.frmSafeList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtStockName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSafeName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStockCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSafeCode.Properties)).EndInit();
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -228,17 +230,17 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn StockBarcode;
-        private DevExpress.XtraGrid.Columns.GridColumn StockCode;
+        private DevExpress.XtraGrid.Columns.GridColumn Amount;
+        private DevExpress.XtraGrid.Columns.GridColumn SafeCode;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
-        private DevExpress.XtraEditors.TextEdit txtStockName;
+        private DevExpress.XtraEditors.TextEdit txtSafeName;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn StockName;
+        private DevExpress.XtraGrid.Columns.GridColumn SafeName;
         private DevExpress.XtraGrid.GridControl gridList;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtStockCode;
+        private DevExpress.XtraEditors.TextEdit txtSafeCode;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;

@@ -41,7 +41,7 @@ namespace PreAccountancy.Modul_Current
             {
                 SelectionID = int.Parse(gridView1.GetFocusedRowCellValue("ID").ToString());
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 SelectionID = -1;
             }

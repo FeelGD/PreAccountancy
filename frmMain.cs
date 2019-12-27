@@ -71,5 +71,15 @@ namespace PreAccountancy
         {
             Forms.SafeOpeningCard();
         }
+
+        private void barbtnSafeTransfer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.SafeTransfer();
+        }
+
+        private void barbtnSafeList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.SafeList();
+        }
     }
 }
