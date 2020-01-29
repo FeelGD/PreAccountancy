@@ -105,5 +105,11 @@ namespace PreAccountancy.Functions
             }
             return frmMain.Transfer;
         }
+        public void SafePayment(bool Open=false,int ID = -1)
+        {
+            Modul_Safe.frmSafePayment safePayment = new Modul_Safe.frmSafePayment();
+            if (Open) safePayment.Open(ID);
+            safePayment.ShowDialog();
+        }
     }
 }

@@ -39,19 +39,19 @@
             this.txtDate = new DevExpress.XtraEditors.DateEdit();
             this.txtCurrentCode = new DevExpress.XtraEditors.ButtonEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtAmount = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtDescription = new DevExpress.XtraEditors.MemoEdit();
+            this.txtProcessType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtSafeName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtDocumentNo = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txtProcessType = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -61,11 +61,11 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProcessType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocumentNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProcessType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl7
@@ -80,6 +80,7 @@
             // 
             this.txtCurrentName.Location = new System.Drawing.Point(95, 127);
             this.txtCurrentName.Name = "txtCurrentName";
+            this.txtCurrentName.Properties.ReadOnly = true;
             this.txtCurrentName.Size = new System.Drawing.Size(194, 20);
             this.txtCurrentName.TabIndex = 11;
             // 
@@ -99,6 +100,7 @@
             this.btnClose.Size = new System.Drawing.Size(113, 40);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Kapat";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -108,6 +110,7 @@
             this.btnDelete.Size = new System.Drawing.Size(113, 40);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Sil";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -117,6 +120,7 @@
             this.btnSave.Size = new System.Drawing.Size(113, 40);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Kaydet";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtSafeCode
             // 
@@ -124,8 +128,10 @@
             this.txtSafeCode.Name = "txtSafeCode";
             this.txtSafeCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtSafeCode.Properties.ReadOnly = true;
             this.txtSafeCode.Size = new System.Drawing.Size(194, 20);
             this.txtSafeCode.TabIndex = 5;
+            this.txtSafeCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtSafeCode_ButtonClick);
             // 
             // txtDate
             // 
@@ -151,8 +157,10 @@
             this.txtCurrentCode.Name = "txtCurrentCode";
             this.txtCurrentCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtCurrentCode.Properties.ReadOnly = true;
             this.txtCurrentCode.Size = new System.Drawing.Size(194, 20);
             this.txtCurrentCode.TabIndex = 9;
+            this.txtCurrentCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCurrentCode_ButtonClick);
             // 
             // groupControl2
             // 
@@ -170,6 +178,14 @@
             this.groupControl2.Size = new System.Drawing.Size(439, 218);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "İşlem Bilgileri";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(12, 61);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(52, 13);
+            this.labelControl10.TabIndex = 19;
+            this.labelControl10.Text = "İşlem türü:";
             // 
             // labelControl4
             // 
@@ -211,6 +227,20 @@
             this.txtDescription.Size = new System.Drawing.Size(325, 114);
             this.txtDescription.TabIndex = 13;
             // 
+            // txtProcessType
+            // 
+            this.txtProcessType.EditValue = "Kasa Tahsilat";
+            this.txtProcessType.Location = new System.Drawing.Point(95, 58);
+            this.txtProcessType.Name = "txtProcessType";
+            this.txtProcessType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtProcessType.Properties.Items.AddRange(new object[] {
+            "Kasa Tahsilat",
+            "Kasa Ödeme"});
+            this.txtProcessType.Size = new System.Drawing.Size(194, 20);
+            this.txtProcessType.TabIndex = 18;
+            this.txtProcessType.SelectedIndexChanged += new System.EventHandler(this.txtProcessType_SelectedIndexChanged);
+            // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(12, 78);
@@ -223,6 +253,7 @@
             // 
             this.txtSafeName.Location = new System.Drawing.Point(95, 75);
             this.txtSafeName.Name = "txtSafeName";
+            this.txtSafeName.Properties.ReadOnly = true;
             this.txtSafeName.Size = new System.Drawing.Size(194, 20);
             this.txtSafeName.TabIndex = 7;
             // 
@@ -271,28 +302,6 @@
             this.txtDocumentNo.Size = new System.Drawing.Size(194, 20);
             this.txtDocumentNo.TabIndex = 3;
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(12, 61);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(52, 13);
-            this.labelControl10.TabIndex = 19;
-            this.labelControl10.Text = "İşlem türü:";
-            // 
-            // txtProcessType
-            // 
-            this.txtProcessType.EditValue = "Kasa Tahsilat";
-            this.txtProcessType.Location = new System.Drawing.Point(95, 58);
-            this.txtProcessType.Name = "txtProcessType";
-            this.txtProcessType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtProcessType.Properties.Items.AddRange(new object[] {
-            "Kasa Tahsilat",
-            "Kasa Ödeme"});
-            this.txtProcessType.Size = new System.Drawing.Size(194, 20);
-            this.txtProcessType.TabIndex = 18;
-            this.txtProcessType.SelectedIndexChanged += new System.EventHandler(this.txtProcessType_SelectedIndexChanged);
-            // 
             // frmSafePayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,12 +324,12 @@
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProcessType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocumentNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProcessType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

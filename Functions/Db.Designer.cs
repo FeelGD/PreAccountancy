@@ -42,15 +42,15 @@ namespace PreAccountancy.Functions
     partial void InsertTBL_Current(TBL_Current instance);
     partial void UpdateTBL_Current(TBL_Current instance);
     partial void DeleteTBL_Current(TBL_Current instance);
-    partial void InsertTBL_CurrentMovement(TBL_CurrentMovement instance);
-    partial void UpdateTBL_CurrentMovement(TBL_CurrentMovement instance);
-    partial void DeleteTBL_CurrentMovement(TBL_CurrentMovement instance);
     partial void InsertTBL_Safe(TBL_Safe instance);
     partial void UpdateTBL_Safe(TBL_Safe instance);
     partial void DeleteTBL_Safe(TBL_Safe instance);
     partial void InsertTBL_SafeMovement(TBL_SafeMovement instance);
     partial void UpdateTBL_SafeMovement(TBL_SafeMovement instance);
     partial void DeleteTBL_SafeMovement(TBL_SafeMovement instance);
+    partial void InsertTBL_CurrentMovement(TBL_CurrentMovement instance);
+    partial void UpdateTBL_CurrentMovement(TBL_CurrentMovement instance);
+    partial void DeleteTBL_CurrentMovement(TBL_CurrentMovement instance);
     #endregion
 		
 		public DbDataContext() : 
@@ -115,14 +115,6 @@ namespace PreAccountancy.Functions
 			}
 		}
 		
-		public System.Data.Linq.Table<TBL_CurrentMovement> TBL_CurrentMovements
-		{
-			get
-			{
-				return this.GetTable<TBL_CurrentMovement>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TBL_Safe> TBL_Safes
 		{
 			get
@@ -136,6 +128,14 @@ namespace PreAccountancy.Functions
 			get
 			{
 				return this.GetTable<TBL_SafeMovement>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_CurrentMovement> TBL_CurrentMovements
+		{
+			get
+			{
+				return this.GetTable<TBL_CurrentMovement>();
 			}
 		}
 	}
@@ -417,7 +417,7 @@ namespace PreAccountancy.Functions
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPicture", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPicture", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary StockPicture
 		{
 			get
@@ -1564,332 +1564,6 @@ namespace PreAccountancy.Functions
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_CurrentMovement")]
-	public partial class TBL_CurrentMovement : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _CurrentID;
-		
-		private string _DocumentType;
-		
-		private System.Nullable<int> _DocumentID;
-		
-		private System.Nullable<decimal> _Debt;
-		
-		private System.Nullable<decimal> _Credit;
-		
-		private System.Nullable<System.DateTime> _Date;
-		
-		private string _Tpye;
-		
-		private System.Nullable<System.DateTime> _SaveDate;
-		
-		private System.Nullable<int> _SaveUser;
-		
-		private System.Nullable<System.DateTime> _EditDate;
-		
-		private System.Nullable<int> _EditUser;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnCurrentIDChanging(System.Nullable<int> value);
-    partial void OnCurrentIDChanged();
-    partial void OnDocumentTypeChanging(string value);
-    partial void OnDocumentTypeChanged();
-    partial void OnDocumentIDChanging(System.Nullable<int> value);
-    partial void OnDocumentIDChanged();
-    partial void OnDebtChanging(System.Nullable<decimal> value);
-    partial void OnDebtChanged();
-    partial void OnCreditChanging(System.Nullable<decimal> value);
-    partial void OnCreditChanged();
-    partial void OnDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateChanged();
-    partial void OnTpyeChanging(string value);
-    partial void OnTpyeChanged();
-    partial void OnSaveDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnSaveDateChanged();
-    partial void OnSaveUserChanging(System.Nullable<int> value);
-    partial void OnSaveUserChanged();
-    partial void OnEditDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnEditDateChanged();
-    partial void OnEditUserChanging(System.Nullable<int> value);
-    partial void OnEditUserChanged();
-    #endregion
-		
-		public TBL_CurrentMovement()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentID", DbType="Int")]
-		public System.Nullable<int> CurrentID
-		{
-			get
-			{
-				return this._CurrentID;
-			}
-			set
-			{
-				if ((this._CurrentID != value))
-				{
-					this.OnCurrentIDChanging(value);
-					this.SendPropertyChanging();
-					this._CurrentID = value;
-					this.SendPropertyChanged("CurrentID");
-					this.OnCurrentIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentType", DbType="NVarChar(50)")]
-		public string DocumentType
-		{
-			get
-			{
-				return this._DocumentType;
-			}
-			set
-			{
-				if ((this._DocumentType != value))
-				{
-					this.OnDocumentTypeChanging(value);
-					this.SendPropertyChanging();
-					this._DocumentType = value;
-					this.SendPropertyChanged("DocumentType");
-					this.OnDocumentTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentID", DbType="Int")]
-		public System.Nullable<int> DocumentID
-		{
-			get
-			{
-				return this._DocumentID;
-			}
-			set
-			{
-				if ((this._DocumentID != value))
-				{
-					this.OnDocumentIDChanging(value);
-					this.SendPropertyChanging();
-					this._DocumentID = value;
-					this.SendPropertyChanged("DocumentID");
-					this.OnDocumentIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Debt", DbType="Decimal(18,2)")]
-		public System.Nullable<decimal> Debt
-		{
-			get
-			{
-				return this._Debt;
-			}
-			set
-			{
-				if ((this._Debt != value))
-				{
-					this.OnDebtChanging(value);
-					this.SendPropertyChanging();
-					this._Debt = value;
-					this.SendPropertyChanged("Debt");
-					this.OnDebtChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Credit", DbType="Decimal(18,2)")]
-		public System.Nullable<decimal> Credit
-		{
-			get
-			{
-				return this._Credit;
-			}
-			set
-			{
-				if ((this._Credit != value))
-				{
-					this.OnCreditChanging(value);
-					this.SendPropertyChanging();
-					this._Credit = value;
-					this.SendPropertyChanged("Credit");
-					this.OnCreditChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tpye", DbType="NVarChar(50)")]
-		public string Tpye
-		{
-			get
-			{
-				return this._Tpye;
-			}
-			set
-			{
-				if ((this._Tpye != value))
-				{
-					this.OnTpyeChanging(value);
-					this.SendPropertyChanging();
-					this._Tpye = value;
-					this.SendPropertyChanged("Tpye");
-					this.OnTpyeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> SaveDate
-		{
-			get
-			{
-				return this._SaveDate;
-			}
-			set
-			{
-				if ((this._SaveDate != value))
-				{
-					this.OnSaveDateChanging(value);
-					this.SendPropertyChanging();
-					this._SaveDate = value;
-					this.SendPropertyChanged("SaveDate");
-					this.OnSaveDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveUser", DbType="Int")]
-		public System.Nullable<int> SaveUser
-		{
-			get
-			{
-				return this._SaveUser;
-			}
-			set
-			{
-				if ((this._SaveUser != value))
-				{
-					this.OnSaveUserChanging(value);
-					this.SendPropertyChanging();
-					this._SaveUser = value;
-					this.SendPropertyChanged("SaveUser");
-					this.OnSaveUserChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> EditDate
-		{
-			get
-			{
-				return this._EditDate;
-			}
-			set
-			{
-				if ((this._EditDate != value))
-				{
-					this.OnEditDateChanging(value);
-					this.SendPropertyChanging();
-					this._EditDate = value;
-					this.SendPropertyChanged("EditDate");
-					this.OnEditDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditUser", DbType="Int")]
-		public System.Nullable<int> EditUser
-		{
-			get
-			{
-				return this._EditUser;
-			}
-			set
-			{
-				if ((this._EditUser != value))
-				{
-					this.OnEditUserChanging(value);
-					this.SendPropertyChanging();
-					this._EditUser = value;
-					this.SendPropertyChanged("EditUser");
-					this.OnEditUserChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_Safe")]
 	public partial class TBL_Safe : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2469,6 +2143,356 @@ namespace PreAccountancy.Functions
 					this._EditUser = value;
 					this.SendPropertyChanged("EditUser");
 					this.OnEditUserChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_CurrentMovement")]
+	public partial class TBL_CurrentMovement : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _CurrentID;
+		
+		private string _DocumentType;
+		
+		private System.Nullable<int> _DocumentID;
+		
+		private System.Nullable<decimal> _Debt;
+		
+		private System.Nullable<decimal> _Credit;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Type;
+		
+		private System.Nullable<System.DateTime> _SaveDate;
+		
+		private System.Nullable<int> _SaveUser;
+		
+		private System.Nullable<System.DateTime> _EditDate;
+		
+		private System.Nullable<int> _EditUser;
+		
+		private string _Description;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCurrentIDChanging(System.Nullable<int> value);
+    partial void OnCurrentIDChanged();
+    partial void OnDocumentTypeChanging(string value);
+    partial void OnDocumentTypeChanged();
+    partial void OnDocumentIDChanging(System.Nullable<int> value);
+    partial void OnDocumentIDChanged();
+    partial void OnDebtChanging(System.Nullable<decimal> value);
+    partial void OnDebtChanged();
+    partial void OnCreditChanging(System.Nullable<decimal> value);
+    partial void OnCreditChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnSaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnSaveDateChanged();
+    partial void OnSaveUserChanging(System.Nullable<int> value);
+    partial void OnSaveUserChanged();
+    partial void OnEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEditDateChanged();
+    partial void OnEditUserChanging(System.Nullable<int> value);
+    partial void OnEditUserChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
+		public TBL_CurrentMovement()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentID", DbType="Int")]
+		public System.Nullable<int> CurrentID
+		{
+			get
+			{
+				return this._CurrentID;
+			}
+			set
+			{
+				if ((this._CurrentID != value))
+				{
+					this.OnCurrentIDChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentID = value;
+					this.SendPropertyChanged("CurrentID");
+					this.OnCurrentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentType", DbType="NVarChar(50)")]
+		public string DocumentType
+		{
+			get
+			{
+				return this._DocumentType;
+			}
+			set
+			{
+				if ((this._DocumentType != value))
+				{
+					this.OnDocumentTypeChanging(value);
+					this.SendPropertyChanging();
+					this._DocumentType = value;
+					this.SendPropertyChanged("DocumentType");
+					this.OnDocumentTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentID", DbType="Int")]
+		public System.Nullable<int> DocumentID
+		{
+			get
+			{
+				return this._DocumentID;
+			}
+			set
+			{
+				if ((this._DocumentID != value))
+				{
+					this.OnDocumentIDChanging(value);
+					this.SendPropertyChanging();
+					this._DocumentID = value;
+					this.SendPropertyChanged("DocumentID");
+					this.OnDocumentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Debt", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Debt
+		{
+			get
+			{
+				return this._Debt;
+			}
+			set
+			{
+				if ((this._Debt != value))
+				{
+					this.OnDebtChanging(value);
+					this.SendPropertyChanging();
+					this._Debt = value;
+					this.SendPropertyChanged("Debt");
+					this.OnDebtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Credit", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Credit
+		{
+			get
+			{
+				return this._Credit;
+			}
+			set
+			{
+				if ((this._Credit != value))
+				{
+					this.OnCreditChanging(value);
+					this.SendPropertyChanging();
+					this._Credit = value;
+					this.SendPropertyChanged("Credit");
+					this.OnCreditChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SaveDate
+		{
+			get
+			{
+				return this._SaveDate;
+			}
+			set
+			{
+				if ((this._SaveDate != value))
+				{
+					this.OnSaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._SaveDate = value;
+					this.SendPropertyChanged("SaveDate");
+					this.OnSaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveUser", DbType="Int")]
+		public System.Nullable<int> SaveUser
+		{
+			get
+			{
+				return this._SaveUser;
+			}
+			set
+			{
+				if ((this._SaveUser != value))
+				{
+					this.OnSaveUserChanging(value);
+					this.SendPropertyChanging();
+					this._SaveUser = value;
+					this.SendPropertyChanged("SaveUser");
+					this.OnSaveUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EditDate
+		{
+			get
+			{
+				return this._EditDate;
+			}
+			set
+			{
+				if ((this._EditDate != value))
+				{
+					this.OnEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._EditDate = value;
+					this.SendPropertyChanged("EditDate");
+					this.OnEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditUser", DbType="Int")]
+		public System.Nullable<int> EditUser
+		{
+			get
+			{
+				return this._EditUser;
+			}
+			set
+			{
+				if ((this._EditUser != value))
+				{
+					this.OnEditUserChanging(value);
+					this.SendPropertyChanging();
+					this._EditUser = value;
+					this.SendPropertyChanged("EditUser");
+					this.OnEditUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}

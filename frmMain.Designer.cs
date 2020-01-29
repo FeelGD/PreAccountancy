@@ -295,6 +295,7 @@
             this.barbtnSafePayment.LargeWidth = 120;
             this.barbtnSafePayment.Name = "barbtnSafePayment";
             this.barbtnSafePayment.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnSafePayment.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSafePayment_ItemClick);
             // 
             // barbtnSalesInvoice
             // 

@@ -69,22 +69,6 @@
       <Column Name="CurrentEditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TBL_CurrentMovement" Member="TBL_CurrentMovements">
-    <Type Name="TBL_CurrentMovement">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CurrentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DocumentType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DocumentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Debt" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Tpye" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SaveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="SaveUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="EditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TBL_Safe" Member="TBL_Safes">
     <Type Name="TBL_Safe">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -113,6 +97,23 @@
       <Column Name="SaveUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="EditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="EditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_CurrentMovement" Member="TBL_CurrentMovements">
+    <Type Name="TBL_CurrentMovement">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CurrentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocumentType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Debt" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SaveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SaveUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
 </Database>
