@@ -63,7 +63,7 @@ namespace PreAccountancy.Modul_Bank
             CurrentID = -1;
             ProcessID = -1;
             frmMain.Transfer = -1;
-
+             
         }
         void OpenBank(int ID)
         {
