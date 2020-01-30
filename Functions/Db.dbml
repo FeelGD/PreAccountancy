@@ -116,4 +116,41 @@
       <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
+  <Table Name="dbo.VW_SAFEMOVEMENT" Member="VW_SAFEMOVEMENTs">
+    <Type Name="VW_SAFEMOVEMENT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SafeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SafeCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SafeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Inflow" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Outflow" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Desciption" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SAFESTATUS" Member="VW_SAFESTATUS">
+    <Type Name="VW_SAFESTATUS">
+      <Column Name="SafeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Inflow" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Outflow" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SAFELIST" Member="VW_SAFELISTs">
+    <Type Name="VW_SAFELIST">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SafeCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SafeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Inflow" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Outflow" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

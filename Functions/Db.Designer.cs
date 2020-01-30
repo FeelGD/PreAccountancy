@@ -138,6 +138,30 @@ namespace PreAccountancy.Functions
 				return this.GetTable<TBL_CurrentMovement>();
 			}
 		}
+		
+		public System.Data.Linq.Table<VW_SAFEMOVEMENT> VW_SAFEMOVEMENTs
+		{
+			get
+			{
+				return this.GetTable<VW_SAFEMOVEMENT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_SAFESTATUS> VW_SAFESTATUS
+		{
+			get
+			{
+				return this.GetTable<VW_SAFESTATUS>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_SAFELIST> VW_SAFELISTs
+		{
+			get
+			{
+				return this.GetTable<VW_SAFELIST>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_Stock")]
@@ -417,7 +441,7 @@ namespace PreAccountancy.Functions
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPicture", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockPicture", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary StockPicture
 		{
 			get
@@ -2514,6 +2538,483 @@ namespace PreAccountancy.Functions
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_SAFEMOVEMENT")]
+	public partial class VW_SAFEMOVEMENT
+	{
+		
+		private int _ID;
+		
+		private System.Nullable<int> _SafeID;
+		
+		private System.Nullable<int> _CurrentID;
+		
+		private string _SafeCode;
+		
+		private string _SafeName;
+		
+		private string _CurrentCode;
+		
+		private string _CurrentName;
+		
+		private string _DocumentNo;
+		
+		private string _DocumentType;
+		
+		private System.Nullable<int> _DocumentID;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private System.Nullable<decimal> _Inflow;
+		
+		private System.Nullable<decimal> _Outflow;
+		
+		private string _Desciption;
+		
+		public VW_SAFEMOVEMENT()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeID", DbType="Int")]
+		public System.Nullable<int> SafeID
+		{
+			get
+			{
+				return this._SafeID;
+			}
+			set
+			{
+				if ((this._SafeID != value))
+				{
+					this._SafeID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentID", DbType="Int")]
+		public System.Nullable<int> CurrentID
+		{
+			get
+			{
+				return this._CurrentID;
+			}
+			set
+			{
+				if ((this._CurrentID != value))
+				{
+					this._CurrentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeCode", DbType="NVarChar(50)")]
+		public string SafeCode
+		{
+			get
+			{
+				return this._SafeCode;
+			}
+			set
+			{
+				if ((this._SafeCode != value))
+				{
+					this._SafeCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeName", DbType="NVarChar(50)")]
+		public string SafeName
+		{
+			get
+			{
+				return this._SafeName;
+			}
+			set
+			{
+				if ((this._SafeName != value))
+				{
+					this._SafeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentCode", DbType="NVarChar(50)")]
+		public string CurrentCode
+		{
+			get
+			{
+				return this._CurrentCode;
+			}
+			set
+			{
+				if ((this._CurrentCode != value))
+				{
+					this._CurrentCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentName", DbType="NVarChar(50)")]
+		public string CurrentName
+		{
+			get
+			{
+				return this._CurrentName;
+			}
+			set
+			{
+				if ((this._CurrentName != value))
+				{
+					this._CurrentName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentNo", DbType="NVarChar(50)")]
+		public string DocumentNo
+		{
+			get
+			{
+				return this._DocumentNo;
+			}
+			set
+			{
+				if ((this._DocumentNo != value))
+				{
+					this._DocumentNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentType", DbType="NVarChar(50)")]
+		public string DocumentType
+		{
+			get
+			{
+				return this._DocumentType;
+			}
+			set
+			{
+				if ((this._DocumentType != value))
+				{
+					this._DocumentType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentID", DbType="Int")]
+		public System.Nullable<int> DocumentID
+		{
+			get
+			{
+				return this._DocumentID;
+			}
+			set
+			{
+				if ((this._DocumentID != value))
+				{
+					this._DocumentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inflow", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Inflow
+		{
+			get
+			{
+				return this._Inflow;
+			}
+			set
+			{
+				if ((this._Inflow != value))
+				{
+					this._Inflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Outflow", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Outflow
+		{
+			get
+			{
+				return this._Outflow;
+			}
+			set
+			{
+				if ((this._Outflow != value))
+				{
+					this._Outflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desciption", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Desciption
+		{
+			get
+			{
+				return this._Desciption;
+			}
+			set
+			{
+				if ((this._Desciption != value))
+				{
+					this._Desciption = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_SAFESTATUS")]
+	public partial class VW_SAFESTATUS
+	{
+		
+		private System.Nullable<int> _SafeID;
+		
+		private System.Nullable<decimal> _Inflow;
+		
+		private System.Nullable<decimal> _Outflow;
+		
+		private System.Nullable<decimal> _Balance;
+		
+		public VW_SAFESTATUS()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeID", DbType="Int")]
+		public System.Nullable<int> SafeID
+		{
+			get
+			{
+				return this._SafeID;
+			}
+			set
+			{
+				if ((this._SafeID != value))
+				{
+					this._SafeID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inflow", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Inflow
+		{
+			get
+			{
+				return this._Inflow;
+			}
+			set
+			{
+				if ((this._Inflow != value))
+				{
+					this._Inflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Outflow", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Outflow
+		{
+			get
+			{
+				return this._Outflow;
+			}
+			set
+			{
+				if ((this._Outflow != value))
+				{
+					this._Outflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_SAFELIST")]
+	public partial class VW_SAFELIST
+	{
+		
+		private int _ID;
+		
+		private string _SafeCode;
+		
+		private string _SafeName;
+		
+		private string _Description;
+		
+		private System.Nullable<decimal> _Inflow;
+		
+		private System.Nullable<decimal> _Outflow;
+		
+		private System.Nullable<decimal> _Balance;
+		
+		public VW_SAFELIST()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeCode", DbType="NVarChar(50)")]
+		public string SafeCode
+		{
+			get
+			{
+				return this._SafeCode;
+			}
+			set
+			{
+				if ((this._SafeCode != value))
+				{
+					this._SafeCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeName", DbType="NVarChar(50)")]
+		public string SafeName
+		{
+			get
+			{
+				return this._SafeName;
+			}
+			set
+			{
+				if ((this._SafeName != value))
+				{
+					this._SafeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inflow", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Inflow
+		{
+			get
+			{
+				return this._Inflow;
+			}
+			set
+			{
+				if ((this._Inflow != value))
+				{
+					this._Inflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Outflow", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Outflow
+		{
+			get
+			{
+				return this._Outflow;
+			}
+			set
+			{
+				if ((this._Outflow != value))
+				{
+					this._Outflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
+				}
 			}
 		}
 	}

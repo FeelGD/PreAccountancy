@@ -56,6 +56,7 @@
             this.barbtnSalesSlip = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnPurshaseSlip = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barbtnSafeMovement = new DevExpress.XtraBars.BarButtonItem();
             this.PageStock = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -108,9 +109,10 @@
             this.barbtnPurshaseRefundInvoice,
             this.barbtnSalesSlip,
             this.barbtnPurshaseSlip,
-            this.barStaticItem1});
+            this.barStaticItem1,
+            this.barbtnSafeMovement});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 27;
+            this.ribbonControl1.MaxItemId = 28;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageStock,
@@ -357,6 +359,15 @@
             this.barStaticItem1.Id = 24;
             this.barStaticItem1.Name = "barStaticItem1";
             // 
+            // barbtnSafeMovement
+            // 
+            this.barbtnSafeMovement.Caption = "Kasa hareketleri";
+            this.barbtnSafeMovement.Id = 27;
+            this.barbtnSafeMovement.ImageOptions.Image = global::PreAccountancy.Properties.Resources.Kasa_Hareket32x32;
+            this.barbtnSafeMovement.Name = "barbtnSafeMovement";
+            this.barbtnSafeMovement.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnSafeMovement.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSafeMovement_ItemClick);
+            // 
             // PageStock
             // 
             this.PageStock.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -423,6 +434,7 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barbtnSafeList);
             this.ribbonPageGroup4.ItemLinks.Add(this.barbtnSafeTransfer);
             this.ribbonPageGroup4.ItemLinks.Add(this.barbtnSafePayment);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barbtnSafeMovement);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Kasa İşlemleri";
             // 
@@ -467,6 +479,7 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager1.MdiParent = this;
+            this.xtraTabbedMdiManager1.UseFormIconAsPageImage = DevExpress.Utils.DefaultBoolean.True;
             // 
             // timer1
             // 
@@ -483,6 +496,7 @@
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Ana Sayfa";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
@@ -534,6 +548,7 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarHeaderItem clock;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraBars.BarButtonItem barbtnSafeMovement;
     }
 }
 

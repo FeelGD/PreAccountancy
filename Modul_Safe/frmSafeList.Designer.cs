@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSafeList));
-            this.Amount = new DevExpress.XtraGrid.Columns.GridColumn();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            this.Balance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SafeCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
@@ -37,6 +38,9 @@
             this.txtSafeName = new DevExpress.XtraEditors.TextEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.SafeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Inflow = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Outflow = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridList = new DevExpress.XtraGrid.GridControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtSafeCode = new DevExpress.XtraEditors.TextEdit();
@@ -55,16 +59,17 @@
             this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Amount
+            // Balance
             // 
-            this.Amount.Caption = "Bakiye";
-            this.Amount.FieldName = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.OptionsColumn.AllowEdit = false;
-            this.Amount.OptionsColumn.AllowFocus = false;
-            this.Amount.OptionsColumn.FixedWidth = true;
-            this.Amount.Visible = true;
-            this.Amount.VisibleIndex = 2;
+            this.Balance.Caption = "Bakiye";
+            this.Balance.FieldName = "Balance";
+            this.Balance.Name = "Balance";
+            this.Balance.OptionsColumn.AllowEdit = false;
+            this.Balance.OptionsColumn.AllowFocus = false;
+            this.Balance.OptionsColumn.FixedWidth = true;
+            this.Balance.Visible = true;
+            this.Balance.VisibleIndex = 5;
+            this.Balance.Width = 80;
             // 
             // SafeCode
             // 
@@ -90,6 +95,7 @@
             this.btnClear.Size = new System.Drawing.Size(79, 41);
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Temizle";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -114,7 +120,13 @@
             this.ID,
             this.SafeCode,
             this.SafeName,
-            this.Amount});
+            this.Balance,
+            this.Inflow,
+            this.Outflow,
+            this.Description});
+            gridFormatRule1.Name = "Format0";
+            gridFormatRule1.Rule = null;
+            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gridList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -129,6 +141,42 @@
             this.SafeName.OptionsColumn.FixedWidth = true;
             this.SafeName.Visible = true;
             this.SafeName.VisibleIndex = 1;
+            this.SafeName.Width = 150;
+            // 
+            // Inflow
+            // 
+            this.Inflow.Caption = "Giriş";
+            this.Inflow.FieldName = "Inflow";
+            this.Inflow.Name = "Inflow";
+            this.Inflow.OptionsColumn.AllowEdit = false;
+            this.Inflow.OptionsColumn.AllowFocus = false;
+            this.Inflow.OptionsColumn.FixedWidth = true;
+            this.Inflow.Visible = true;
+            this.Inflow.VisibleIndex = 3;
+            this.Inflow.Width = 80;
+            // 
+            // Outflow
+            // 
+            this.Outflow.Caption = "Çıkış";
+            this.Outflow.FieldName = "Outflow";
+            this.Outflow.Name = "Outflow";
+            this.Outflow.OptionsColumn.AllowEdit = false;
+            this.Outflow.OptionsColumn.AllowFocus = false;
+            this.Outflow.OptionsColumn.FixedWidth = true;
+            this.Outflow.Visible = true;
+            this.Outflow.VisibleIndex = 4;
+            this.Outflow.Width = 80;
+            // 
+            // Description
+            // 
+            this.Description.Caption = "Açıklama";
+            this.Description.FieldName = "Description";
+            this.Description.Name = "Description";
+            this.Description.OptionsColumn.AllowEdit = false;
+            this.Description.OptionsColumn.AllowFocus = false;
+            this.Description.Visible = true;
+            this.Description.VisibleIndex = 2;
+            this.Description.Width = 266;
             // 
             // gridList
             // 
@@ -230,7 +278,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn Amount;
+        private DevExpress.XtraGrid.Columns.GridColumn Balance;
         private DevExpress.XtraGrid.Columns.GridColumn SafeCode;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraEditors.SimpleButton btnClear;
@@ -245,5 +293,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn Inflow;
+        private DevExpress.XtraGrid.Columns.GridColumn Outflow;
+        private DevExpress.XtraGrid.Columns.GridColumn Description;
     }
 }

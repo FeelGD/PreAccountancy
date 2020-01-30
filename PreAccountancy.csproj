@@ -144,6 +144,12 @@
     <Compile Include="Modul_Safe\frmSafeList.Designer.cs">
       <DependentUpon>frmSafeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modul_Safe\frmSafeMovement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Safe\frmSafeMovement.Designer.cs">
+      <DependentUpon>frmSafeMovement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modul_Safe\frmSafeOpeningCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <EmbeddedResource Include="Modul_Current\frmCurrentList.resx">
       <DependentUpon>frmCurrentList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Current\frmCurrentMovement.resx">
+      <DependentUpon>frmCurrentMovement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modul_Current\frmCurrentOpeningCard.resx">
       <DependentUpon>frmCurrentOpeningCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modul_Safe\frmSafeList.resx">
       <DependentUpon>frmSafeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Safe\frmSafeMovement.resx">
+      <DependentUpon>frmSafeMovement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modul_Safe\frmSafeOpeningCard.resx">
       <DependentUpon>frmSafeOpeningCard.cs</DependentUpon>

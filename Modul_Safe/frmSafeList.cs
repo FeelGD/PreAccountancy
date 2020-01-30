@@ -29,12 +29,12 @@ namespace PreAccountancy.Modul_Safe
         }
         void Lists()
         {
-            var list = from s in DB.TBL_Safes
+            var list = from s in DB.VW_SAFELISTs
                        where s.SafeCode.Contains(txtSafeCode.Text) && s.SafeName.Contains(txtSafeName.Text)
                        select s;
             gridList.DataSource = list;
 
-        }
+        } 
         new void Select()
         {
             try
@@ -60,6 +60,16 @@ namespace PreAccountancy.Modul_Safe
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            Lists();
+        }
+        void Clear()
+        {
+            txtSafeCode.Text = "";
+            txtSafeName.Text = "";
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
             Lists();
         }
     }

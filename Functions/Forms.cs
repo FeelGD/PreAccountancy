@@ -111,5 +111,12 @@ namespace PreAccountancy.Functions
             if (Open) safePayment.Open(ID);
             safePayment.ShowDialog();
         }
+        public void SafeMovement(bool Open=false, int ID = -1)
+        {
+            Modul_Safe.frmSafeMovement safeMovement = new Modul_Safe.frmSafeMovement();
+            safeMovement.MdiParent = frmMain.ActiveForm;
+            if (Open) safeMovement.Open(ID);
+            safeMovement.Show();
+        }
     }
 }

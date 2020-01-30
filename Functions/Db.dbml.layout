@@ -44,5 +44,23 @@
         <elementListCompartment Id="2d8891bd-75ce-4881-a6d6-cf93226c7fb7" absoluteBounds="3.64, 2.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="2fc5c0da-fef4-4c40-b7ed-f3f71f5c2278" isExpanded="false" absoluteBounds="3.375, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DbDataContext/VW_SAFEMOVEMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49585746-b4af-457c-9224-acf08300c03c" absoluteBounds="3.39, 4.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bfcadbeb-d8a0-452d-a947-c1152a80bd1d" isExpanded="false" absoluteBounds="3.375, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/DbDataContext/VW_SAFESTATUS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73d85717-0df6-47f5-a906-48d8515ec337" absoluteBounds="3.3899999999999997, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8cdbcc49-b911-4550-8260-e0ac76d0bde6" isExpanded="false" absoluteBounds="3.375, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/DbDataContext/VW_SAFELIST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f54fd8d-50bb-4c3b-8a2d-24ddafe2178d" absoluteBounds="3.3899999999999997, 4.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

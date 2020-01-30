@@ -86,5 +86,10 @@ namespace PreAccountancy
         {
             Forms.SafePayment();
         }
+
+        private void barbtnSafeMovement_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.SafeMovement();
+        }
     }
 }
