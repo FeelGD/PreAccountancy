@@ -91,5 +91,25 @@ namespace PreAccountancy
         {
             Forms.SafeMovement();
         }
+
+        private void barbtnBankOpeningCard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.BankOpeningCard();
+        }
+
+        private void barbtnBankProcess_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.BankProcess();
+        }
+
+        private void barbtnBankList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.BankList();
+        }
+
+        private void barbtnMoneyTransfer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.BankTransfer();
+        }
     }
 }

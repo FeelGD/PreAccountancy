@@ -62,5 +62,17 @@
         <elementListCompartment Id="1f54fd8d-50bb-4c3b-8a2d-24ddafe2178d" absoluteBounds="3.3899999999999997, 4.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="bf9d46d6-c2fe-4a81-b7ff-17f586399e91" isExpanded="false" absoluteBounds="3.25, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/DbDataContext/TBL_BANKMOVEMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6235946a-e75e-4941-b96b-a4ce16037a5f" absoluteBounds="3.265, 6.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9203a14d-9df7-4420-8da9-c9e2dec4d237" isExpanded="false" absoluteBounds="3.25, 5.125, 2, 0.45">
+      <DataClassMoniker Name="/DbDataContext/TBL_BANK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3fe197b-91ed-44a0-a1f6-f19db1b6795c" absoluteBounds="3.265, 5.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

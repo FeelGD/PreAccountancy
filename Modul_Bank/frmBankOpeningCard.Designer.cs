@@ -41,7 +41,7 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtIBAN = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtAccountNumber = new DevExpress.XtraEditors.TextEdit();
+            this.txtAccountNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtAccountType = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -56,8 +56,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BankName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.BankAccountType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.BankBalance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AccountName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Balance = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthorizedMail.Properties)).BeginInit();
@@ -65,7 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtBankBranchPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBankBranch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIBAN.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAccountNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAccountNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAccountType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBankName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBankAddress.Properties)).BeginInit();
@@ -88,7 +88,7 @@
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.txtIBAN);
             this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.txtAccountNumber);
+            this.groupControl1.Controls.Add(this.txtAccountNo);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.txtAccountType);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -110,7 +110,7 @@
             this.txtAuthorizedMail.Location = new System.Drawing.Point(117, 266);
             this.txtAuthorizedMail.Name = "txtAuthorizedMail";
             this.txtAuthorizedMail.Size = new System.Drawing.Size(237, 20);
-            this.txtAuthorizedMail.TabIndex = 20;
+            this.txtAuthorizedMail.TabIndex = 8;
             // 
             // labelControl9
             // 
@@ -125,7 +125,7 @@
             this.txtAuthorized.Location = new System.Drawing.Point(117, 240);
             this.txtAuthorized.Name = "txtAuthorized";
             this.txtAuthorized.Size = new System.Drawing.Size(237, 20);
-            this.txtAuthorized.TabIndex = 18;
+            this.txtAuthorized.TabIndex = 7;
             // 
             // labelControl8
             // 
@@ -148,7 +148,7 @@
             this.txtBankBranchPhone.Location = new System.Drawing.Point(117, 153);
             this.txtBankBranchPhone.Name = "txtBankBranchPhone";
             this.txtBankBranchPhone.Size = new System.Drawing.Size(237, 20);
-            this.txtBankBranchPhone.TabIndex = 14;
+            this.txtBankBranchPhone.TabIndex = 5;
             // 
             // labelControl6
             // 
@@ -163,7 +163,7 @@
             this.txtBankBranch.Location = new System.Drawing.Point(117, 127);
             this.txtBankBranch.Name = "txtBankBranch";
             this.txtBankBranch.Size = new System.Drawing.Size(237, 20);
-            this.txtBankBranch.TabIndex = 12;
+            this.txtBankBranch.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -178,7 +178,7 @@
             this.txtIBAN.Location = new System.Drawing.Point(117, 101);
             this.txtIBAN.Name = "txtIBAN";
             this.txtIBAN.Size = new System.Drawing.Size(237, 20);
-            this.txtIBAN.TabIndex = 10;
+            this.txtIBAN.TabIndex = 3;
             // 
             // labelControl4
             // 
@@ -188,12 +188,12 @@
             this.labelControl4.TabIndex = 9;
             this.labelControl4.Text = "IBAN:";
             // 
-            // txtAccountNumber
+            // txtAccountNo
             // 
-            this.txtAccountNumber.Location = new System.Drawing.Point(117, 75);
-            this.txtAccountNumber.Name = "txtAccountNumber";
-            this.txtAccountNumber.Size = new System.Drawing.Size(237, 20);
-            this.txtAccountNumber.TabIndex = 8;
+            this.txtAccountNo.Location = new System.Drawing.Point(117, 75);
+            this.txtAccountNo.Name = "txtAccountNo";
+            this.txtAccountNo.Size = new System.Drawing.Size(237, 20);
+            this.txtAccountNo.TabIndex = 2;
             // 
             // labelControl3
             // 
@@ -208,7 +208,7 @@
             this.txtAccountType.Location = new System.Drawing.Point(117, 49);
             this.txtAccountType.Name = "txtAccountType";
             this.txtAccountType.Size = new System.Drawing.Size(237, 20);
-            this.txtAccountType.TabIndex = 6;
+            this.txtAccountType.TabIndex = 1;
             // 
             // labelControl2
             // 
@@ -223,7 +223,7 @@
             this.txtBankName.Location = new System.Drawing.Point(117, 23);
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.Size = new System.Drawing.Size(237, 20);
-            this.txtBankName.TabIndex = 4;
+            this.txtBankName.TabIndex = 0;
             // 
             // labelControl1
             // 
@@ -239,8 +239,9 @@
             this.btnClose.Location = new System.Drawing.Point(370, 115);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(83, 40);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Kapat";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -248,8 +249,9 @@
             this.btnDelete.Location = new System.Drawing.Point(370, 69);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(83, 40);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Sil";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -257,15 +259,16 @@
             this.btnSave.Location = new System.Drawing.Point(370, 23);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(83, 40);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Kaydet";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtBankAddress
             // 
             this.txtBankAddress.Location = new System.Drawing.Point(117, 179);
             this.txtBankAddress.Name = "txtBankAddress";
             this.txtBankAddress.Size = new System.Drawing.Size(237, 55);
-            this.txtBankAddress.TabIndex = 16;
+            this.txtBankAddress.TabIndex = 6;
             // 
             // groupControl3
             // 
@@ -274,8 +277,8 @@
             this.groupControl3.Location = new System.Drawing.Point(0, 292);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(465, 161);
-            this.groupControl3.TabIndex = 4;
-            this.groupControl3.Text = "groupControl3";
+            this.groupControl3.TabIndex = 1;
+            this.groupControl3.Text = "Banka Listesi";
             // 
             // gridControl1
             // 
@@ -287,14 +290,15 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.BankName,
-            this.BankAccountType,
-            this.BankBalance});
+            this.AccountName,
+            this.Balance});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -310,28 +314,34 @@
             this.BankName.Caption = "Banka Adı";
             this.BankName.FieldName = "BankName";
             this.BankName.Name = "BankName";
+            this.BankName.OptionsColumn.AllowEdit = false;
+            this.BankName.OptionsColumn.AllowFocus = false;
             this.BankName.OptionsColumn.FixedWidth = true;
             this.BankName.Visible = true;
             this.BankName.VisibleIndex = 0;
             // 
-            // BankAccountType
+            // AccountName
             // 
-            this.BankAccountType.Caption = "Hesap Türü";
-            this.BankAccountType.FieldName = "BankAccountType";
-            this.BankAccountType.Name = "BankAccountType";
-            this.BankAccountType.OptionsColumn.FixedWidth = true;
-            this.BankAccountType.Visible = true;
-            this.BankAccountType.VisibleIndex = 1;
-            this.BankAccountType.Width = 100;
+            this.AccountName.Caption = "Hesap Adı";
+            this.AccountName.FieldName = "AccountName";
+            this.AccountName.Name = "AccountName";
+            this.AccountName.OptionsColumn.AllowEdit = false;
+            this.AccountName.OptionsColumn.AllowFocus = false;
+            this.AccountName.OptionsColumn.FixedWidth = true;
+            this.AccountName.Visible = true;
+            this.AccountName.VisibleIndex = 1;
+            this.AccountName.Width = 100;
             // 
-            // BankBalance
+            // Balance
             // 
-            this.BankBalance.Caption = "Bakiye";
-            this.BankBalance.FieldName = "BankBalance";
-            this.BankBalance.Name = "BankBalance";
-            this.BankBalance.OptionsColumn.FixedWidth = true;
-            this.BankBalance.Visible = true;
-            this.BankBalance.VisibleIndex = 2;
+            this.Balance.Caption = "Bakiye";
+            this.Balance.FieldName = "Balance";
+            this.Balance.Name = "Balance";
+            this.Balance.OptionsColumn.AllowEdit = false;
+            this.Balance.OptionsColumn.AllowFocus = false;
+            this.Balance.OptionsColumn.FixedWidth = true;
+            this.Balance.Visible = true;
+            this.Balance.VisibleIndex = 2;
             // 
             // frmBankOpeningCard
             // 
@@ -355,7 +365,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtBankBranchPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBankBranch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIBAN.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAccountNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAccountNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAccountType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBankName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBankAddress.Properties)).EndInit();
@@ -381,7 +391,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtIBAN;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txtAccountNumber;
+        private DevExpress.XtraEditors.TextEdit txtAccountNo;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtAccountType;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -396,7 +406,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn BankName;
-        private DevExpress.XtraGrid.Columns.GridColumn BankAccountType;
-        private DevExpress.XtraGrid.Columns.GridColumn BankBalance;
+        private DevExpress.XtraGrid.Columns.GridColumn AccountName;
+        private DevExpress.XtraGrid.Columns.GridColumn Balance;
     }
 }

@@ -222,6 +222,7 @@
             this.barbtnBankOpeningCard.LargeWidth = 100;
             this.barbtnBankOpeningCard.Name = "barbtnBankOpeningCard";
             this.barbtnBankOpeningCard.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnBankOpeningCard.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnBankOpeningCard_ItemClick);
             // 
             // barbtnMoneyTransfer
             // 
@@ -231,6 +232,7 @@
             this.barbtnMoneyTransfer.LargeWidth = 100;
             this.barbtnMoneyTransfer.Name = "barbtnMoneyTransfer";
             this.barbtnMoneyTransfer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnMoneyTransfer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnMoneyTransfer_ItemClick);
             // 
             // barbtnBankList
             // 
@@ -240,6 +242,7 @@
             this.barbtnBankList.LargeWidth = 100;
             this.barbtnBankList.Name = "barbtnBankList";
             this.barbtnBankList.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnBankList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnBankList_ItemClick);
             // 
             // barbtnBankProcess
             // 
@@ -249,6 +252,7 @@
             this.barbtnBankProcess.LargeWidth = 100;
             this.barbtnBankProcess.Name = "barbtnBankProcess";
             this.barbtnBankProcess.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnBankProcess.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnBankProcess_ItemClick);
             // 
             // barbtnBankMovement
             // 

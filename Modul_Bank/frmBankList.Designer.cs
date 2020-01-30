@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBankList));
-            this.StockBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.StockCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IBAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BankName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.StockName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AccountName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AccountNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Balance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridList = new DevExpress.XtraGrid.GridControl();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
@@ -58,27 +60,31 @@
             this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // StockBarcode
+            // IBAN
             // 
-            this.StockBarcode.Caption = "Barkod";
-            this.StockBarcode.FieldName = "StockBarcode";
-            this.StockBarcode.Name = "StockBarcode";
-            this.StockBarcode.OptionsColumn.AllowEdit = false;
-            this.StockBarcode.OptionsColumn.AllowFocus = false;
-            this.StockBarcode.OptionsColumn.FixedWidth = true;
-            this.StockBarcode.Visible = true;
-            this.StockBarcode.VisibleIndex = 2;
+            this.IBAN.Caption = "IBAN";
+            this.IBAN.FieldName = "IBAN";
+            this.IBAN.Name = "IBAN";
+            this.IBAN.OptionsColumn.AllowEdit = false;
+            this.IBAN.OptionsColumn.AllowFocus = false;
+            this.IBAN.OptionsColumn.FixedWidth = true;
+            this.IBAN.OptionsColumn.ReadOnly = true;
+            this.IBAN.Visible = true;
+            this.IBAN.VisibleIndex = 2;
+            this.IBAN.Width = 194;
             // 
-            // StockCode
+            // BankName
             // 
-            this.StockCode.Caption = "Stok Kodu";
-            this.StockCode.FieldName = "StockCode";
-            this.StockCode.Name = "StockCode";
-            this.StockCode.OptionsColumn.AllowEdit = false;
-            this.StockCode.OptionsColumn.AllowFocus = false;
-            this.StockCode.OptionsColumn.FixedWidth = true;
-            this.StockCode.Visible = true;
-            this.StockCode.VisibleIndex = 0;
+            this.BankName.Caption = "Banka Adı";
+            this.BankName.FieldName = "BankName";
+            this.BankName.Name = "BankName";
+            this.BankName.OptionsColumn.AllowEdit = false;
+            this.BankName.OptionsColumn.AllowFocus = false;
+            this.BankName.OptionsColumn.FixedWidth = true;
+            this.BankName.OptionsColumn.ReadOnly = true;
+            this.BankName.Visible = true;
+            this.BankName.VisibleIndex = 0;
+            this.BankName.Width = 200;
             // 
             // ID
             // 
@@ -89,23 +95,51 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
-            this.StockCode,
-            this.StockName,
-            this.StockBarcode});
+            this.BankName,
+            this.AccountName,
+            this.IBAN,
+            this.AccountNo,
+            this.Balance});
             this.gridView1.GridControl = this.gridList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // StockName
+            // AccountName
             // 
-            this.StockName.Caption = "Stok Adı";
-            this.StockName.FieldName = "StockName";
-            this.StockName.Name = "StockName";
-            this.StockName.OptionsColumn.AllowEdit = false;
-            this.StockName.OptionsColumn.AllowFocus = false;
-            this.StockName.OptionsColumn.FixedWidth = true;
-            this.StockName.Visible = true;
-            this.StockName.VisibleIndex = 1;
+            this.AccountName.Caption = "Hesap Adı";
+            this.AccountName.FieldName = "AccountName";
+            this.AccountName.Name = "AccountName";
+            this.AccountName.OptionsColumn.AllowEdit = false;
+            this.AccountName.OptionsColumn.AllowFocus = false;
+            this.AccountName.OptionsColumn.FixedWidth = true;
+            this.AccountName.OptionsColumn.ReadOnly = true;
+            this.AccountName.Visible = true;
+            this.AccountName.VisibleIndex = 1;
+            this.AccountName.Width = 200;
+            // 
+            // AccountNo
+            // 
+            this.AccountNo.Caption = "Hesap Numarası";
+            this.AccountNo.FieldName = "AccountNo";
+            this.AccountNo.Name = "AccountNo";
+            this.AccountNo.OptionsColumn.AllowEdit = false;
+            this.AccountNo.OptionsColumn.AllowFocus = false;
+            this.AccountNo.OptionsColumn.ReadOnly = true;
+            this.AccountNo.Visible = true;
+            this.AccountNo.VisibleIndex = 3;
+            this.AccountNo.Width = 70;
+            // 
+            // Balance
+            // 
+            this.Balance.Caption = "Bakiye";
+            this.Balance.FieldName = "Balance";
+            this.Balance.Name = "Balance";
+            this.Balance.OptionsColumn.AllowEdit = false;
+            this.Balance.OptionsColumn.AllowFocus = false;
+            this.Balance.OptionsColumn.ReadOnly = true;
+            this.Balance.Visible = true;
+            this.Balance.VisibleIndex = 4;
+            this.Balance.Width = 147;
             // 
             // gridList
             // 
@@ -113,10 +147,11 @@
             this.gridList.Location = new System.Drawing.Point(0, 0);
             this.gridList.MainView = this.gridView1;
             this.gridList.Name = "gridList";
-            this.gridList.Size = new System.Drawing.Size(729, 518);
+            this.gridList.Size = new System.Drawing.Size(829, 518);
             this.gridList.TabIndex = 0;
             this.gridList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridList.DoubleClick += new System.EventHandler(this.gridList_DoubleClick);
             // 
             // btnClear
             // 
@@ -215,7 +250,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridList);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(919, 518);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1019, 518);
             this.splitContainerControl1.SplitterPosition = 185;
             this.splitContainerControl1.TabIndex = 1;
             // 
@@ -223,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 518);
+            this.ClientSize = new System.Drawing.Size(1019, 518);
             this.Controls.Add(this.splitContainerControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -248,11 +283,11 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn StockBarcode;
-        private DevExpress.XtraGrid.Columns.GridColumn StockCode;
+        private DevExpress.XtraGrid.Columns.GridColumn IBAN;
+        private DevExpress.XtraGrid.Columns.GridColumn BankName;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn StockName;
+        private DevExpress.XtraGrid.Columns.GridColumn AccountName;
         private DevExpress.XtraGrid.GridControl gridList;
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
@@ -265,5 +300,7 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn AccountNo;
+        private DevExpress.XtraGrid.Columns.GridColumn Balance;
     }
 }

@@ -38,8 +38,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.radioOutgoing = new System.Windows.Forms.RadioButton();
-            this.radioIncoming = new System.Windows.Forms.RadioButton();
+            this.radioOutflow = new System.Windows.Forms.RadioButton();
+            this.radioInflow = new System.Windows.Forms.RadioButton();
             this.txtDocumentNo = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -54,7 +54,7 @@
             this.txtCurrentName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txtCurrentCode = new DevExpress.XtraEditors.ButtonEdit();
-            this.txtDocumentType = new DevExpress.XtraEditors.ButtonEdit();
+            this.txtAccountName = new DevExpress.XtraEditors.ButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAccountNo.Properties)).BeginInit();
@@ -70,7 +70,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDocumentType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAccountName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl5
@@ -86,7 +86,7 @@
             this.txtAmount.Location = new System.Drawing.Point(95, 93);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(194, 20);
-            this.txtAmount.TabIndex = 11;
+            this.txtAmount.TabIndex = 2;
             // 
             // labelControl6
             // 
@@ -101,7 +101,7 @@
             this.txtDescription.Location = new System.Drawing.Point(95, 128);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(300, 114);
-            this.txtDescription.TabIndex = 13;
+            this.txtDescription.TabIndex = 3;
             // 
             // labelControl3
             // 
@@ -115,8 +115,9 @@
             // 
             this.txtAccountNo.Location = new System.Drawing.Point(95, 75);
             this.txtAccountNo.Name = "txtAccountNo";
+            this.txtAccountNo.Properties.ReadOnly = true;
             this.txtAccountNo.Size = new System.Drawing.Size(172, 20);
-            this.txtAccountNo.TabIndex = 7;
+            this.txtAccountNo.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -142,35 +143,35 @@
             this.labelControl4.TabIndex = 14;
             this.labelControl4.Text = "Açıklama";
             // 
-            // radioOutgoing
+            // radioOutflow
             // 
-            this.radioOutgoing.AutoSize = true;
-            this.radioOutgoing.Location = new System.Drawing.Point(6, 57);
-            this.radioOutgoing.Name = "radioOutgoing";
-            this.radioOutgoing.Size = new System.Drawing.Size(88, 17);
-            this.radioOutgoing.TabIndex = 1;
-            this.radioOutgoing.TabStop = true;
-            this.radioOutgoing.Text = "Giden Havale";
-            this.radioOutgoing.UseVisualStyleBackColor = true;
+            this.radioOutflow.AutoSize = true;
+            this.radioOutflow.Location = new System.Drawing.Point(6, 57);
+            this.radioOutflow.Name = "radioOutflow";
+            this.radioOutflow.Size = new System.Drawing.Size(88, 17);
+            this.radioOutflow.TabIndex = 1;
+            this.radioOutflow.TabStop = true;
+            this.radioOutflow.Text = "Giden Havale";
+            this.radioOutflow.UseVisualStyleBackColor = true;
             // 
-            // radioIncoming
+            // radioInflow
             // 
-            this.radioIncoming.AutoSize = true;
-            this.radioIncoming.Checked = true;
-            this.radioIncoming.Location = new System.Drawing.Point(6, 30);
-            this.radioIncoming.Name = "radioIncoming";
-            this.radioIncoming.Size = new System.Drawing.Size(88, 17);
-            this.radioIncoming.TabIndex = 0;
-            this.radioIncoming.TabStop = true;
-            this.radioIncoming.Text = "Gelen Havale";
-            this.radioIncoming.UseVisualStyleBackColor = true;
+            this.radioInflow.AutoSize = true;
+            this.radioInflow.Checked = true;
+            this.radioInflow.Location = new System.Drawing.Point(6, 30);
+            this.radioInflow.Name = "radioInflow";
+            this.radioInflow.Size = new System.Drawing.Size(88, 17);
+            this.radioInflow.TabIndex = 0;
+            this.radioInflow.TabStop = true;
+            this.radioInflow.Text = "Gelen Havale";
+            this.radioInflow.UseVisualStyleBackColor = true;
             // 
             // txtDocumentNo
             // 
             this.txtDocumentNo.Location = new System.Drawing.Point(95, 23);
             this.txtDocumentNo.Name = "txtDocumentNo";
             this.txtDocumentNo.Size = new System.Drawing.Size(172, 20);
-            this.txtDocumentNo.TabIndex = 3;
+            this.txtDocumentNo.TabIndex = 0;
             // 
             // groupControl2
             // 
@@ -187,7 +188,7 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 172);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(410, 256);
-            this.groupControl2.TabIndex = 7;
+            this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "İşlem Bilgileri";
             // 
             // labelControl9
@@ -200,8 +201,8 @@
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.radioOutgoing);
-            this.groupControl3.Controls.Add(this.radioIncoming);
+            this.groupControl3.Controls.Add(this.radioOutflow);
+            this.groupControl3.Controls.Add(this.radioInflow);
             this.groupControl3.Location = new System.Drawing.Point(295, 23);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(100, 99);
@@ -219,7 +220,7 @@
             "Banka Havale",
             "Banka EFT"});
             this.txtTransferType.Size = new System.Drawing.Size(194, 20);
-            this.txtTransferType.TabIndex = 16;
+            this.txtTransferType.TabIndex = 0;
             this.txtTransferType.SelectedIndexChanged += new System.EventHandler(this.txtTransferType_SelectedIndexChanged);
             // 
             // txtDate
@@ -238,7 +239,7 @@
             this.txtDate.Properties.Mask.EditMask = "";
             this.txtDate.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtDate.Size = new System.Drawing.Size(194, 20);
-            this.txtDate.TabIndex = 9;
+            this.txtDate.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -246,8 +247,9 @@
             this.btnClose.Location = new System.Drawing.Point(282, 117);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(113, 40);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Kapat";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -255,8 +257,9 @@
             this.btnDelete.Location = new System.Drawing.Point(282, 71);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(113, 40);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Sil";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -264,8 +267,9 @@
             this.btnSave.Location = new System.Drawing.Point(282, 25);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(113, 40);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Kaydet";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // groupControl1
             // 
@@ -281,12 +285,12 @@
             this.groupControl1.Controls.Add(this.btnDelete);
             this.groupControl1.Controls.Add(this.btnSave);
             this.groupControl1.Controls.Add(this.txtCurrentCode);
-            this.groupControl1.Controls.Add(this.txtDocumentType);
+            this.groupControl1.Controls.Add(this.txtAccountName);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(410, 172);
-            this.groupControl1.TabIndex = 6;
+            this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Temel Tilgiler";
             // 
             // labelControl7
@@ -301,8 +305,9 @@
             // 
             this.txtCurrentName.Location = new System.Drawing.Point(95, 127);
             this.txtCurrentName.Name = "txtCurrentName";
+            this.txtCurrentName.Properties.ReadOnly = true;
             this.txtCurrentName.Size = new System.Drawing.Size(172, 20);
-            this.txtCurrentName.TabIndex = 11;
+            this.txtCurrentName.TabIndex = 4;
             // 
             // labelControl8
             // 
@@ -318,17 +323,21 @@
             this.txtCurrentCode.Name = "txtCurrentCode";
             this.txtCurrentCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtCurrentCode.Properties.ReadOnly = true;
             this.txtCurrentCode.Size = new System.Drawing.Size(172, 20);
-            this.txtCurrentCode.TabIndex = 9;
+            this.txtCurrentCode.TabIndex = 3;
+            this.txtCurrentCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCurrentCode_ButtonClick);
             // 
-            // txtDocumentType
+            // txtAccountName
             // 
-            this.txtDocumentType.Location = new System.Drawing.Point(95, 49);
-            this.txtDocumentType.Name = "txtDocumentType";
-            this.txtDocumentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtAccountName.Location = new System.Drawing.Point(95, 49);
+            this.txtAccountName.Name = "txtAccountName";
+            this.txtAccountName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtDocumentType.Size = new System.Drawing.Size(172, 20);
-            this.txtDocumentType.TabIndex = 5;
+            this.txtAccountName.Properties.ReadOnly = true;
+            this.txtAccountName.Size = new System.Drawing.Size(172, 20);
+            this.txtAccountName.TabIndex = 1;
+            this.txtAccountName.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtAccountName_ButtonClick);
             // 
             // frmMoneyTranfer
             // 
@@ -363,7 +372,7 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDocumentType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAccountName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,8 +388,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.RadioButton radioOutgoing;
-        private System.Windows.Forms.RadioButton radioIncoming;
+        private System.Windows.Forms.RadioButton radioOutflow;
+        private System.Windows.Forms.RadioButton radioInflow;
         private DevExpress.XtraEditors.TextEdit txtDocumentNo;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
@@ -395,6 +404,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.DateEdit txtDate;
         private DevExpress.XtraEditors.ButtonEdit txtCurrentCode;
-        private DevExpress.XtraEditors.ButtonEdit txtDocumentType;
+        private DevExpress.XtraEditors.ButtonEdit txtAccountName;
     }
 }

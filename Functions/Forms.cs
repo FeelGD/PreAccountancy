@@ -79,6 +79,7 @@ namespace PreAccountancy.Functions
         }
         #endregion
 
+        #region SafeForms
         public void SafeOpeningCard()
         {
             Modul_Safe.frmSafeOpeningCard openingCard = new Modul_Safe.frmSafeOpeningCard();
@@ -105,18 +106,52 @@ namespace PreAccountancy.Functions
             }
             return frmMain.Transfer;
         }
-        public void SafePayment(bool Open=false,int ID = -1)
+        public void SafePayment(bool Open = false, int ID = -1)
         {
             Modul_Safe.frmSafePayment safePayment = new Modul_Safe.frmSafePayment();
             if (Open) safePayment.Open(ID);
             safePayment.ShowDialog();
         }
-        public void SafeMovement(bool Open=false, int ID = -1)
+        public void SafeMovement(bool Open = false, int ID = -1)
         {
             Modul_Safe.frmSafeMovement safeMovement = new Modul_Safe.frmSafeMovement();
             safeMovement.MdiParent = frmMain.ActiveForm;
             if (Open) safeMovement.Open(ID);
             safeMovement.Show();
+        } 
+        #endregion
+
+        public void BankOpeningCard()
+        {
+            Modul_Bank.frmBankOpeningCard bankOpeningCard = new Modul_Bank.frmBankOpeningCard();
+            bankOpeningCard.ShowDialog();
+        }
+        public void BankProcess(bool Open=false, int ID = -1)
+        {
+            Modul_Bank.frmBankProcess frm = new Modul_Bank.frmBankProcess();
+            if (Open) frm.Open(ID);
+            frm.ShowDialog();
+        }
+        public int BankList(bool Selection = false)
+        {
+            Modul_Bank.frmBankList frm = new Modul_Bank.frmBankList();
+            if (Selection)
+            {
+                frm.Selection = Selection;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frm.MdiParent = frmMain.ActiveForm;
+                frm.Show();
+            }
+            return frmMain.Transfer;
+        }
+        public void BankTransfer(bool Open=false, int ID = -1)
+        {
+            Modul_Bank.frmMoneyTranfer frm = new Modul_Bank.frmMoneyTranfer();
+            if (Open) frm.Open(ID);
+            frm.ShowDialog();
         }
     }
 }
