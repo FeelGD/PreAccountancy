@@ -32,7 +32,7 @@ namespace PreAccountancy.Modul_Bank
         }
         void Lists()
         {
-            var lst = from s in DB.TBL_BANKs
+            var lst = from s in DB.VW_BANKLISTs
                       where s.AccountName.Contains(txtAccountName.Text) && s.AccountNo.Contains(txtAccountNo.Text) && s.IBAN.Contains(txtIBAN.Text)
                       select s;
             gridList.DataSource=lst;

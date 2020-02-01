@@ -9,9 +9,11 @@ namespace PreAccountancy.Functions
 {
     class Messages
     {
+        frmMain messageForm = new frmMain();
         public void NewRecord(string Message)
         {
-            System.Windows.Forms.MessageBox.Show(Message, "Yeni Kayıt Girişi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            messageForm.Message("Yeni Kayıt Girişi", Message);
+           /* MessageBox.Show(Message, "Yeni Kayıt Girişi", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
         }
         public DialogResult Delete()
         {
@@ -25,11 +27,24 @@ namespace PreAccountancy.Functions
         }
         public void Update(bool Updates)
         {
-            MessageBox.Show("Kayıt güncellenmiştir.", "Kayıt Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            messageForm.Message("Kayıt güncellenmiştir.", "Kayıt Güncelleme");
+            /*MessageBox.Show("Kayıt güncellenmiştir.", "Kayıt Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
         }
         public void Error(Exception Error)
         {
-            MessageBox.Show(Error.Message,"Hata Oluştu",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+            messageForm.Message("Hata Oluştu", Error.Message);
+           /* MessageBox.Show(Error.Message, "Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);*/
+        }
+        public void OpenForm(string FormName)
+        {
+            messageForm.Message("", FormName + " formu açıldı.");
+            
+        }
+        public void CloseForm(string FormName)
+        {
+            messageForm.Message("", FormName + " formu kapatıldı.");
+
         }
     }
 }

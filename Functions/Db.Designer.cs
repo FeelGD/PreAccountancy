@@ -184,6 +184,30 @@ namespace PreAccountancy.Functions
 				return this.GetTable<TBL_BANK>();
 			}
 		}
+		
+		public System.Data.Linq.Table<VW_BANKSTATUS> VW_BANKSTATUS
+		{
+			get
+			{
+				return this.GetTable<VW_BANKSTATUS>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_BANKMOVEMENT> VW_BANKMOVEMENTs
+		{
+			get
+			{
+				return this.GetTable<VW_BANKMOVEMENT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_BANKLIST> VW_BANKLISTs
+		{
+			get
+			{
+				return this.GetTable<VW_BANKLIST>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_Stock")]
@@ -3785,6 +3809,465 @@ namespace PreAccountancy.Functions
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_BANKSTATUS")]
+	public partial class VW_BANKSTATUS
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<decimal> _Inflow;
+		
+		private System.Nullable<decimal> _Outflow;
+		
+		private System.Nullable<decimal> _Balance;
+		
+		public VW_BANKSTATUS()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inflow", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Inflow
+		{
+			get
+			{
+				return this._Inflow;
+			}
+			set
+			{
+				if ((this._Inflow != value))
+				{
+					this._Inflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Outflow", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Outflow
+		{
+			get
+			{
+				return this._Outflow;
+			}
+			set
+			{
+				if ((this._Outflow != value))
+				{
+					this._Outflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_BANKMOVEMENT")]
+	public partial class VW_BANKMOVEMENT
+	{
+		
+		private System.Nullable<int> _BankID;
+		
+		private System.Nullable<int> _CurrentID;
+		
+		private string _DocumentNo;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _DocumentType;
+		
+		private System.Nullable<int> _DocumentID;
+		
+		private string _Description;
+		
+		private System.Nullable<decimal> _Inflow;
+		
+		private System.Nullable<decimal> _Outflow;
+		
+		private string _AccountName;
+		
+		private string _AccountNo;
+		
+		private int _Id;
+		
+		public VW_BANKMOVEMENT()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BankID", DbType="Int")]
+		public System.Nullable<int> BankID
+		{
+			get
+			{
+				return this._BankID;
+			}
+			set
+			{
+				if ((this._BankID != value))
+				{
+					this._BankID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentID", DbType="Int")]
+		public System.Nullable<int> CurrentID
+		{
+			get
+			{
+				return this._CurrentID;
+			}
+			set
+			{
+				if ((this._CurrentID != value))
+				{
+					this._CurrentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentNo", DbType="NVarChar(50)")]
+		public string DocumentNo
+		{
+			get
+			{
+				return this._DocumentNo;
+			}
+			set
+			{
+				if ((this._DocumentNo != value))
+				{
+					this._DocumentNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentType", DbType="NVarChar(50)")]
+		public string DocumentType
+		{
+			get
+			{
+				return this._DocumentType;
+			}
+			set
+			{
+				if ((this._DocumentType != value))
+				{
+					this._DocumentType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentID", DbType="Int")]
+		public System.Nullable<int> DocumentID
+		{
+			get
+			{
+				return this._DocumentID;
+			}
+			set
+			{
+				if ((this._DocumentID != value))
+				{
+					this._DocumentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inflow", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Inflow
+		{
+			get
+			{
+				return this._Inflow;
+			}
+			set
+			{
+				if ((this._Inflow != value))
+				{
+					this._Inflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Outflow", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Outflow
+		{
+			get
+			{
+				return this._Outflow;
+			}
+			set
+			{
+				if ((this._Outflow != value))
+				{
+					this._Outflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountName", DbType="NVarChar(50)")]
+		public string AccountName
+		{
+			get
+			{
+				return this._AccountName;
+			}
+			set
+			{
+				if ((this._AccountName != value))
+				{
+					this._AccountName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountNo", DbType="NVarChar(50)")]
+		public string AccountNo
+		{
+			get
+			{
+				return this._AccountNo;
+			}
+			set
+			{
+				if ((this._AccountNo != value))
+				{
+					this._AccountNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_BANKLIST")]
+	public partial class VW_BANKLIST
+	{
+		
+		private int _Id;
+		
+		private string _AccountNo;
+		
+		private string _IBAN;
+		
+		private string _BankName;
+		
+		private string _AccountName;
+		
+		private System.Nullable<decimal> _Inflow;
+		
+		private System.Nullable<decimal> _Outflow;
+		
+		private System.Nullable<decimal> _Balance;
+		
+		public VW_BANKLIST()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountNo", DbType="NVarChar(50)")]
+		public string AccountNo
+		{
+			get
+			{
+				return this._AccountNo;
+			}
+			set
+			{
+				if ((this._AccountNo != value))
+				{
+					this._AccountNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IBAN", DbType="NVarChar(50)")]
+		public string IBAN
+		{
+			get
+			{
+				return this._IBAN;
+			}
+			set
+			{
+				if ((this._IBAN != value))
+				{
+					this._IBAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BankName", DbType="NVarChar(50)")]
+		public string BankName
+		{
+			get
+			{
+				return this._BankName;
+			}
+			set
+			{
+				if ((this._BankName != value))
+				{
+					this._BankName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountName", DbType="NVarChar(50)")]
+		public string AccountName
+		{
+			get
+			{
+				return this._AccountName;
+			}
+			set
+			{
+				if ((this._AccountName != value))
+				{
+					this._AccountName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inflow", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Inflow
+		{
+			get
+			{
+				return this._Inflow;
+			}
+			set
+			{
+				if ((this._Inflow != value))
+				{
+					this._Inflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Outflow", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Outflow
+		{
+			get
+			{
+				return this._Outflow;
+			}
+			set
+			{
+				if ((this._Outflow != value))
+				{
+					this._Outflow = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
+				}
 			}
 		}
 	}

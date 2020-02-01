@@ -189,4 +189,40 @@
       <Column Name="EditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.VW_BANKSTATUS" Member="VW_BANKSTATUS">
+    <Type Name="VW_BANKSTATUS">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Inflow" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Outflow" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_BANKMOVEMENT" Member="VW_BANKMOVEMENTs">
+    <Type Name="VW_BANKMOVEMENT">
+      <Column Name="BankID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocumentNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocumentType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Inflow" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Outflow" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_BANKLIST" Member="VW_BANKLISTs">
+    <Type Name="VW_BANKLIST">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Inflow" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Outflow" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

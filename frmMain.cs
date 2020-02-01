@@ -21,7 +21,17 @@ namespace PreAccountancy
         {
             InitializeComponent();
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            clock.Caption = DateTime.Now.ToString();
+        }
+        public void Message(string Header, string Message)
+        {
+            alertControl.Show(this, Header, Message);
+        }
 
+
+        #region Stock
         private void btnStockCard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.StockCard();
@@ -41,7 +51,28 @@ namespace PreAccountancy
         {
             Forms.StockMovement();
         }
+        private void navStockCard_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.StockCard();
+        }
 
+        private void navStockList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.StockList();
+        }
+
+        private void navStockGroup_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.StockGroup();
+        }
+
+        private void navStockMovement_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.StockMovement();
+        }
+        #endregion
+
+        #region Current
         private void barbtnCurrentOpeningCard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.CurrentOpeningCard();
@@ -61,12 +92,28 @@ namespace PreAccountancy
         {
 
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void navCurrentList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            clock.Caption = DateTime.Now.ToString();
+            Forms.CurrentList();
         }
 
+        private void navCurrentGroups_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.CurrentGroup();
+        }
+
+        private void navCurrentOpeningCard_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.CurrentOpeningCard();
+        }
+
+        private void navCurrentMovement_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Safe
         private void barbtnSafeOpeningCard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.SafeOpeningCard();
@@ -91,7 +138,33 @@ namespace PreAccountancy
         {
             Forms.SafeMovement();
         }
+        private void navSafePayment_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.SafePayment();
+        }
 
+        private void navSafeTransfer_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.SafeTransfer();
+        }
+
+        private void navSafeMovement_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.SafeMovement();
+        }
+
+        private void navSafeOpeningCard_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.SafeOpeningCard();
+        }
+
+        private void navSafeList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.SafeList();
+        }
+        #endregion
+
+        #region Bank
         private void barbtnBankOpeningCard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.BankOpeningCard();
@@ -111,5 +184,37 @@ namespace PreAccountancy
         {
             Forms.BankTransfer();
         }
+
+        private void barbtnBankMovement_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.BankMovement();
+        }
+        private void navBankProcess_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.BankProcess();
+        }
+
+        private void navBankList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.BankList();
+        }
+
+        private void navBankTransfer_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.BankTransfer();
+        }
+
+        private void navBankOpeningCard_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.BankOpeningCard();
+        }
+
+        private void navBankMovement_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Forms.BankMovement();
+        } 
+        #endregion
+
+
     }
 }

@@ -115,3 +115,9 @@ C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountan
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Safe.frmSafeTransfer.resources
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Safe.frmSafeMovement.resources
 C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\obj\Debug\PreAccountancy.Modul_Current.frmCurrentMovement.resources
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\bin\Debug\DevExpress.XtraNavBar.v19.1.dll
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\bin\Debug\DevExpress.XtraNavBar.v19.1.xml
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\bin\Debug\de\DevExpress.XtraNavBar.v19.1.resources.dll
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\bin\Debug\es\DevExpress.XtraNavBar.v19.1.resources.dll
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\bin\Debug\ja\DevExpress.XtraNavBar.v19.1.resources.dll
+C:\Users\aiyil\source\repos\PreAccountancy\PreAccountancy\bin\Debug\ru\DevExpress.XtraNavBar.v19.1.resources.dll

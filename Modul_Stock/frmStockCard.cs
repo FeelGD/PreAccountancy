@@ -42,6 +42,7 @@ namespace PreAccountancy.Modul_Stock
         private void frmStockCard_Load(object sender, EventArgs e)
         {
             txtStockCode.Text = Numbers.StockCodeNumber();
+            Messages.OpenForm(this.Text);
 
         }
         void Clear()
@@ -220,5 +221,10 @@ namespace PreAccountancy.Modul_Stock
         {
             if (Edit && StockID > 0 && Messages.Delete() == DialogResult.Yes) Delete();
         }
+
+        private void frmStockCard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Messages.CloseForm(this.Text);
+        }
     }
-}
+} 

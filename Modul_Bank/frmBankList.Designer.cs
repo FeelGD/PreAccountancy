@@ -48,6 +48,8 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.Inflow = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Outflow = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIBAN.Properties)).BeginInit();
@@ -71,7 +73,7 @@
             this.IBAN.OptionsColumn.ReadOnly = true;
             this.IBAN.Visible = true;
             this.IBAN.VisibleIndex = 2;
-            this.IBAN.Width = 194;
+            this.IBAN.Width = 150;
             // 
             // BankName
             // 
@@ -84,7 +86,7 @@
             this.BankName.OptionsColumn.ReadOnly = true;
             this.BankName.Visible = true;
             this.BankName.VisibleIndex = 0;
-            this.BankName.Width = 200;
+            this.BankName.Width = 100;
             // 
             // ID
             // 
@@ -99,7 +101,9 @@
             this.AccountName,
             this.IBAN,
             this.AccountNo,
-            this.Balance});
+            this.Balance,
+            this.Inflow,
+            this.Outflow});
             this.gridView1.GridControl = this.gridList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -115,19 +119,20 @@
             this.AccountName.OptionsColumn.ReadOnly = true;
             this.AccountName.Visible = true;
             this.AccountName.VisibleIndex = 1;
-            this.AccountName.Width = 200;
+            this.AccountName.Width = 150;
             // 
             // AccountNo
             // 
-            this.AccountNo.Caption = "Hesap Numarası";
+            this.AccountNo.Caption = "Hesap No";
             this.AccountNo.FieldName = "AccountNo";
             this.AccountNo.Name = "AccountNo";
             this.AccountNo.OptionsColumn.AllowEdit = false;
             this.AccountNo.OptionsColumn.AllowFocus = false;
+            this.AccountNo.OptionsColumn.FixedWidth = true;
             this.AccountNo.OptionsColumn.ReadOnly = true;
             this.AccountNo.Visible = true;
             this.AccountNo.VisibleIndex = 3;
-            this.AccountNo.Width = 70;
+            this.AccountNo.Width = 80;
             // 
             // Balance
             // 
@@ -136,10 +141,11 @@
             this.Balance.Name = "Balance";
             this.Balance.OptionsColumn.AllowEdit = false;
             this.Balance.OptionsColumn.AllowFocus = false;
+            this.Balance.OptionsColumn.FixedWidth = true;
             this.Balance.OptionsColumn.ReadOnly = true;
             this.Balance.Visible = true;
             this.Balance.VisibleIndex = 4;
-            this.Balance.Width = 147;
+            this.Balance.Width = 80;
             // 
             // gridList
             // 
@@ -147,7 +153,7 @@
             this.gridList.Location = new System.Drawing.Point(0, 0);
             this.gridList.MainView = this.gridView1;
             this.gridList.Name = "gridList";
-            this.gridList.Size = new System.Drawing.Size(829, 518);
+            this.gridList.Size = new System.Drawing.Size(1152, 518);
             this.gridList.TabIndex = 0;
             this.gridList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -250,15 +256,39 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridList);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1019, 518);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1342, 518);
             this.splitContainerControl1.SplitterPosition = 185;
             this.splitContainerControl1.TabIndex = 1;
+            // 
+            // Inflow
+            // 
+            this.Inflow.Caption = "Giriş";
+            this.Inflow.FieldName = "Inflow";
+            this.Inflow.Name = "Inflow";
+            this.Inflow.OptionsColumn.AllowEdit = false;
+            this.Inflow.OptionsColumn.AllowFocus = false;
+            this.Inflow.OptionsColumn.FixedWidth = true;
+            this.Inflow.Visible = true;
+            this.Inflow.VisibleIndex = 5;
+            this.Inflow.Width = 80;
+            // 
+            // Outflow
+            // 
+            this.Outflow.Caption = "Çıkış";
+            this.Outflow.FieldName = "Outflow";
+            this.Outflow.Name = "Outflow";
+            this.Outflow.OptionsColumn.AllowEdit = false;
+            this.Outflow.OptionsColumn.AllowFocus = false;
+            this.Outflow.OptionsColumn.FixedWidth = true;
+            this.Outflow.Visible = true;
+            this.Outflow.VisibleIndex = 6;
+            this.Outflow.Width = 80;
             // 
             // frmBankList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 518);
+            this.ClientSize = new System.Drawing.Size(1342, 518);
             this.Controls.Add(this.splitContainerControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -302,5 +332,7 @@
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraGrid.Columns.GridColumn AccountNo;
         private DevExpress.XtraGrid.Columns.GridColumn Balance;
+        private DevExpress.XtraGrid.Columns.GridColumn Inflow;
+        private DevExpress.XtraGrid.Columns.GridColumn Outflow;
     }
 }

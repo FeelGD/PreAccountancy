@@ -412,6 +412,7 @@
             this.Name = "frmStockCard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stok Açılış Kartı";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmStockCard_FormClosed);
             this.Load += new System.EventHandler(this.frmStockCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

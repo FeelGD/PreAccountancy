@@ -118,7 +118,7 @@ namespace PreAccountancy.Functions
             safeMovement.MdiParent = frmMain.ActiveForm;
             if (Open) safeMovement.Open(ID);
             safeMovement.Show();
-        } 
+        }
         #endregion
 
         public void BankOpeningCard()
@@ -126,7 +126,7 @@ namespace PreAccountancy.Functions
             Modul_Bank.frmBankOpeningCard bankOpeningCard = new Modul_Bank.frmBankOpeningCard();
             bankOpeningCard.ShowDialog();
         }
-        public void BankProcess(bool Open=false, int ID = -1)
+        public void BankProcess(bool Open = false, int ID = -1)
         {
             Modul_Bank.frmBankProcess frm = new Modul_Bank.frmBankProcess();
             if (Open) frm.Open(ID);
@@ -147,11 +147,18 @@ namespace PreAccountancy.Functions
             }
             return frmMain.Transfer;
         }
-        public void BankTransfer(bool Open=false, int ID = -1)
+        public void BankTransfer(bool Open = false, int ID = -1)
         {
             Modul_Bank.frmMoneyTranfer frm = new Modul_Bank.frmMoneyTranfer();
             if (Open) frm.Open(ID);
             frm.ShowDialog();
+        }
+        public void BankMovement(bool Open = false, int ID = -1)
+        {
+            Modul_Bank.frmBankMovement frm = new Modul_Bank.frmBankMovement();
+            frm.MdiParent = frmMain.ActiveForm;
+            if (Open) frm.OpenBank(ID);
+            frm.Show();
         }
     }
 }
