@@ -51,13 +51,13 @@
             this.txtPaymentPlace = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSlipNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtWaybillNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtInvoiceNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtInvoiceDate = new DevExpress.XtraEditors.DateEdit();
-            this.txtSlipDate = new DevExpress.XtraEditors.DateEdit();
+            this.txtWaybillDate = new DevExpress.XtraEditors.DateEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -102,12 +102,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentPlace.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSlipNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaybillNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSlipDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSlipDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaybillDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaybillDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -324,13 +324,13 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.labelControl9);
-            this.panelControl2.Controls.Add(this.txtSlipNo);
+            this.panelControl2.Controls.Add(this.txtWaybillNo);
             this.panelControl2.Controls.Add(this.labelControl10);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Controls.Add(this.txtInvoiceNo);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.txtInvoiceDate);
-            this.panelControl2.Controls.Add(this.txtSlipDate);
+            this.panelControl2.Controls.Add(this.txtWaybillDate);
             this.panelControl2.Location = new System.Drawing.Point(218, 23);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(200, 118);
@@ -344,12 +344,12 @@
             this.labelControl9.TabIndex = 7;
             this.labelControl9.Text = "İrsaliye Tarih:";
             // 
-            // txtSlipNo
+            // txtWaybillNo
             // 
-            this.txtSlipNo.Location = new System.Drawing.Point(77, 62);
-            this.txtSlipNo.Name = "txtSlipNo";
-            this.txtSlipNo.Size = new System.Drawing.Size(118, 20);
-            this.txtSlipNo.TabIndex = 8;
+            this.txtWaybillNo.Location = new System.Drawing.Point(77, 62);
+            this.txtWaybillNo.Name = "txtWaybillNo";
+            this.txtWaybillNo.Size = new System.Drawing.Size(118, 20);
+            this.txtWaybillNo.TabIndex = 8;
             // 
             // labelControl10
             // 
@@ -398,21 +398,21 @@
             this.txtInvoiceDate.Size = new System.Drawing.Size(118, 20);
             this.txtInvoiceDate.TabIndex = 6;
             // 
-            // txtSlipDate
+            // txtWaybillDate
             // 
-            this.txtSlipDate.EditValue = null;
-            this.txtSlipDate.Location = new System.Drawing.Point(77, 88);
-            this.txtSlipDate.Name = "txtSlipDate";
-            this.txtSlipDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtWaybillDate.EditValue = null;
+            this.txtWaybillDate.Location = new System.Drawing.Point(77, 88);
+            this.txtWaybillDate.Name = "txtWaybillDate";
+            this.txtWaybillDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSlipDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtWaybillDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSlipDate.Properties.DisplayFormat.FormatString = "";
-            this.txtSlipDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtSlipDate.Properties.EditFormat.FormatString = "";
-            this.txtSlipDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtSlipDate.Size = new System.Drawing.Size(118, 20);
-            this.txtSlipDate.TabIndex = 10;
+            this.txtWaybillDate.Properties.DisplayFormat.FormatString = "";
+            this.txtWaybillDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtWaybillDate.Properties.EditFormat.FormatString = "";
+            this.txtWaybillDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtWaybillDate.Size = new System.Drawing.Size(118, 20);
+            this.txtWaybillDate.TabIndex = 10;
             // 
             // btnClose
             // 
@@ -422,6 +422,7 @@
             this.btnClose.Size = new System.Drawing.Size(83, 40);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Kapat";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -440,6 +441,7 @@
             this.btnSave.Size = new System.Drawing.Size(83, 40);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Kaydet";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panelControl1
             // 
@@ -699,12 +701,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSlipNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaybillNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSlipDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSlipDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaybillDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaybillDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
@@ -753,13 +755,13 @@
         private DevExpress.XtraEditors.TextEdit txtCurrentName;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.TextEdit txtSlipNo;
+        private DevExpress.XtraEditors.TextEdit txtWaybillNo;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtInvoiceNo;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.DateEdit txtInvoiceDate;
-        private DevExpress.XtraEditors.DateEdit txtSlipDate;
+        private DevExpress.XtraEditors.DateEdit txtWaybillDate;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.MemoEdit txtDescription;

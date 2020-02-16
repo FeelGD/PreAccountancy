@@ -225,4 +225,55 @@
       <Column Name="Balance" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TBL_INVOICE" Member="TBL_INVOICEs">
+    <Type Name="TBL_INVOICE">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InvoiceType" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="InvoiceSerial" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="WaybillID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentCode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TopTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PaymentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaveUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_WAYBILL" Member="TBL_WAYBILLs">
+    <Type Name="TBL_WAYBILL">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WaybillSerial" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="WaybillNo" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="InvoiceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentCode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SaveUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_STOCKMOVEMENT" Member="TBL_STOCKMOVEMENTs">
+    <Type Name="TBL_STOCKMOVEMENT">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InvoiceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaybillID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockCode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="GCCode" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TAX" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SaveUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EditUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

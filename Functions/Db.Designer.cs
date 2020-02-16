@@ -57,6 +57,15 @@ namespace PreAccountancy.Functions
     partial void InsertTBL_BANK(TBL_BANK instance);
     partial void UpdateTBL_BANK(TBL_BANK instance);
     partial void DeleteTBL_BANK(TBL_BANK instance);
+    partial void InsertTBL_INVOICE(TBL_INVOICE instance);
+    partial void UpdateTBL_INVOICE(TBL_INVOICE instance);
+    partial void DeleteTBL_INVOICE(TBL_INVOICE instance);
+    partial void InsertTBL_WAYBILL(TBL_WAYBILL instance);
+    partial void UpdateTBL_WAYBILL(TBL_WAYBILL instance);
+    partial void DeleteTBL_WAYBILL(TBL_WAYBILL instance);
+    partial void InsertTBL_STOCKMOVEMENT(TBL_STOCKMOVEMENT instance);
+    partial void UpdateTBL_STOCKMOVEMENT(TBL_STOCKMOVEMENT instance);
+    partial void DeleteTBL_STOCKMOVEMENT(TBL_STOCKMOVEMENT instance);
     #endregion
 		
 		public DbDataContext() : 
@@ -206,6 +215,30 @@ namespace PreAccountancy.Functions
 			get
 			{
 				return this.GetTable<VW_BANKLIST>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_INVOICE> TBL_INVOICEs
+		{
+			get
+			{
+				return this.GetTable<TBL_INVOICE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_WAYBILL> TBL_WAYBILLs
+		{
+			get
+			{
+				return this.GetTable<TBL_WAYBILL>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_STOCKMOVEMENT> TBL_STOCKMOVEMENTs
+		{
+			get
+			{
+				return this.GetTable<TBL_STOCKMOVEMENT>();
 			}
 		}
 	}
@@ -4268,6 +4301,1056 @@ namespace PreAccountancy.Functions
 				{
 					this._Balance = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_INVOICE")]
+	public partial class TBL_INVOICE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _InvoiceType;
+		
+		private string _InvoiceSerial;
+		
+		private string _InvoiceNo;
+		
+		private System.Nullable<int> _WaybillID;
+		
+		private string _CurrentCode;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Description;
+		
+		private System.Nullable<decimal> _TopTotal;
+		
+		private string _PaymentType;
+		
+		private System.Nullable<int> _PaymentID;
+		
+		private System.Nullable<int> _SaveUser;
+		
+		private System.Nullable<System.DateTime> _SaveDate;
+		
+		private System.Nullable<int> _EditUser;
+		
+		private System.Nullable<System.DateTime> _EditDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnInvoiceTypeChanging(string value);
+    partial void OnInvoiceTypeChanged();
+    partial void OnInvoiceSerialChanging(string value);
+    partial void OnInvoiceSerialChanged();
+    partial void OnInvoiceNoChanging(string value);
+    partial void OnInvoiceNoChanged();
+    partial void OnWaybillIDChanging(System.Nullable<int> value);
+    partial void OnWaybillIDChanged();
+    partial void OnCurrentCodeChanging(string value);
+    partial void OnCurrentCodeChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnTopTotalChanging(System.Nullable<decimal> value);
+    partial void OnTopTotalChanged();
+    partial void OnPaymentTypeChanging(string value);
+    partial void OnPaymentTypeChanged();
+    partial void OnPaymentIDChanging(System.Nullable<int> value);
+    partial void OnPaymentIDChanged();
+    partial void OnSaveUserChanging(System.Nullable<int> value);
+    partial void OnSaveUserChanged();
+    partial void OnSaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnSaveDateChanged();
+    partial void OnEditUserChanging(System.Nullable<int> value);
+    partial void OnEditUserChanged();
+    partial void OnEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEditDateChanged();
+    #endregion
+		
+		public TBL_INVOICE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceType", DbType="NVarChar(25)")]
+		public string InvoiceType
+		{
+			get
+			{
+				return this._InvoiceType;
+			}
+			set
+			{
+				if ((this._InvoiceType != value))
+				{
+					this.OnInvoiceTypeChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceType = value;
+					this.SendPropertyChanged("InvoiceType");
+					this.OnInvoiceTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceSerial", DbType="NVarChar(5)")]
+		public string InvoiceSerial
+		{
+			get
+			{
+				return this._InvoiceSerial;
+			}
+			set
+			{
+				if ((this._InvoiceSerial != value))
+				{
+					this.OnInvoiceSerialChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceSerial = value;
+					this.SendPropertyChanged("InvoiceSerial");
+					this.OnInvoiceSerialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="NVarChar(15)")]
+		public string InvoiceNo
+		{
+			get
+			{
+				return this._InvoiceNo;
+			}
+			set
+			{
+				if ((this._InvoiceNo != value))
+				{
+					this.OnInvoiceNoChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceNo = value;
+					this.SendPropertyChanged("InvoiceNo");
+					this.OnInvoiceNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WaybillID", DbType="Int")]
+		public System.Nullable<int> WaybillID
+		{
+			get
+			{
+				return this._WaybillID;
+			}
+			set
+			{
+				if ((this._WaybillID != value))
+				{
+					this.OnWaybillIDChanging(value);
+					this.SendPropertyChanging();
+					this._WaybillID = value;
+					this.SendPropertyChanged("WaybillID");
+					this.OnWaybillIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentCode", DbType="NVarChar(30)")]
+		public string CurrentCode
+		{
+			get
+			{
+				return this._CurrentCode;
+			}
+			set
+			{
+				if ((this._CurrentCode != value))
+				{
+					this.OnCurrentCodeChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentCode = value;
+					this.SendPropertyChanged("CurrentCode");
+					this.OnCurrentCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TopTotal", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> TopTotal
+		{
+			get
+			{
+				return this._TopTotal;
+			}
+			set
+			{
+				if ((this._TopTotal != value))
+				{
+					this.OnTopTotalChanging(value);
+					this.SendPropertyChanging();
+					this._TopTotal = value;
+					this.SendPropertyChanged("TopTotal");
+					this.OnTopTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentType", DbType="NVarChar(10)")]
+		public string PaymentType
+		{
+			get
+			{
+				return this._PaymentType;
+			}
+			set
+			{
+				if ((this._PaymentType != value))
+				{
+					this.OnPaymentTypeChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentType = value;
+					this.SendPropertyChanged("PaymentType");
+					this.OnPaymentTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentID", DbType="Int")]
+		public System.Nullable<int> PaymentID
+		{
+			get
+			{
+				return this._PaymentID;
+			}
+			set
+			{
+				if ((this._PaymentID != value))
+				{
+					this.OnPaymentIDChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentID = value;
+					this.SendPropertyChanged("PaymentID");
+					this.OnPaymentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveUser", DbType="Int")]
+		public System.Nullable<int> SaveUser
+		{
+			get
+			{
+				return this._SaveUser;
+			}
+			set
+			{
+				if ((this._SaveUser != value))
+				{
+					this.OnSaveUserChanging(value);
+					this.SendPropertyChanging();
+					this._SaveUser = value;
+					this.SendPropertyChanged("SaveUser");
+					this.OnSaveUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SaveDate
+		{
+			get
+			{
+				return this._SaveDate;
+			}
+			set
+			{
+				if ((this._SaveDate != value))
+				{
+					this.OnSaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._SaveDate = value;
+					this.SendPropertyChanged("SaveDate");
+					this.OnSaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditUser", DbType="Int")]
+		public System.Nullable<int> EditUser
+		{
+			get
+			{
+				return this._EditUser;
+			}
+			set
+			{
+				if ((this._EditUser != value))
+				{
+					this.OnEditUserChanging(value);
+					this.SendPropertyChanging();
+					this._EditUser = value;
+					this.SendPropertyChanged("EditUser");
+					this.OnEditUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EditDate
+		{
+			get
+			{
+				return this._EditDate;
+			}
+			set
+			{
+				if ((this._EditDate != value))
+				{
+					this.OnEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._EditDate = value;
+					this.SendPropertyChanged("EditDate");
+					this.OnEditDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_WAYBILL")]
+	public partial class TBL_WAYBILL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _WaybillSerial;
+		
+		private string _WaybillNo;
+		
+		private System.Nullable<int> _InvoiceID;
+		
+		private string _CurrentCode;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Description;
+		
+		private System.Nullable<int> _SaveUser;
+		
+		private System.Nullable<System.DateTime> _SaveDate;
+		
+		private System.Nullable<int> _EditUser;
+		
+		private System.Nullable<System.DateTime> _EditDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnWaybillSerialChanging(string value);
+    partial void OnWaybillSerialChanged();
+    partial void OnWaybillNoChanging(string value);
+    partial void OnWaybillNoChanged();
+    partial void OnInvoiceIDChanging(System.Nullable<int> value);
+    partial void OnInvoiceIDChanged();
+    partial void OnCurrentCodeChanging(string value);
+    partial void OnCurrentCodeChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnSaveUserChanging(System.Nullable<int> value);
+    partial void OnSaveUserChanged();
+    partial void OnSaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnSaveDateChanged();
+    partial void OnEditUserChanging(System.Nullable<int> value);
+    partial void OnEditUserChanged();
+    partial void OnEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEditDateChanged();
+    #endregion
+		
+		public TBL_WAYBILL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WaybillSerial", DbType="NVarChar(5)")]
+		public string WaybillSerial
+		{
+			get
+			{
+				return this._WaybillSerial;
+			}
+			set
+			{
+				if ((this._WaybillSerial != value))
+				{
+					this.OnWaybillSerialChanging(value);
+					this.SendPropertyChanging();
+					this._WaybillSerial = value;
+					this.SendPropertyChanged("WaybillSerial");
+					this.OnWaybillSerialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WaybillNo", DbType="NVarChar(15)")]
+		public string WaybillNo
+		{
+			get
+			{
+				return this._WaybillNo;
+			}
+			set
+			{
+				if ((this._WaybillNo != value))
+				{
+					this.OnWaybillNoChanging(value);
+					this.SendPropertyChanging();
+					this._WaybillNo = value;
+					this.SendPropertyChanged("WaybillNo");
+					this.OnWaybillNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceID", DbType="Int")]
+		public System.Nullable<int> InvoiceID
+		{
+			get
+			{
+				return this._InvoiceID;
+			}
+			set
+			{
+				if ((this._InvoiceID != value))
+				{
+					this.OnInvoiceIDChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceID = value;
+					this.SendPropertyChanged("InvoiceID");
+					this.OnInvoiceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentCode", DbType="NVarChar(30)")]
+		public string CurrentCode
+		{
+			get
+			{
+				return this._CurrentCode;
+			}
+			set
+			{
+				if ((this._CurrentCode != value))
+				{
+					this.OnCurrentCodeChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentCode = value;
+					this.SendPropertyChanged("CurrentCode");
+					this.OnCurrentCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveUser", DbType="Int")]
+		public System.Nullable<int> SaveUser
+		{
+			get
+			{
+				return this._SaveUser;
+			}
+			set
+			{
+				if ((this._SaveUser != value))
+				{
+					this.OnSaveUserChanging(value);
+					this.SendPropertyChanging();
+					this._SaveUser = value;
+					this.SendPropertyChanged("SaveUser");
+					this.OnSaveUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SaveDate
+		{
+			get
+			{
+				return this._SaveDate;
+			}
+			set
+			{
+				if ((this._SaveDate != value))
+				{
+					this.OnSaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._SaveDate = value;
+					this.SendPropertyChanged("SaveDate");
+					this.OnSaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditUser", DbType="Int")]
+		public System.Nullable<int> EditUser
+		{
+			get
+			{
+				return this._EditUser;
+			}
+			set
+			{
+				if ((this._EditUser != value))
+				{
+					this.OnEditUserChanging(value);
+					this.SendPropertyChanging();
+					this._EditUser = value;
+					this.SendPropertyChanged("EditUser");
+					this.OnEditUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EditDate
+		{
+			get
+			{
+				return this._EditDate;
+			}
+			set
+			{
+				if ((this._EditDate != value))
+				{
+					this.OnEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._EditDate = value;
+					this.SendPropertyChanged("EditDate");
+					this.OnEditDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_STOCKMOVEMENT")]
+	public partial class TBL_STOCKMOVEMENT : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _InvoiceID;
+		
+		private System.Nullable<int> _WaybillID;
+		
+		private string _StockCode;
+		
+		private string _GCCode;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<decimal> _UnitPrice;
+		
+		private System.Nullable<decimal> _TAX;
+		
+		private string _Type;
+		
+		private System.Nullable<int> _SaveUser;
+		
+		private System.Nullable<System.DateTime> _SaveDate;
+		
+		private System.Nullable<int> _EditUser;
+		
+		private System.Nullable<System.DateTime> _EditDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnInvoiceIDChanging(System.Nullable<int> value);
+    partial void OnInvoiceIDChanged();
+    partial void OnWaybillIDChanging(System.Nullable<int> value);
+    partial void OnWaybillIDChanged();
+    partial void OnStockCodeChanging(string value);
+    partial void OnStockCodeChanged();
+    partial void OnGCCodeChanging(string value);
+    partial void OnGCCodeChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnUnitPriceChanging(System.Nullable<decimal> value);
+    partial void OnUnitPriceChanged();
+    partial void OnTAXChanging(System.Nullable<decimal> value);
+    partial void OnTAXChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnSaveUserChanging(System.Nullable<int> value);
+    partial void OnSaveUserChanged();
+    partial void OnSaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnSaveDateChanged();
+    partial void OnEditUserChanging(System.Nullable<int> value);
+    partial void OnEditUserChanged();
+    partial void OnEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEditDateChanged();
+    #endregion
+		
+		public TBL_STOCKMOVEMENT()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceID", DbType="Int")]
+		public System.Nullable<int> InvoiceID
+		{
+			get
+			{
+				return this._InvoiceID;
+			}
+			set
+			{
+				if ((this._InvoiceID != value))
+				{
+					this.OnInvoiceIDChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceID = value;
+					this.SendPropertyChanged("InvoiceID");
+					this.OnInvoiceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WaybillID", DbType="Int")]
+		public System.Nullable<int> WaybillID
+		{
+			get
+			{
+				return this._WaybillID;
+			}
+			set
+			{
+				if ((this._WaybillID != value))
+				{
+					this.OnWaybillIDChanging(value);
+					this.SendPropertyChanging();
+					this._WaybillID = value;
+					this.SendPropertyChanged("WaybillID");
+					this.OnWaybillIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockCode", DbType="NVarChar(30)")]
+		public string StockCode
+		{
+			get
+			{
+				return this._StockCode;
+			}
+			set
+			{
+				if ((this._StockCode != value))
+				{
+					this.OnStockCodeChanging(value);
+					this.SendPropertyChanging();
+					this._StockCode = value;
+					this.SendPropertyChanged("StockCode");
+					this.OnStockCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GCCode", DbType="NVarChar(1)")]
+		public string GCCode
+		{
+			get
+			{
+				return this._GCCode;
+			}
+			set
+			{
+				if ((this._GCCode != value))
+				{
+					this.OnGCCodeChanging(value);
+					this.SendPropertyChanging();
+					this._GCCode = value;
+					this.SendPropertyChanged("GCCode");
+					this.OnGCCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPrice", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> UnitPrice
+		{
+			get
+			{
+				return this._UnitPrice;
+			}
+			set
+			{
+				if ((this._UnitPrice != value))
+				{
+					this.OnUnitPriceChanging(value);
+					this.SendPropertyChanging();
+					this._UnitPrice = value;
+					this.SendPropertyChanged("UnitPrice");
+					this.OnUnitPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAX", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> TAX
+		{
+			get
+			{
+				return this._TAX;
+			}
+			set
+			{
+				if ((this._TAX != value))
+				{
+					this.OnTAXChanging(value);
+					this.SendPropertyChanging();
+					this._TAX = value;
+					this.SendPropertyChanged("TAX");
+					this.OnTAXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(20)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveUser", DbType="Int")]
+		public System.Nullable<int> SaveUser
+		{
+			get
+			{
+				return this._SaveUser;
+			}
+			set
+			{
+				if ((this._SaveUser != value))
+				{
+					this.OnSaveUserChanging(value);
+					this.SendPropertyChanging();
+					this._SaveUser = value;
+					this.SendPropertyChanged("SaveUser");
+					this.OnSaveUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SaveDate
+		{
+			get
+			{
+				return this._SaveDate;
+			}
+			set
+			{
+				if ((this._SaveDate != value))
+				{
+					this.OnSaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._SaveDate = value;
+					this.SendPropertyChanged("SaveDate");
+					this.OnSaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditUser", DbType="Int")]
+		public System.Nullable<int> EditUser
+		{
+			get
+			{
+				return this._EditUser;
+			}
+			set
+			{
+				if ((this._EditUser != value))
+				{
+					this.OnEditUserChanging(value);
+					this.SendPropertyChanging();
+					this._EditUser = value;
+					this.SendPropertyChanged("EditUser");
+					this.OnEditUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EditDate
+		{
+			get
+			{
+				return this._EditDate;
+			}
+			set
+			{
+				if ((this._EditDate != value))
+				{
+					this.OnEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._EditDate = value;
+					this.SendPropertyChanged("EditDate");
+					this.OnEditDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
