@@ -73,12 +73,12 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navSafeList = new DevExpress.XtraNavBar.NavBarItem();
-            this.navSafeOpeningCard = new DevExpress.XtraNavBar.NavBarItem();
-            this.navSafeMovement = new DevExpress.XtraNavBar.NavBarItem();
-            this.navSafeTransfer = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navSafePayment = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSafeTransfer = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSafeMovement = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSafeOpeningCard = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSafeList = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navStockCard = new DevExpress.XtraNavBar.NavBarItem();
             this.navStockList = new DevExpress.XtraNavBar.NavBarItem();
@@ -95,7 +95,7 @@
             this.navBankTransfer = new DevExpress.XtraNavBar.NavBarItem();
             this.navBankOpeningCard = new DevExpress.XtraNavBar.NavBarItem();
             this.navBankMovement = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.alertControl = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -338,6 +338,7 @@
             this.barbtnSalesInvoice.LargeWidth = 100;
             this.barbtnSalesInvoice.Name = "barbtnSalesInvoice";
             this.barbtnSalesInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barbtnSalesInvoice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSalesInvoice_ItemClick);
             // 
             // barbtnSalesRefundInvoice
             // 
@@ -554,31 +555,25 @@
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.SkinNavigationPaneViewInfoRegistrator();
             // 
-            // navBarGroup4
+            // navBarGroup5
             // 
-            this.navBarGroup4.Caption = "Fatura";
-            this.navBarGroup4.Name = "navBarGroup4";
+            this.navBarGroup5.Caption = "Kasa";
+            this.navBarGroup5.Expanded = true;
+            this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafePayment),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafeTransfer),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafeMovement),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafeOpeningCard),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafeList)});
+            this.navBarGroup5.Name = "navBarGroup5";
+            this.navBarGroup5.TopVisibleLinkIndex = 2;
             // 
-            // navSafeList
+            // navSafePayment
             // 
-            this.navSafeList.Caption = "Kasa Listesi";
-            this.navSafeList.ImageOptions.SmallImage = global::PreAccountancy.Properties.Resources.Kasa_Liste16x16;
-            this.navSafeList.Name = "navSafeList";
-            this.navSafeList.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafeList_LinkClicked);
-            // 
-            // navSafeOpeningCard
-            // 
-            this.navSafeOpeningCard.Caption = "Kasa Açılış Kartı";
-            this.navSafeOpeningCard.ImageOptions.SmallImage = global::PreAccountancy.Properties.Resources.Kasa_Karti16x16;
-            this.navSafeOpeningCard.Name = "navSafeOpeningCard";
-            this.navSafeOpeningCard.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafeOpeningCard_LinkClicked);
-            // 
-            // navSafeMovement
-            // 
-            this.navSafeMovement.Caption = "Kasa Hareketleri";
-            this.navSafeMovement.ImageOptions.SmallImage = global::PreAccountancy.Properties.Resources.Kasa_Hareket16x16;
-            this.navSafeMovement.Name = "navSafeMovement";
-            this.navSafeMovement.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafeMovement_LinkClicked);
+            this.navSafePayment.Caption = "Kasa Tahsilat/Ödeme";
+            this.navSafePayment.ImageOptions.SmallImage = global::PreAccountancy.Properties.Resources.Kasa_Odeme16x16;
+            this.navSafePayment.Name = "navSafePayment";
+            this.navSafePayment.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafePayment_LinkClicked);
             // 
             // navSafeTransfer
             // 
@@ -587,12 +582,26 @@
             this.navSafeTransfer.Name = "navSafeTransfer";
             this.navSafeTransfer.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafeTransfer_LinkClicked);
             // 
-            // navSafePayment
+            // navSafeMovement
             // 
-            this.navSafePayment.Caption = "Kasa Tahsilat/Ödeme";
-            this.navSafePayment.ImageOptions.SmallImage = global::PreAccountancy.Properties.Resources.Kasa_Odeme16x16;
-            this.navSafePayment.Name = "navSafePayment";
-            this.navSafePayment.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafePayment_LinkClicked);
+            this.navSafeMovement.Caption = "Kasa Hareketleri";
+            this.navSafeMovement.ImageOptions.SmallImage = global::PreAccountancy.Properties.Resources.Kasa_Hareket16x16;
+            this.navSafeMovement.Name = "navSafeMovement";
+            this.navSafeMovement.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafeMovement_LinkClicked);
+            // 
+            // navSafeOpeningCard
+            // 
+            this.navSafeOpeningCard.Caption = "Kasa Açılış Kartı";
+            this.navSafeOpeningCard.ImageOptions.SmallImage = global::PreAccountancy.Properties.Resources.Kasa_Karti16x16;
+            this.navSafeOpeningCard.Name = "navSafeOpeningCard";
+            this.navSafeOpeningCard.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafeOpeningCard_LinkClicked);
+            // 
+            // navSafeList
+            // 
+            this.navSafeList.Caption = "Kasa Listesi";
+            this.navSafeList.ImageOptions.SmallImage = global::PreAccountancy.Properties.Resources.Kasa_Liste16x16;
+            this.navSafeList.Name = "navSafeList";
+            this.navSafeList.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSafeList_LinkClicked);
             // 
             // navBarGroup1
             // 
@@ -717,18 +726,10 @@
             this.navBankMovement.Name = "navBankMovement";
             this.navBankMovement.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBankMovement_LinkClicked);
             // 
-            // navBarGroup5
+            // navBarGroup4
             // 
-            this.navBarGroup5.Caption = "Kasa";
-            this.navBarGroup5.Expanded = true;
-            this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafePayment),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafeTransfer),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafeMovement),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafeOpeningCard),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navSafeList)});
-            this.navBarGroup5.Name = "navBarGroup5";
-            this.navBarGroup5.TopVisibleLinkIndex = 2;
+            this.navBarGroup4.Caption = "Fatura";
+            this.navBarGroup4.Name = "navBarGroup4";
             // 
             // alertControl
             // 

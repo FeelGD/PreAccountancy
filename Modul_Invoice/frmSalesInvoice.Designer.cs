@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalesInvoice));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.pnlPaymentPlace = new DevExpress.XtraEditors.PanelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
@@ -67,7 +67,7 @@
             this.txtDescription = new DevExpress.XtraEditors.MemoEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTotal = new DevExpress.XtraEditors.TextEdit();
+            this.txtTopTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtSubTotal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -78,6 +78,7 @@
             this.dataSets = new PreAccountancy.DataSets();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnStockSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colStockCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStockName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUnit = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -87,8 +88,8 @@
             this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlPaymentPlace)).BeginInit();
+            this.pnlPaymentPlace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAccountName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAccountNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeCode.Properties)).BeginInit();
@@ -114,7 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTopTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTAX.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -123,11 +124,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStockSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.panelControl6);
+            this.groupControl1.Controls.Add(this.pnlPaymentPlace);
             this.groupControl1.Controls.Add(this.panelControl3);
             this.groupControl1.Controls.Add(this.panelControl2);
             this.groupControl1.Controls.Add(this.btnClose);
@@ -140,20 +142,21 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Fatura Bilgileri";
             // 
-            // panelControl6
+            // pnlPaymentPlace
             // 
-            this.panelControl6.Controls.Add(this.labelControl13);
-            this.panelControl6.Controls.Add(this.labelControl14);
-            this.panelControl6.Controls.Add(this.labelControl16);
-            this.panelControl6.Controls.Add(this.labelControl17);
-            this.panelControl6.Controls.Add(this.txtAccountName);
-            this.panelControl6.Controls.Add(this.txtAccountNo);
-            this.panelControl6.Controls.Add(this.txtSafeCode);
-            this.panelControl6.Controls.Add(this.txtSafeName);
-            this.panelControl6.Location = new System.Drawing.Point(424, 23);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(200, 118);
-            this.panelControl6.TabIndex = 17;
+            this.pnlPaymentPlace.Controls.Add(this.labelControl13);
+            this.pnlPaymentPlace.Controls.Add(this.labelControl14);
+            this.pnlPaymentPlace.Controls.Add(this.labelControl16);
+            this.pnlPaymentPlace.Controls.Add(this.labelControl17);
+            this.pnlPaymentPlace.Controls.Add(this.txtAccountName);
+            this.pnlPaymentPlace.Controls.Add(this.txtAccountNo);
+            this.pnlPaymentPlace.Controls.Add(this.txtSafeCode);
+            this.pnlPaymentPlace.Controls.Add(this.txtSafeName);
+            this.pnlPaymentPlace.Enabled = false;
+            this.pnlPaymentPlace.Location = new System.Drawing.Point(424, 23);
+            this.pnlPaymentPlace.Name = "pnlPaymentPlace";
+            this.pnlPaymentPlace.Size = new System.Drawing.Size(200, 118);
+            this.pnlPaymentPlace.TabIndex = 17;
             // 
             // labelControl13
             // 
@@ -189,6 +192,7 @@
             // 
             // txtAccountName
             // 
+            this.txtAccountName.Enabled = false;
             this.txtAccountName.Location = new System.Drawing.Point(90, 10);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -198,6 +202,7 @@
             // 
             // txtAccountNo
             // 
+            this.txtAccountNo.Enabled = false;
             this.txtAccountNo.Location = new System.Drawing.Point(90, 36);
             this.txtAccountNo.Name = "txtAccountNo";
             this.txtAccountNo.Size = new System.Drawing.Size(100, 20);
@@ -205,6 +210,7 @@
             // 
             // txtSafeCode
             // 
+            this.txtSafeCode.Enabled = false;
             this.txtSafeCode.Location = new System.Drawing.Point(90, 62);
             this.txtSafeCode.Name = "txtSafeCode";
             this.txtSafeCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -214,6 +220,7 @@
             // 
             // txtSafeName
             // 
+            this.txtSafeName.Enabled = false;
             this.txtSafeName.Location = new System.Drawing.Point(90, 88);
             this.txtSafeName.Name = "txtSafeName";
             this.txtSafeName.Size = new System.Drawing.Size(100, 20);
@@ -281,6 +288,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtCurrentCode.Size = new System.Drawing.Size(100, 20);
             this.txtCurrentCode.TabIndex = 8;
+            this.txtCurrentCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCurrentCode_ButtonClick);
             // 
             // txtInvoiceType
             // 
@@ -300,6 +308,7 @@
             // txtPaymentPlace
             // 
             this.txtPaymentPlace.EditValue = "Kasa";
+            this.txtPaymentPlace.Enabled = false;
             this.txtPaymentPlace.Location = new System.Drawing.Point(90, 88);
             this.txtPaymentPlace.Name = "txtPaymentPlace";
             this.txtPaymentPlace.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -310,6 +319,7 @@
             this.txtPaymentPlace.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtPaymentPlace.Size = new System.Drawing.Size(100, 20);
             this.txtPaymentPlace.TabIndex = 14;
+            this.txtPaymentPlace.SelectedIndexChanged += new System.EventHandler(this.txtPaymentPlace_SelectedIndexChanged);
             // 
             // panelControl2
             // 
@@ -469,7 +479,7 @@
             // 
             this.panelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl4.Controls.Add(this.labelControl5);
-            this.panelControl4.Controls.Add(this.txtTotal);
+            this.panelControl4.Controls.Add(this.txtTopTotal);
             this.panelControl4.Controls.Add(this.txtSubTotal);
             this.panelControl4.Controls.Add(this.labelControl11);
             this.panelControl4.Controls.Add(this.labelControl12);
@@ -487,12 +497,12 @@
             this.labelControl5.TabIndex = 13;
             this.labelControl5.Text = "Genel toplam:";
             // 
-            // txtTotal
+            // txtTopTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(90, 62);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtTotal.TabIndex = 14;
+            this.txtTopTotal.Location = new System.Drawing.Point(90, 62);
+            this.txtTopTotal.Name = "txtTopTotal";
+            this.txtTopTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTopTotal.TabIndex = 14;
             // 
             // txtSubTotal
             // 
@@ -540,6 +550,8 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 20);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnStockSelect});
             this.gridControl1.Size = new System.Drawing.Size(854, 229);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -570,15 +582,27 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
             // 
             // colBarcode
             // 
             this.colBarcode.Caption = "Barkod";
+            this.colBarcode.ColumnEdit = this.btnStockSelect;
             this.colBarcode.FieldName = "Barcode";
             this.colBarcode.Name = "colBarcode";
             this.colBarcode.OptionsColumn.FixedWidth = true;
             this.colBarcode.Visible = true;
             this.colBarcode.VisibleIndex = 0;
+            this.colBarcode.Width = 100;
+            // 
+            // btnStockSelect
+            // 
+            this.btnStockSelect.AutoHeight = false;
+            this.btnStockSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnStockSelect.Name = "btnStockSelect";
+            this.btnStockSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnStockSelect_ButtonClick);
             // 
             // colStockCode
             // 
@@ -588,6 +612,7 @@
             this.colStockCode.OptionsColumn.FixedWidth = true;
             this.colStockCode.Visible = true;
             this.colStockCode.VisibleIndex = 1;
+            this.colStockCode.Width = 100;
             // 
             // colStockName
             // 
@@ -596,6 +621,7 @@
             this.colStockName.Name = "colStockName";
             this.colStockName.Visible = true;
             this.colStockName.VisibleIndex = 2;
+            this.colStockName.Width = 238;
             // 
             // colUnit
             // 
@@ -653,11 +679,12 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "frmSalesInvoice";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.frmSalesInvoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
-            this.panelControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlPaymentPlace)).EndInit();
+            this.pnlPaymentPlace.ResumeLayout(false);
+            this.pnlPaymentPlace.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAccountName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAccountNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSafeCode.Properties)).EndInit();
@@ -687,7 +714,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTopTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTAX.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -696,6 +723,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStockSelect)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -708,7 +736,7 @@
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl6;
+        private DevExpress.XtraEditors.PanelControl pnlPaymentPlace;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl16;
@@ -737,7 +765,7 @@
         private DevExpress.XtraEditors.MemoEdit txtDescription;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txtTotal;
+        private DevExpress.XtraEditors.TextEdit txtTopTotal;
         private DevExpress.XtraEditors.TextEdit txtSubTotal;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl12;
@@ -757,5 +785,6 @@
         private DevExpress.XtraEditors.ButtonEdit txtCurrentCode;
         private DevExpress.XtraEditors.ComboBoxEdit txtInvoiceType;
         private DevExpress.XtraEditors.ComboBoxEdit txtPaymentPlace;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnStockSelect;
     }
 }

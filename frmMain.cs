@@ -212,9 +212,13 @@ namespace PreAccountancy
         private void navBankMovement_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Forms.BankMovement();
-        } 
+        }
+
         #endregion
 
-
+        private void barbtnSalesInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.Invoice();
+        }
     }
 }

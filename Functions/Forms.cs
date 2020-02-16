@@ -121,6 +121,7 @@ namespace PreAccountancy.Functions
         }
         #endregion
 
+        #region BankForms
         public void BankOpeningCard()
         {
             Modul_Bank.frmBankOpeningCard bankOpeningCard = new Modul_Bank.frmBankOpeningCard();
@@ -159,6 +160,23 @@ namespace PreAccountancy.Functions
             frm.MdiParent = frmMain.ActiveForm;
             if (Open) frm.OpenBank(ID);
             frm.Show();
+        } 
+        #endregion
+
+        public void Invoice(bool Open=false, int ID = -1)
+        {
+            Modul_Invoice.frmSalesInvoice frm;
+            if (Open)
+            {
+                frm = new Modul_Invoice.frmSalesInvoice(Open,ID);
+            }
+            else
+            {
+                frm = new Modul_Invoice.frmSalesInvoice();
+            }
+            frm.MdiParent = frmMain.ActiveForm;
+            frm.Show();
         }
+
     }
 }
