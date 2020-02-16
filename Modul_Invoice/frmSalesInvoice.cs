@@ -17,5 +17,10 @@ namespace PreAccountancy.Modul_Invoice
         {
             InitializeComponent();
         }
+
+        private void txtInvoiceType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

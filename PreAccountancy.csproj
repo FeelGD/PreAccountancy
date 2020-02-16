@@ -71,6 +71,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSets.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +289,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="DataSets.xsc">
+      <DependentUpon>DataSets.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSets.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets.xss">
+      <DependentUpon>DataSets.xsd</DependentUpon>
+    </None>
     <None Include="Functions\Db.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Db.designer.cs</LastGenOutput>
